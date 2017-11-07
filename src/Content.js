@@ -1,7 +1,11 @@
-import React from 'React'
+import React from 'react'
 
-export () => {
+export default () => {
   return (
-       
-  }
-)
+    <main className="content">
+      <div className="row">
+          
+      </div>
+    </main>
+  )
+}

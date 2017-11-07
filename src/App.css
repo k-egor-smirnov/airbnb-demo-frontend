@@ -1,34 +1,14 @@
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(/HelveticaNeue.ttf) format('ttf');
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  font-family: "HelveticaNeue", Helvetica, Arial;
 }
 
 .App-title {
   font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .row {
@@ -36,6 +16,84 @@
   flex-wrap: wrap;
 }
 
-.col-4 {
-  flex-basis: 33.33333%
+.col-1 {
+  flex-basis: 8.3333%;
 }
+
+.col-2 {
+  flex-basis: 16.6667%;
+}
+
+.col-3 {
+  flex-basis: 24.9999%;
+}
+
+.col-4 {
+  box-sizing: border-box;
+  flex-basis: 33.33333%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.col-12 {
+  flex-basis: 100%;
+}
+
+.card {
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.containter {
+  width: 976px;
+}
+/* 
+.App-header {
+  justify-content: space-between;  
+  flex-flow: row nowrap;
+  display: flex;
+  background-color: #FFFFFF;
+  height: 80px;
+  margin-bottom: 48px;
+}
+
+.App-logo {
+  height: 32px;
+  padding-top: 24px;
+  padding-left: 32px;
+}
+
+.search {
+  align-self: flex-start;
+}
+
+#search_icon {
+  display: inline;
+}
+
+.search .search_input {
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  border-radius: 4px;
+  width: 392px;
+}
+
+.search .search_input input {
+  display: block;
+  border: none;
+  height: 48px;
+  width: 324px;
+  outline: none;
+}
+
+.App-header nav a {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+  margin-right: 8px;
+}
+
+.App-header nav {
+  padding-top: 32px;
+  margin-right: 8px;
+} */
