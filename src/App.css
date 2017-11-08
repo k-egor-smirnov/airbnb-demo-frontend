@@ -79,6 +79,11 @@
   flex-flow: row nowrap;
 }
 
+.reservations {
+  display: flex;
+  flex-flow: row nowrap;  
+}
+
 main section {
   padding-top: 48px;
 }

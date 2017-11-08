@@ -2,6 +2,7 @@ import React from 'react'
 import ExploreCard from './ExploreCard'
 import ExperienceCard from './ExperienceCard'
 import HomeCard from './HomeCard'
+import ReservationCard from './ReservationCard'
 
 export default () => {
   return (
@@ -40,6 +41,19 @@ export default () => {
               <HomeCard type="Entire house" beds="5" cost="$82" title="Your private 3 bedr. riad and exclusi..." image="/house2.png" />
               <HomeCard type="Entire treehouse" beds="1" cost="$200" title="Dreamy Tropical Tree House" image="/house3.png" />  
             </div>
+        </div>
+      </section>
+
+      <section>
+        <h1 className="section-name">Popular reservations around the world</h1>
+
+        <div className="row">
+          <div className="reservations">
+            <ReservationCard type="SPEAKEASY" title="Chumley's" cost="About $60 per person" image="./reservation1.png" /> 
+            <ReservationCard type="KOREAN GASTROPUB" title="Hanjan" cost="About $55 per person" image="./reservation2.png"/> 
+            <ReservationCard type="GERMAN AMERICAN" title="Prime Meats" cost="About $55 per person" image="./reservation3.png"/> 
+            <ReservationCard type="FINE SEAFOOD" title="Seaprice" cost="About $70 per person" image="./reservation4.png"/> 
+          </div>
         </div>
       </section>
     </main>
