@@ -67,12 +67,30 @@
   font-weight: bold;
 }
 
+.experiences {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.experiences .item {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 400px;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  margin: 16px;
+}
+
+main section {
+  padding-top: 48px;
+}
+
 main .section-name {
   padding-left: 16px;
 }
 
-
-/* main {
+main {
   width: 976px;
   margin: 0 auto;
-} */
+}
