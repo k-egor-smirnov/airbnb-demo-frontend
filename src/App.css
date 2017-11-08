@@ -29,20 +29,26 @@
 }
 
 .col-4 {
-  box-sizing: border-box;
   flex-basis: 33.33333%;
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
 .col-12 {
   flex-basis: 100%;
 }
 
-.card {
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  margin-bottom: 20px;
-  text-align: center;
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-12 {
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.homes {
+  display: flex;
+  flex-flow: row nowrap;  
 }
 
 .explore {
@@ -57,6 +63,7 @@
   display: flex;
   border: 1px solid rgba(72, 72, 72, 0.2);
   padding: 0px;
+  width: 310px;
   margin: 16px;
   border-radius: 4px;
 }
