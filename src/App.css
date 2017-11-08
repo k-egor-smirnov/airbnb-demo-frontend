@@ -45,55 +45,34 @@
   text-align: center;
 }
 
-.containter {
-  width: 976px;
-}
-/* 
-.App-header {
-  justify-content: space-between;  
-  flex-flow: row nowrap;
+.explore {
   display: flex;
-  background-color: #FFFFFF;
-  height: 80px;
-  margin-bottom: 48px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 32px;
-  padding-top: 24px;
-  padding-left: 32px;
-}
-
-.search {
-  align-self: flex-start;
-}
-
-#search_icon {
-  display: inline;
-}
-
-.search .search_input {
+.explore .item {
+  display: flex;
   border: 1px solid rgba(72, 72, 72, 0.2);
+  padding: 0px;
+  margin: 16px;
   border-radius: 4px;
-  width: 392px;
 }
 
-.search .search_input input {
-  display: block;
-  border: none;
-  height: 48px;
-  width: 324px;
-  outline: none;
+.explore .item .item-title {
+  align-self: center;
+  padding-left: 24px;
+  font-weight: bold;
 }
 
-.App-header nav a {
-  text-decoration: none;
-  font-size: 14px;
-  color: black;
-  margin-right: 8px;
+main .section-name {
+  padding-left: 16px;
 }
 
-.App-header nav {
-  padding-top: 32px;
-  margin-right: 8px;
+
+/* main {
+  width: 976px;
+  margin: 0 auto;
 } */

@@ -50,6 +50,7 @@ const Input = styled.input.attrs({
   height: 48px;
   width: 324px;
   border: none;
+  outline: none;
 `;
 
 export default () => {
