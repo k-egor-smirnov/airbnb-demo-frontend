@@ -20,10 +20,10 @@ export default () => {
         <h1 className="section-name">Experiences</h1>      
         
         <div className="row experiences">        
-          <ExperienceItem image="/forest.png" title="Restaurants"/>            
-          <ExperienceItem image="/whale.png" title="Restaurants"/>            
-          <ExperienceItem image="/mountain.png" title="Restaurants"/>            
-          <ExperienceItem image="/salsa.png" title="Restaurants"/>            
+          <ExperienceItem image="/forest.png" title=""/>            
+          <ExperienceItem image="/whale.png" title=""/>            
+          <ExperienceItem image="/mountain.png" title=""/>            
+          <ExperienceItem image="/salsa.png" title=""/>            
         </div>
       </section>
     </main>
