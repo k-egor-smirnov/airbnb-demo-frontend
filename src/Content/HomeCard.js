@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import star from './star.svg'
 
-const Home = styled.div`
+const Card = styled.div`
   display: flex;
-  margin: 16px;
+  margin-right: 16px;
   flex-flow: column nowrap;
   width: 310px;
   overflow: none;
@@ -29,7 +29,6 @@ const Title = styled.span`
   font-weight: bold;  
 `
 
-
 const Type = styled.span`
 `
 
@@ -37,12 +36,11 @@ const Rating = styled.div`
 `
 
 const Star = styled.img`
-  padding-left: 4px;
+  margin-right: 4px;
   height: 12px;
 `
 
 const Reviews = styled.span`
-  padding-left: 8px;
 `
 
 const Superhost = styled.span`
@@ -53,7 +51,7 @@ class HomeCard extends Component {
   render() {
     return (
       <div className="col-4">
-        <Home>  
+        <Card>  
           <img src={this.props.image} alt="" /> 
 
           <Information className="card-information">
@@ -69,11 +67,11 @@ class HomeCard extends Component {
             <Star src={star}/>
             <Star src={star}/>
             <Star src={star}/>  
-            <Reviews>{this.props.reviews} {this.props.beds}
+            <Reviews>{this.props.reviews}
               <Superhost> • Superhost</Superhost>
             </Reviews>
           </Rating>
-        </Home>
+        </Card>
       </div>
     )
   }

@@ -2,16 +2,14 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import star from './star.svg'
 
-const Card = styled.div`
+const Experience = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  margin-left: 0px;
-  margin: 16px;
+  margin-right: 16px;
 `;
 
 const Information = styled.div`
   padding-top: 8px;
-  padding-left: 8px;
 `
 
 const Cost = styled.span`
@@ -22,23 +20,21 @@ const Title = styled.span`
   padding-left: 8px;
 `
 const Rating = styled.div`
-  padding-left: 4px;
 `
 
 const Star = styled.img`
-  padding-left: 4px;
+  margin-right: 4px;
   height: 12px;
 `
 
 const Reviews = styled.span`
-  padding-left: 8px;  
 `
 
 class ExperienceCard extends Component {
   render() {
     return (
       <div className="col-3">
-        <Card>
+        <Experience>
           <img src={this.props.image} alt="" /> 
           <Information className="card-information">
             <Cost>{this.props.cost}</Cost>
@@ -55,7 +51,7 @@ class ExperienceCard extends Component {
             <Reviews>{this.props.reviews} reviews </Reviews>
           </Rating>
 
-        </Card>
+        </Experience>
       </div>
     )
   }

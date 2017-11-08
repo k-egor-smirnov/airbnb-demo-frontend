@@ -48,7 +48,7 @@
 
 .homes {
   display: flex;
-  flex-flow: row nowrap;  
+  flex-flow: row nowrap;
 }
 
 .explore {
@@ -64,7 +64,7 @@
   border: 1px solid rgba(72, 72, 72, 0.2);
   padding: 0px;
   width: 310px;
-  margin: 16px;
+  margin-right: 16px;
   border-radius: 4px;
 }
 
@@ -74,14 +74,11 @@
   font-weight: bold;
 }
 
+.destination,
+.reservations,
 .experiences {
   display: flex;
   flex-flow: row nowrap;
-}
-
-.reservations {
-  display: flex;
-  flex-flow: row nowrap;  
 }
 
 main section {

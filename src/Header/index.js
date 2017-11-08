@@ -4,14 +4,17 @@ import search from './search.svg'
 import styled from 'styled-components'
 
 const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
   height: 80px;
   width: 100%;
   box-sizing: border-box;
 `;
+
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
 const Logo = styled.img`
   height: 40px;
@@ -58,20 +61,22 @@ const Input = styled.input.attrs({
 export default () => {
   return (
     <Header>
-      <Left>
-        <Logo />    
-        <Search>            
-          <SearchIcon />
-          <Input placeholder='Try "Miami"'/>
-        </Search>
-      </Left>
+      <Content>
+        <Left>
+          <Logo />    
+          <Search>            
+            <SearchIcon />
+            <Input placeholder='Try "Miami"'/>
+          </Search>
+        </Left>
 
-      <Nav>
-        <Link href="#">Become a host</Link>
-        <Link href="#">Help</Link>
-        <Link href="#">Sign up</Link>
-        <Link href="#">Log in</Link>
-      </Nav>
+        <Nav>
+          <Link href="#">Become a host</Link>
+          <Link href="#">Help</Link>
+          <Link href="#">Sign up</Link>
+          <Link href="#">Log in</Link>
+        </Nav>
+      </Content>
     </Header>
   )
 }

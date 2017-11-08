@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Reservation = styled.div`
   display: flex;
-  margin: 16px;
+  margin-right: 16px;
   flex-flow: column nowrap;
   width: 230px;
   overflow: none;
