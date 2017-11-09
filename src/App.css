@@ -95,6 +95,6 @@ main .section-name {
 }
 
 main {
-  width: 976px;
+  max-width: 976px;
   margin: 0 auto;
 }

@@ -5,7 +5,6 @@ const Reservation = styled.div`
   display: flex;
   margin-right: 16px;
   flex-flow: column nowrap;
-  width: 230px;
   overflow: none;
 `
 

@@ -6,7 +6,6 @@ const Card = styled.div`
   display: flex;
   margin-right: 16px;
   flex-flow: column nowrap;
-  width: 310px;
   overflow: none;
 `
 
