@@ -16,6 +16,11 @@
   flex-wrap: wrap;
 }
 
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .col-1 {
   flex-basis: 8.3333%;
 }
