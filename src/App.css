@@ -53,7 +53,7 @@
   box-sizing: border-box;
 }
 
-.homse .explore .destination,
+.homes .explore .destination,
 .reservations,
 .experiences {
   display: flex;
@@ -74,7 +74,7 @@ main {
 }
 
 .scrolling-wrapper {
-    display: flex;
+  display: flex;
 }
 
 @media screen and (max-width: 972px) {
