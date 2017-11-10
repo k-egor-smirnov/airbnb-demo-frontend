@@ -12,7 +12,7 @@ export default () => {
         <h1 className="section-name">Explore Airbnb</h1>      
         
         <div className="row">
-          <div className="explore">
+          <div className="explore scrolling-wrapper">
             <ExploreCard image="/homes.png" title="Homes" />
             <ExploreCard image="/experiences.png" title="Experiences"/>
             <ExploreCard image="/restaurants.png" title="Restaurants"/> 
@@ -24,7 +24,7 @@ export default () => {
         <h1 className="section-name">Experiences</h1>      
         
         <div className="row"> 
-          <div className="experiences">
+          <div className="experiences scrolling-wrapper">
             <ExperienceCard cost="$29" reviews="44" 
               title="Forest therapy" image="/forest.png"/>            
             <ExperienceCard cost="$69" reviews="46" 
@@ -41,11 +41,11 @@ export default () => {
         <h1 className="section-name">Homes</h1>
 
         <div className="row">
-            <div className="homes">
+            <div className="homes scrolling-wrapper">
               <HomeCard type="Entire house" reviews="97" beds="9" cost="$82" 
                 title="La Salentina, see, nature & relax" image="/house1.png" />
               <HomeCard type="Entire house" reviews="161" beds="5" cost="$82" 
-                title="Your private 3 bedr. riad and exclusi..." image="/house2.png" />
+                title="Your private 3 bedr. riad and exclusive" image="/house2.png" />
               <HomeCard type="Entire treehouse" reviews="364" beds="1" cost="$200" 
                 title="Dreamy Tropical Tree House" image="/house3.png" />  
             </div>
@@ -56,7 +56,7 @@ export default () => {
         <h1 className="section-name">Popular reservations around the world</h1>
 
         <div className="row">
-          <div className="reservations">
+          <div className="reservations scrolling-wrapper">
             <ReservationCard type="SPEAKEASY" title="Chumley's" cost="About $60 per person"
               image="./reservation1.png" /> 
             <ReservationCard type="KOREAN GASTROPUB" title="Hanjan" cost="About $55 per person" 
@@ -74,7 +74,7 @@ export default () => {
         <h1 className="section-name">Featured destination</h1>
 
         <div className="row">
-          <div className="destination">
+          <div className="destination scrolling-wrapper">
             <DestinationCard image="/dest1.png" title="Paris"/>
             <DestinationCard image="/dest2.png" title="Miami"/>
             <DestinationCard image="/dest3.png" title="Tokyo"/>

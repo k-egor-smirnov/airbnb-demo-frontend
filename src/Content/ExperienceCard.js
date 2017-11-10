@@ -5,11 +5,17 @@ import star from './star.svg'
 const Experience = styled.div`
   display: flex;
   flex-flow: column nowrap;
+  width: 230px;
   margin-right: 16px;
 `;
 
 const Information = styled.div`
   padding-top: 8px;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: inherit;
 `
 
 const Cost = styled.span`
@@ -33,25 +39,32 @@ const Reviews = styled.span`
 class ExperienceCard extends Component {
   render() {
     return (
-      <div className="col-3">
-        <Experience>
-          <img src={this.props.image} alt="" /> 
-          <Information className="card-information">
-            <Cost>{this.props.cost}</Cost>
-            <Title>{this.props.title}</Title>
-          </Information>
+      <div className="scrolling-card">
+        <div className="
+          col-xs-6
+          col-sm-5
+          col-md-3
+          ">
+          
+          <Experience>
+            <img src={this.props.image} alt="" /> 
+            <Information className="card-information">
+              <Cost>{this.props.cost}</Cost>
+              <Title>{this.props.title}</Title>
+            </Information>
 
-          <Rating>
-            <Star src={star}/>
-            <Star src={star}/>
-            <Star src={star}/>
-            <Star src={star}/>
-            <Star src={star}/>
+            <Rating>
+              <Star src={star}/>
+              <Star src={star}/>
+              <Star src={star}/>
+              <Star src={star}/>
+              <Star src={star}/>
 
-            <Reviews>{this.props.reviews} reviews </Reviews>
-          </Rating>
+              <Reviews>{this.props.reviews} reviews </Reviews>
+            </Rating>
 
-        </Experience>
+          </Experience>
+        </div>
       </div>
     )
   }

@@ -4,6 +4,7 @@ import 'normalize.css'
 import Header from './Header/'
 import Content from './Content/'
 import Footer from './Footer/'
+import 'flexboxgrid2/flexboxgrid2.css'
 
 class App extends Component {
   render() {

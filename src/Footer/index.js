@@ -4,8 +4,9 @@ import logo from './logo.svg'
 import facebook from './facebook.svg'
 import twitter from './twitter.svg'
 import instagram from './instagram.svg'
+import media from '../media'
 
-const Footer = styled.header`
+const Footer = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
@@ -26,7 +27,9 @@ const Select = styled.select`
 `
 
 const Content = styled.div`
+  margin: 0 auto;  
   margin-top: 48px;
+  max-width: 976px;
 `
 
 const Category = styled.div`
@@ -49,6 +52,11 @@ const Information = styled.div`
   display: flex;
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);  
+
+  @media (orientation: portrait) {
+    color: red;
+    display: none;
+  }
 `
 
 const Credits = styled.div`

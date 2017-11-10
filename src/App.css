@@ -7,10 +7,6 @@
   font-family: "HelveticaNeue", Helvetica, Arial;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -51,35 +47,13 @@
   padding-right: 8px;
 }
 
-.homes {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
 .explore {
-  display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
 }
 
-.explore .explore-card {
-  display: flex;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  padding: 0px;
-  width: 310px;
-  margin-right: 16px;
-  border-radius: 4px;
-}
-
-.explore .explore-card .item-title {
-  align-self: center;
-  padding-left: 24px;
-  font-weight: bold;
-}
-
-.destination,
+.homse .explore .destination,
 .reservations,
 .experiences {
   display: flex;
@@ -97,4 +71,21 @@ main .section-name {
 main {
   max-width: 976px;
   margin: 0 auto;
+}
+
+.scrolling-wrapper {
+    display: flex;
+}
+
+@media screen and (max-width: 972px) {
+  .scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+
+.scrolling-card {
+  padding-left: 16px;
+  flex: 0 0 auto;
 }
