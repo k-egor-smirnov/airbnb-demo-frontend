@@ -8,14 +8,15 @@ const Card = styled.div`
   margin-right: 16px;
   flex-flow: column nowrap;
   overflow: none;
-  width: 310px;
+  max-width: 310px;
 
-  ${media.tablet`
-    width: 305px;
+  ${media.md`
+    max-width: 305px;
   `}
 `
 
 const Image = styled.img`
+  object-fit: cover;
 `
 
 const Information = styled.div`
@@ -57,15 +58,15 @@ const Superhost = styled.span`
 class HomeCard extends Component {
   render() {
     return (
-      <div className="scrolling-card">
-        <div className="
+      <div className="
           col-xs-6
           col-sm-5
           col-md-4
           ">
-
+          
+        <div className="scrolling-card">
           <Card>  
-            <img src={this.props.image} alt="" /> 
+            <Image src={this.props.image} alt="" /> 
 
             <Information className="card-information">
               <Cost>{this.props.cost}</Cost>

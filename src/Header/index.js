@@ -27,14 +27,14 @@ const Logo = styled.img`
 `;
 
 const Nav = styled.nav`
-  margin-right: 8px;
-  display: flex;
+  display: none;
   justify-content: flex-end;
+  align-items: center;  
   flex-flow: row nowrap;
-
-  ${media.tablet`
-    display: none;
-  `}
+  
+  @media only screen and (min-width: 768px){
+    display: flex;
+  }
 `
 
 const Left = styled.div`
@@ -57,11 +57,11 @@ const Search = styled.div`
   border-radius: 4px; 
   max-width: 512px;    
 
-  ${media.desktop`
+  ${media.lg`
     max-width: 350px;        
   `}
 
-  ${media.tablet`
+  ${media.lg`
     padding-right: 8px;
   `}
 `
@@ -72,9 +72,7 @@ const SearchIcon = styled.img`
   content: url(${search})
 `
 
-const Input = styled.input.attrs({
-	type: 'text',
-})`
+const Input = styled.input`
   height: 48px;
   width: 100%;
   border: none;
@@ -84,25 +82,35 @@ export default () => {
   return (
     <Header>
       <Content>
-        <Left>
-          <Logo className="
-              col-xs-2
-            "/>    
+        <div className="row">
+          <Left className="
+            col-lg-8
+            col-md-8
+            col-sm-12
+            col-xs-12
+          ">
+            <Logo />    
+            <Search className="
+              col-lg-7
+              col-md-7
+              col-sm-10
+              col-xs-10 
+            ">            
+              <SearchIcon />
+              <Input placeholder='Try "Miami"'/>
+            </Search>
+          </Left>
 
-          <Search>            
-            <SearchIcon />
-            <Input placeholder='Try "Miami"'/>
-          </Search>
-        </Left>
-
-        <Nav className="
-          col-xl-6        
-        ">
-          <Link href="#">Become a host</Link>
-          <Link href="#">Help</Link>
-          <Link href="#">Sign up</Link>
-          <Link href="#">Log in</Link>
-        </Nav>
+          <Nav className="
+            col-lg-4
+            col-md-4
+          ">
+            <Link href="#">Become a host</Link>
+            <Link href="#">Help</Link>
+            <Link href="#">Sign up</Link>
+            <Link href="#">Log in</Link>
+          </Nav>
+        </div>
       </Content>
     </Header>
   )

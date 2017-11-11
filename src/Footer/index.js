@@ -11,6 +11,7 @@ const Footer = styled.footer`
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
   margin-left: 8px;
+  width: 100%;
 `
 
 const SelectContainer = styled.div`
@@ -23,7 +24,7 @@ const Select = styled.select`
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   height: 48px;
-  width: 230px;
+  max-width: 230px;
 `
 
 const Content = styled.div`
@@ -91,8 +92,14 @@ export default () => {
     <Footer>
       <Content>
         <Information>
-          <div className="col-4">
-            <div className="col-3">
+          <div className="
+            col-lg-4
+            col-md-3
+          ">
+            <div className="
+              col-lg-4
+              col-md-3
+            ">
               <SelectContainer>
                 <Select>
 
@@ -107,7 +114,10 @@ export default () => {
             </div>
           </div>      
 
-          <div className="col-3">
+          <div className="
+            col-lg-3
+            col-md-3
+          ">
             <Category>
               <CategoryTitle>Airbnb</CategoryTitle>
             
@@ -120,7 +130,10 @@ export default () => {
             </Category>          
           </div>
           
-          <div className="col-3">
+          <div className="
+            col-lg-3
+            col-md-3
+          ">
             <Category>        
             <CategoryTitle>Discover</CategoryTitle>
 
@@ -134,7 +147,10 @@ export default () => {
             </Category>          
           </div>
 
-          <div className="col-2">
+          <div className="
+            col-lg-3
+            col-md-3
+          ">
             <Category>        
               <CategoryTitle>Hosting</CategoryTitle>
 

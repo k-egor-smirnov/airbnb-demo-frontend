@@ -7,10 +7,10 @@ const Reservation = styled.div`
   margin-right: 16px;
   flex-flow: column nowrap;
   overflow: none;
-  width: 230px;
+  max-width: 230px;
   
-  ${media.tablet`
-    width: 240px;
+  ${media.md`
+    max-width: 240px;
   `}
 `
 
@@ -27,18 +27,22 @@ const Cost = styled.div`
   padding-top: 2px;
 `
 
+const Image = styled.img`
+  object-fit: cover;
+`
+
 class ReservationCard extends Component {
   render() {
     return (
-      <div className="scrolling-card">
-        <div className="
+      <div className="
           col-xs-6
           col-sm-4
           col-md-3
           ">
-
+          
+        <div className="scrolling-card">
           <Reservation>
-            <img src={this.props.image} alt="" /> 
+            <Image src={this.props.image} alt="" /> 
             <Type>{this.props.type}</Type>
             <Title>{this.props.title}</Title>
             <Cost>{this.props.cost}</Cost>

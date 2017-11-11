@@ -10,82 +10,39 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-.column {
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.col-1 {
-  flex-basis: 8.3333%;
-}
-
-.col-2 {
-  flex-basis: 16.6667%;
-}
-
-.col-3 {
-  flex-basis: 24.9999%;
-}
-
-.col-4 {
-  flex-basis: 33.33333%;
-}
-
-.col-12 {
-  flex-basis: 100%;
-}
-
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-12 {
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.explore {
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.homes .explore .destination,
-.reservations,
-.experiences {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-main section {
+.main-container section {
   padding-top: 48px;
 }
 
-main .section-name {
+.main-container container .section-name {
   padding-left: 16px;
 }
 
-main {
-  max-width: 976px;
+.main-container {
   margin: 0 auto;
+  max-width: 976px;
 }
 
 .scrolling-wrapper {
   display: flex;
-}
-
-@media screen and (max-width: 972px) {
-  .scrolling-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .scrolling-card {
-  padding-left: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
   flex: 0 0 auto;
 }
+
+
+/* @media (pointer: fine) {
+  .scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+  }
+} */

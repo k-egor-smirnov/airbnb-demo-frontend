@@ -4,41 +4,48 @@ import media from '../media'
 
 const Explore = styled.div`
   display: flex;
-  padding: 0px;
-  max-width: auto;
   margin-right: 16px;
-  padding-right: 24px;
-
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
   box-sizing: border-box;
+  max-width: 310px;
+  flex: 0 1 auto;
 
-  ${media.phone`
+  ${media.md`
+    max-width: 305px;    
+  `}
+
+  ${media.sm`
     flex-flow: column nowrap;
-    width: 144px;
+    max-width: 144px;    
   `}
 `
 
-const Title = styled.div`
+const Title = styled.span`
+  padding: 8px;
   margin: auto;
   font-weight: bold;
-  align-self: center;
-  padding-left: 24px;
-  margin-right: 24px;
+`
 
-  ${media.phone`
-
-  `}  
+const Image = styled.img`
+  object-fit: cover;
 `
 
 class ExploreCard extends Component {
   render() {
     return (
-      <div className="scrolling-card">
-          <Explore>
-            <img src={this.props.image} alt="" /> 
-            <Title>{this.props.title}</Title>
-          </Explore>
+      <div className="
+        col-xs-6
+        col-sm-5
+        col-md-4
+      ">
+    
+        <div className="scrolling-card">
+            <Explore>
+              <Image src={this.props.image} alt="" /> 
+              <Title>{this.props.title}</Title>
+            </Explore>
+        </div>
       </div>
     )
   }
