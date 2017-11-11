@@ -3,6 +3,7 @@ import logo from './ic-airbnb.svg';
 import search from './search.svg'
 import styled from 'styled-components'
 import media from '../media'
+import downArrow from './downArrow.svg'
 
 const Header = styled.header`
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
@@ -23,7 +24,7 @@ const Content = styled.div`
 const Logo = styled.img`
   display: flex;
   padding: 16px;
-  content: url(${logo});
+  content: url(${logo});   
 `;
 
 const Nav = styled.nav`
@@ -64,6 +65,16 @@ const Search = styled.div`
   ${media.lg`
     padding-right: 8px;
   `}
+
+  @media (min-width: 0px) and (max-width: 768px) {
+    &:before {
+      position: relative;
+      right: 16px;
+      content: url(${downArrow});
+      margin: auto;
+    }
+  }
+
 `
 
 const SearchIcon = styled.img`

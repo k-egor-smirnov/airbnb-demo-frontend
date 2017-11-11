@@ -53,24 +53,31 @@ const Information = styled.div`
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);  
 
-  @media (orientation: portrait) {
-    color: red;
+  @media (orientation: portrait), not (max-width: 572px) {
     display: none;
   }
 `
 
 const Credits = styled.div`
   display: flex;
+  align-items: center;
+  display: flex;
   height: 100px;
   flex-flow: row nowrap; 
   justify-content: space-between;  
   align-items: center; 
+
+  @media (orientation: portrait), not (max-width: 364px) {
+    flex-flow: row wrap;     
+  }  
 `
 const About = styled.div`
 `
 
 const Logo = styled.img`
+  padding-left: 8px;
   height: 20px;
+
 `
 const Credit = styled.span`
   margin-left: 12px;
@@ -101,13 +108,13 @@ export default () => {
             ">
               <SelectContainer>
                 <Select>
-
+                  <option value="English">English</option>
                 </Select>
               </SelectContainer>
               
               <SelectContainer>
                 <Select>
-
+                  <option value="United States dollar">United States dollar</option>    
                 </Select>
               </SelectContainer>
             </div>

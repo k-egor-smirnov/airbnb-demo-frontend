@@ -78,13 +78,13 @@ export default () => {
 
         <div className="row"> 
           <ExperienceCategory className="scrolling-wrapper">
-            <ExperienceCard cost="$29" reviews="44" 
+            <ExperienceCard cost="$29" reviews={44} 
               title="Forest therapy" image="/forest.png"/>            
-            <ExperienceCard cost="$69" reviews="46" 
+            <ExperienceCard cost="$69" reviews={46} 
               title="Whale watching" image="/whale.png" />
-            <ExperienceCard cost="$69" reviews="44" 
+            <ExperienceCard cost="$69" reviews={44} 
               title="Table Mountain Summi, Cable Car Down" image="/mountain.png"/>            
-            <ExperienceCard cost="$50" reviews="44" 
+            <ExperienceCard cost="$50" reviews={44} 
               title="Salsa Night" image="/salsa.png"/>            
           </ExperienceCategory>
         </div>
@@ -98,11 +98,11 @@ export default () => {
 
         <div className="row">
             <HomeCategory className="scrolling-wrapper">
-              <HomeCard type="Entire house" reviews="97" beds="9" cost="$82" 
+              <HomeCard type="Entire house" reviews={97} beds={9} cost="$82" 
                 title="La Salentina, see, nature & relax" image="/house1.png" />
-              <HomeCard type="Entire house" reviews="161" beds="5" cost="$82" 
+              <HomeCard type="Entire house" reviews={161} beds={5} cost="$82" 
                 title="Your private 3 bedr. riad and exclusive" image="/house2.png" />
-              <HomeCard type="Entire treehouse" reviews="364" beds="1" cost="$200" 
+              <HomeCard type="Entire treehouse" reviews={364} beds={1} cost="$200" 
                 title="Dreamy Tropical Tree House" image="/house3.png" />  
             </HomeCategory>
         </div>
