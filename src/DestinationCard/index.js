@@ -7,6 +7,7 @@ const Card = styled.div`
   dispay: flex;
   margin-right: 16px;
   justify-content: space-between;
+  overflow: hidden;
 
   @media only screen and (max-width: 992px){
     max-width: 147px;

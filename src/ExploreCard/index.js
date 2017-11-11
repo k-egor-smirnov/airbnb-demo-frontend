@@ -10,6 +10,7 @@ const Explore = styled.div`
   box-sizing: border-box;
   max-width: 310px;
   flex: 0 1 auto;
+  overflow: hidden;
 
   ${media.md`
     max-width: 305px;    

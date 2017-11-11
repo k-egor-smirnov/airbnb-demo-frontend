@@ -8,7 +8,8 @@ const Reservation = styled.div`
   flex-flow: column nowrap;
   overflow-y: none;
   max-width: 230px;
-  
+  overflow: hidden;
+
   ${media.md`
     max-width: 240px;
   `}

@@ -10,6 +10,7 @@ const Experience = styled.div`
   padding-left: 8px;
   padding-right: 8px;
   flex: 0 1 auto;
+  overflow: hidden;
 `;
 
 const Information = styled.div`
