@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import ExploreCard from './ExploreCard'
-import ExperienceCard from './ExperienceCard'
-import HomeCard from './HomeCard'
-import ReservationCard from './ReservationCard'
-import DestinationCard from './DestinationCard'
+import ExploreCard from '../ExploreCard/'
+import ExperienceCard from '../ExperienceCard/'
+import HomeCard from '../HomeCard/'
+import ReservationCard from '../ReservationCard/'
+import DestinationCard from '../DestinationCard/'
 
 const ExploreCategory = styled.div`
   width: inherit;
@@ -36,11 +36,30 @@ const ReservationCategory = styled.div`
   flex: 1 auto;
 `
 
+const SectionHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const SectionTitle = styled.h1`
+`
+
+const MoreButton = styled.a`
+  padding-right: 16px;
+  text-decoration: none;
+  color: black;
+  
+  &:after {
+    content: url('/arrow.svg');;
+  }
+`
+
 export default () => {
   return (
     <main className="main-container">
       <section>
-        <h1 className="section-name">Explore Airbnb</h1>      
+        <h1 className="section-name">Explore Airbnb</h1> 
         
         <div className="row">
           <ExploreCategory className="scrolling-wrapper">
@@ -52,8 +71,11 @@ export default () => {
       </section>
 
       <section>
-        <h1 className="section-name">Experiences</h1>      
-        
+        <SectionHeader>
+          <SectionTitle className="section-name">Experiences</SectionTitle>      
+          <MoreButton href="#">See all </MoreButton>    
+        </SectionHeader>
+
         <div className="row"> 
           <ExperienceCategory className="scrolling-wrapper">
             <ExperienceCard cost="$29" reviews="44" 
@@ -69,7 +91,10 @@ export default () => {
       </section>
 
       <section>
-        <h1 className="section-name">Homes</h1>
+        <SectionHeader>
+          <SectionTitle className="section-name">Homes</SectionTitle>      
+          <MoreButton href="#">See all </MoreButton>    
+        </SectionHeader>
 
         <div className="row">
             <HomeCategory className="scrolling-wrapper">
@@ -84,7 +109,10 @@ export default () => {
       </section>
 
       <section>
-        <h1 className="section-name">Popular reservations around the world</h1>
+        <SectionHeader>
+          <SectionTitle className="section-name">Popular reservations around the world</SectionTitle>      
+          <MoreButton href="#">See all </MoreButton>    
+        </SectionHeader>
 
         <div className="row">
           <ReservationCategory className="reservations scrolling-wrapper">
@@ -102,7 +130,10 @@ export default () => {
 
 
       <section>
-        <h1 className="section-name">Featured destination</h1>
+        <SectionHeader>
+          <SectionTitle className="section-name">Featured destination</SectionTitle>      
+          <MoreButton href="#">See all </MoreButton>    
+        </SectionHeader>
 
         <div className="row">
           <DestinationCategory className="scrolling-wrapper">

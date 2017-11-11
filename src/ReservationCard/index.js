@@ -6,7 +6,7 @@ const Reservation = styled.div`
   display: flex;
   margin-right: 16px;
   flex-flow: column nowrap;
-  overflow: none;
+  overflow-y: none;
   max-width: 230px;
   
   ${media.md`

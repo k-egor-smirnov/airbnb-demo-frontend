@@ -2,9 +2,19 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Card = styled.div`
+  min-width: 91px;
+  max-width: 91px;
   dispay: flex;
   margin-right: 16px;
   justify-content: space-between;
+
+  @media only screen and (max-width: 992px){
+    max-width: 147px;
+  }
+
+  @media only screen and (max-width: 576px){
+    max-width: 176px;
+  }    
 `
 const Information = styled.div`
   padding-top: 8px;
@@ -15,14 +25,16 @@ const Title = styled.span`
 `
 
 const Image = styled.img`
-  heigth: 220px;
+  object-fit: cover;
+  width: 100%;
+  heigth: 264px;
 
   @media only screen and (max-width: 992px){
-    height: 264px;
+    height: 220px;
   }
 
   @media only screen and (max-width: 576px){
-    height: 138px;
+    height: 264px;
   }
 `
 

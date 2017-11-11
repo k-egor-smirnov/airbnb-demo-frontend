@@ -22,8 +22,8 @@
 }
 
 .main-container {
-  margin: 0 auto;
   max-width: 976px;
+  margin: auto;
 }
 
 .scrolling-wrapper {

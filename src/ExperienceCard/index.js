@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import star from './star.svg'
-import media from '../media'
+import star from '../star.svg'
 
-const Card = styled.div`
+const Experience = styled.div`
   display: flex;
-  margin-right: 16px;
-  flex-flow: column nowrap;
-  overflow: none;
-  max-width: 310px;
-
-  ${media.md`
-    max-width: 305px;
-  `}
-`
-
-const Image = styled.img`
-  object-fit: cover;
-`
+  flex-flow: row wrap;
+  max-width: 229px;
+  flex-basis: 229px;
+  padding-left: 8px;
+  padding-right: 8px;
+  flex: 0 1 auto;
+`;
 
 const Information = styled.div`
   padding-top: 8px;
@@ -25,7 +18,6 @@ const Information = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: inherit;
 `
 
 const Cost = styled.span`
@@ -33,13 +25,8 @@ const Cost = styled.span`
 `
 
 const Title = styled.span`
-  padding-left: 4px;
-  font-weight: bold;  
+  padding-left: 8px;
 `
-
-const Type = styled.span`
-`
-
 const Rating = styled.div`
 `
 
@@ -51,45 +38,44 @@ const Star = styled.img`
 const Reviews = styled.span`
 `
 
-const Superhost = styled.span`
-
+const Image = styled.img`
+  object-fit:  cover;
+  width: 100%;
 `
 
-class HomeCard extends Component {
+class ExperienceCard extends Component {
   render() {
     return (
       <div className="
-          col-xs-6
-          col-sm-5
-          col-md-4
-          ">
-          
-        <div className="scrolling-card">
-          <Card>  
+        col-xs-6
+        col-sm-4
+        col-md-3
+        col-xl-3
+        ">
+        
+        <div className="scrolling-card row">  
+          <Experience>
             <Image src={this.props.image} alt="" /> 
-
             <Information className="card-information">
               <Cost>{this.props.cost}</Cost>
               <Title>{this.props.title}</Title>
-            </Information>
 
-            <Type>{this.props.type} • {this.props.beds} beds</Type>            
+              <Rating>
+              <Star src={star}/>
+              <Star src={star}/>
+              <Star src={star}/>
+              <Star src={star}/>
+              <Star src={star}/>
 
-            <Rating>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Star src={star}/>  
-              <Reviews>{this.props.reviews}
-                <Superhost> • Superhost</Superhost>
-              </Reviews>
+              <Reviews>{this.props.reviews} reviews </Reviews>
             </Rating>
-          </Card>
+
+            </Information>
+          </Experience>
         </div>
       </div>
     )
   }
 }
 
-export default HomeCard;
+export default ExperienceCard;

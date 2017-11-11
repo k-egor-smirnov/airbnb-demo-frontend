@@ -10,7 +10,6 @@ const Footer = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
-  margin-left: 8px;
   width: 100%;
 `
 
