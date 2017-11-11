@@ -3,10 +3,6 @@
   src: url(/HelveticaNeue.ttf) format('ttf');
 }
 
-.App {
-  font-family: "HelveticaNeue", Helvetica, Arial;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -39,11 +35,27 @@
   flex: 0 0 auto;
 }
 
+body {
+  font-family: CircularAir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-/* @media (pointer: fine) {
-  .scrolling-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
-  }
-} */
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Circular_Air-Book.woff") format("woff"), url("fonts/Circular_Air-Book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/Circular_Air-Bold.woff") format("woff"), url("fonts/Circular_Air-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("fonts/Circular_Air-Light.woff") format("woff"), url("fonts/Circular_Air-Light.ttf") format("truetype");
+}

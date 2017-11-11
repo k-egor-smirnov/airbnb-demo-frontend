@@ -10,7 +10,7 @@ const Footer = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
-  width: 100%;
+  width: inherit;
 `
 
 const SelectContainer = styled.div`
@@ -72,11 +72,12 @@ const Credits = styled.div`
   }  
 `
 const About = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 const Logo = styled.img`
-  padding-left: 8px;
-  height: 20px;
+  height: 30px;
 
 `
 const Credit = styled.span`
@@ -84,6 +85,8 @@ const Credit = styled.span`
 `
 
 const Links = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 const Link = styled.a`
