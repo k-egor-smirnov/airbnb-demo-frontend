@@ -6,14 +6,29 @@ import HomeCard from '../HomeCard/'
 import ReservationCard from '../ReservationCard/'
 import DestinationCard from '../DestinationCard/'
 
+const Main = styled.main`
+  width: auto;
+
+  @media (min-width: 768px) {
+    max-width: 752px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 976px;
+  }
+  
+  padding-left: 8px;
+  margin: auto;
+`
+
 const ExploreCategory = styled.div`
-  width: inherit;
+  width: 100%;
   justify-content: flex-start;
   flex: 1 auto;  
 `
 
 const ExperienceCategory = styled.div`
-  width: inherit;
+  width: 100%;
   justify-content: flex-start;
   flex: 1 auto;  
 `
@@ -23,18 +38,18 @@ const HomeCategory = styled.div`
   justify-content: flex-start;
   flex: 1 auto;  
 `
-
-const DestinationCategory = styled.div`
-  width: inherit;
-  justify-content: flex-start;
-  flex: 1 auto;
-`
-
 const ReservationCategory = styled.div`
   width: inherit;
   justify-content: flex-start;
   flex: 1 auto;
 `
+
+const DestinationCategory = styled.div`
+  width: inherit;
+  justify-content: space-between;
+  overflow-x: auto
+`
+
 
 const SectionHeader = styled.div`
   display: flex;
@@ -43,23 +58,38 @@ const SectionHeader = styled.div`
 `
 
 const SectionTitle = styled.h1`
+  padding-left: 16px;
+  font-size: 32px;
+  
+  @media only screen and (max-width: 576px){
+    font-size: 24px;
+  }
 `
 
 const MoreButton = styled.a`
   padding-right: 16px;
   text-decoration: none;
+  font-size: 14px;  
   color: black;
   
+  @media only screen and (max-width: 576px){
+    font-size: 12px;
+  }
+
   &:after {
     content: url('/arrow.svg');;
   }
 `
 
+const Section = styled.section`
+  padding-top: 48px;
+`
+
 export default () => {
   return (
-    <main className="main-container">
-      <section>
-        <h1 className="section-name">Explore Airbnb</h1> 
+    <Main>
+      <Section>
+        <SectionTitle>Explore Airbnb</SectionTitle> 
         
         <div className="row">
           <ExploreCategory className="scrolling-wrapper">
@@ -68,11 +98,11 @@ export default () => {
             <ExploreCard image="/restaurants.png" title="Restaurants"/> 
           </ExploreCategory>
         </div>
-      </section>
+      </Section>
 
-      <section>
+      <Section>
         <SectionHeader>
-          <SectionTitle className="section-name">Experiences</SectionTitle>      
+          <SectionTitle>Experiences</SectionTitle>      
           <MoreButton href="#">See all </MoreButton>    
         </SectionHeader>
 
@@ -88,11 +118,11 @@ export default () => {
               title="Salsa Night" image="/salsa.png"/>            
           </ExperienceCategory>
         </div>
-      </section>
+      </Section>
 
-      <section>
+      <Section>
         <SectionHeader>
-          <SectionTitle className="section-name">Homes</SectionTitle>      
+          <SectionTitle>Homes</SectionTitle>      
           <MoreButton href="#">See all </MoreButton>    
         </SectionHeader>
 
@@ -106,11 +136,11 @@ export default () => {
                 title="Dreamy Tropical Tree House" image="/house3.png" />  
             </HomeCategory>
         </div>
-      </section>
+      </Section>
 
-      <section>
+      <Section>
         <SectionHeader>
-          <SectionTitle className="section-name">Popular reservations around the world</SectionTitle>      
+          <SectionTitle>Popular reservations around the world</SectionTitle>      
           <MoreButton href="#">See all </MoreButton>    
         </SectionHeader>
 
@@ -126,12 +156,12 @@ export default () => {
               image="./reservation4.png"/> 
           </ReservationCategory>
         </div>
-      </section>
+      </Section>
 
 
-      <section>
+      <Section>
         <SectionHeader>
-          <SectionTitle className="section-name">Featured destination</SectionTitle>      
+          <SectionTitle>Featured destination</SectionTitle>      
           <MoreButton href="#">See all </MoreButton>    
         </SectionHeader>
 
@@ -146,7 +176,7 @@ export default () => {
           </DestinationCategory>
         </div>
 
-      </section>
-    </main>
+      </Section>
+    </Main>
   )
 }

@@ -2,41 +2,32 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Card = styled.div`
-  min-width: 91px;
-  max-width: 91px;
   dispay: flex;
-  margin-right: 16px;
   justify-content: space-between;
-  overflow: hidden;
-
-  @media only screen and (max-width: 992px){
-    max-width: 147px;
-  }
-
-  @media only screen and (max-width: 576px){
-    max-width: 176px;
+  flex-flow: column nowrap;
+  max-width: 144px;
+  padding-right: 8px;
+  flex: 0 0 50%;
+  
+  @media only screen and (min-width: 768px){
+    max-width: 176px;    
   }    
+
+  @media only screen and (min-width: 992px){
+    max-width: 264px;
+  }
 `
-const Information = styled.div`
+const Title = styled.span`
+  display: flex;
+  flex-flow: container wrap;
+  font-weight: bold;
   padding-top: 8px;
 `
 
-const Title = styled.span`
-  font-weight: bold;
-`
-
 const Image = styled.img`
-  object-fit: cover;
-  width: 100%;
-  heigth: 264px;
-
-  @media only screen and (max-width: 992px){
-    height: 220px;
-  }
-
-  @media only screen and (max-width: 576px){
-    height: 264px;
-  }
+  @media only screen and (min-width: 768px){
+    max-width: 100%;
+  }  
 `
 
 class DestinationCard extends Component {
@@ -44,16 +35,15 @@ class DestinationCard extends Component {
     return (
       <div className="
           col-xs-4
-          col-md-2
           col-sm-3
+          col-md-2
+          col-xl-2
           ">
 
         <div className="scrolling-card">
           <Card>
             <Image src={this.props.image}></Image>  
-            <Information>
-              <Title>{this.props.title}</Title>
-            </Information>
+            <Title>{this.props.title}</Title>
           </Card>
         </div>
       </div>

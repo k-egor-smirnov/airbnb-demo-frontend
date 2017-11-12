@@ -9,29 +9,14 @@
   width: 100%;
 }
 
-.main-container section {
-  padding-top: 48px;
-}
-
-.main-container container .section-name {
-  padding-left: 16px;
-}
-
-.main-container {
-  max-width: 976px;
-  padding-left: 8px;
-  margin: auto;
-}
-
 .scrolling-wrapper {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .scrolling-card {
-  padding-left: 8px;
-  padding-right: 8px;
   flex: 0 0 auto;
 }
 

@@ -63,9 +63,11 @@ const Credits = styled.div`
   align-items: center;
   display: flex;
   height: 100px;
+  font-size: 12px;
   flex-flow: row nowrap; 
   justify-content: space-between;  
   align-items: center; 
+  max-width: 100%;
 
   @media (orientation: portrait), not (max-width: 364px) {
     flex-flow: row wrap;     
@@ -86,6 +88,8 @@ const Credit = styled.span`
 
 const Links = styled.div`
   display: flex;
+  flex: 1 auto;
+  justify-content: space-between;
   align-items: center;
 `
 
@@ -157,8 +161,8 @@ export default () => {
           </div>
 
           <div className="
-            col-lg-3
-            col-md-3
+            col-lg-2
+            col-md-2
           ">
             <Category>        
               <CategoryTitle>Hosting</CategoryTitle>
@@ -171,13 +175,20 @@ export default () => {
           </div>
         </Information>   
 
-        <Credits>           
+        <Credits className="
+          col-sm-12
+          col-xs-9
+        ">           
           <About>
             <Logo src={logo} alt=""/>
             <Credit>© Airbnb Inc.</Credit>
           </About>
 
-          <Links>
+          <Links className="
+              col-sm-5
+              col-xs-9
+            ">
+
             <Link href="#">Terms</Link>
             <Link href="#">Privacy</Link>
             <Link href="#">Site map</Link>
