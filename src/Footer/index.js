@@ -112,12 +112,7 @@ export default() => {
       <Content>
         <Information>
           <div
-            className="
-            col-lg-4
-            col-md-3
-            col-sm-6
-            col-xs-12
-          ">
+            className="col-lg-4 col-md-3 col-sm-6 col-xs-12">
             <ChooseContainer>
               <div
                 className="

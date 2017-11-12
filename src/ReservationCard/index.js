@@ -36,11 +36,7 @@ class ReservationCard extends Component {
   render() {
     return (
       <div
-        className="
-          col-xs-6
-          col-sm-4
-          col-md-3
-          ">
+        className="col-xs-6 col-sm-4 col-md-3">
 
         <div className="scrolling-card">
           <Reservation>

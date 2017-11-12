@@ -114,10 +114,7 @@ export default() => {
             </Search>
           </Left>
 
-          <Nav className="
-            col-lg-4
-            col-md-4
-          ">
+          <Nav className="col-lg-4 col-md-4">
             <Link href="#">Become a host</Link>
             <Link href="#">Help</Link>
             <Link href="#">Sign up</Link>

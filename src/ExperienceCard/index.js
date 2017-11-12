@@ -48,12 +48,7 @@ class ExperienceCard extends Component {
   render() {
     return (
       <div
-        className="
-        col-xs-6
-        col-sm-4
-        col-md-3
-        col-xl-3
-        ">
+        className="col-xs-6 col-sm-4 col-md-3 col-xl-3">
 
         <div className="scrolling-card row">
           <Experience>
