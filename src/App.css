@@ -3,98 +3,45 @@
   src: url(/HelveticaNeue.ttf) format('ttf');
 }
 
-.App {
-  font-family: "HelveticaNeue", Helvetica, Arial;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
 .row {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-.column {
+.scrolling-wrapper {
   display: flex;
-  flex-flow: column nowrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.col-1 {
-  flex-basis: 8.3333%;
+.scrolling-card {
+  flex: 0 0 auto;
 }
 
-.col-2 {
-  flex-basis: 16.6667%;
+body {
+  font-family: CircularAir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.col-3 {
-  flex-basis: 24.9999%;
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Circular_Air-Book.woff") format("woff"), url("fonts/Circular_Air-Book.ttf") format("truetype");
 }
 
-.col-4 {
-  flex-basis: 33.33333%;
-}
-
-.col-12 {
-  flex-basis: 100%;
-}
-
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-12 {
-  box-sizing: border-box;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.homes {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-.explore {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.explore .explore-card {
-  display: flex;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  padding: 0px;
-  width: 310px;
-  margin-right: 16px;
-  border-radius: 4px;
-}
-
-.explore .explore-card .item-title {
-  align-self: center;
-  padding-left: 24px;
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
   font-weight: bold;
+  src: url("fonts/Circular_Air-Bold.woff") format("woff"), url("fonts/Circular_Air-Bold.ttf") format("truetype");
 }
 
-.destination,
-.reservations,
-.experiences {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
-main section {
-  padding-top: 48px;
-}
-
-main .section-name {
-  padding-left: 16px;
-}
-
-main {
-  max-width: 976px;
-  margin: 0 auto;
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("fonts/Circular_Air-Light.woff") format("woff"), url("fonts/Circular_Air-Light.ttf") format("truetype");
 }
