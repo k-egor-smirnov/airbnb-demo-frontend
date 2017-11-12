@@ -185,7 +185,7 @@ export default () => {
           </About>
 
           <Links className="
-              col-sm-5
+              col-sm-6
               col-xs-9
             ">
 

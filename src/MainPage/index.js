@@ -22,33 +22,55 @@ const Main = styled.main`
   margin: auto;
 `
 
+const ScrollButton = styled.a`
+  display: none;
+
+  @media only screen and (min-width: 992px){
+    display: block;
+    content: url(${scrollArrow});
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }  
+`
 const ExploreCategory = styled.div`
   width: 100%;
   justify-content: flex-start;
   flex: 1 auto;  
+  position: relative;
 `
 
 const ExperienceCategory = styled.div`
   width: 100%;
   justify-content: flex-start;
   flex: 1 auto;  
+  position: relative;
+
+  ${ScrollButton} {
+    display: none;
+  }
 `
 
 const HomeCategory = styled.div`
   width: inherit;
   justify-content: flex-start;
-  flex: 1 auto;  
+  flex: 1 auto;
+  position: relative;  
 `
 const ReservationCategory = styled.div`
   width: inherit;
   justify-content: flex-start;
   flex: 1 auto;
+  position: relative;  
 `
 
 const DestinationCategory = styled.div`
   width: inherit;
   justify-content: space-between;
   overflow-x: auto
+  position: relative;  
 `
 
 
@@ -82,19 +104,6 @@ const MoreButton = styled.a`
   }
 `
 
-const ScrollButton = styled.a`
-  display: none;
-
-  @media only screen and (min-width: 992px){
-    display: block;
-    content: url(${scrollArrow});
-    position: absolute;
-    right: 0%;
-    top: 38%;
-  }  
-  
-`
-
 const Section = styled.section`
   padding-top: 48px;
 `
@@ -104,8 +113,7 @@ export default () => {
     <Main>
       <Section>
         <SectionTitle>Explore Airbnb</SectionTitle> 
-        
-        
+
         <div className="row">
           <ExploreCategory className="scrolling-wrapper">
             <ExploreCard image="/homes.png" title="Homes" />

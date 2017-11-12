@@ -18,13 +18,18 @@ const Card = styled.div`
   }
 `
 const Title = styled.span`
-  display: flex;
-  flex-flow: container wrap;
-  font-weight: bold;
   padding-top: 8px;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: inherit;
+  font-weight: bold;
 `
 
 const Image = styled.img`
+  object-fit: cover;
+
   @media only screen and (min-width: 768px){
     max-width: 100%;
   }  
