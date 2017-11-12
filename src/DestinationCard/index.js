@@ -38,7 +38,7 @@ const Image = styled.img`
 
 const Wrapper = styled.div`
   flexgrow: 1;
-  flex-basis: 20%;
+  flex-basis: 10%;
 `
 
 class DestinationCard extends Component {
