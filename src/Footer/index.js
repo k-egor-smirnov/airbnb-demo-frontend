@@ -6,20 +6,20 @@ import twitter from './twitter.svg'
 import instagram from './instagram.svg'
 import media from '../media'
 
-const Footer = styled.footer`
+const Footer = styled.footer `
   box-sizing: border-box;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
   width: inherit;
 `
 
-const Content = styled.div`
+const Content = styled.div `
   margin: 0 auto;  
   margin-top: 48px;
   max-width: 976px;
 `
 
-const Category = styled.div`
+const Category = styled.div `
   display: flex;
   flex-flow: column nowrap;  
 
@@ -28,24 +28,24 @@ const Category = styled.div`
   }
 `
 
-const CategoryTitle = styled.span`
+const CategoryTitle = styled.span `
   font-weight: bold;  
 `
 
-const CategoryItem = styled.a`
+const CategoryItem = styled.a `
   color: black;
   text-decoration: none;
   padding-top: 12px;
 `
 
-const Information = styled.div`
+const Information = styled.div `
   flex-flow: row nowrap;
   display: flex;
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 `
 
-const Credits = styled.div`
+const Credits = styled.div `
   display: flex;
   align-items: center;
   display: flex;
@@ -56,33 +56,33 @@ const Credits = styled.div`
   align-items: center; 
   max-width: 100%;
 `
-const About = styled.div`
+const About = styled.div `
   display: flex;
   align-items: center;
 `
 
-const Logo = styled.img`
+const Logo = styled.img `
   height: 30px;
 
 `
-const Credit = styled.span`
+const Credit = styled.span `
   margin-left: 12px;
 `
 
-const Links = styled.div`
+const Links = styled.div `
   display: flex;
   flex: 1 auto;
   justify-content: space-between;
   align-items: center;
 `
 
-const Link = styled.a`
+const Link = styled.a `
   color: black;
   text-decoration: none;
   padding: 8px;
   padding-top: 16px;
 `
-const ChooseContainer = styled.div`
+const ChooseContainer = styled.div `
   display: flex;
   flex-flow: column nowrap; 
   width: 100%;
@@ -92,7 +92,7 @@ const ChooseContainer = styled.div`
   }
 `
 
-const Select = styled.select`
+const Select = styled.select `
   margin-bottom: 16px;  
   border: none;
   outline: none;
@@ -106,37 +106,40 @@ const Select = styled.select`
   }
 `
 
-export default () => {
+export default() => {
   return (
     <Footer>
       <Content>
         <Information>
-          <div className="
+          <div
+            className="
             col-lg-4
             col-md-3
             col-sm-6
             col-xs-12
           ">
-              <ChooseContainer>
-                <div className="
+            <ChooseContainer>
+              <div
+                className="
                   col-xs-12
                   col-sm-8
                 ">
-                  <Select>
-                    <option value="English">English</option>
-                  </Select>
-                </div>
+                <Select>
+                  <option value="English">English</option>
+                </Select>
+              </div>
 
-                <div className="
+              <div
+                className="
                   col-xs-12
                   col-sm-8
                 ">
-                  <Select>
-                    <option value="United States dollar">United States dollar</option>    
-                  </Select>
-                </div>
-              </ChooseContainer>
-            </div>
+                <Select>
+                  <option value="United States dollar">United States dollar</option>
+                </Select>
+              </div>
+            </ChooseContainer>
+          </div>
 
           <div className="
             col-lg-3
@@ -144,52 +147,53 @@ export default () => {
           ">
             <Category>
               <CategoryTitle>Airbnb</CategoryTitle>
-            
-              <CategoryItem href="#" >About us</CategoryItem>
-              <CategoryItem href="#" >Careers</CategoryItem>
-              <CategoryItem href="#" >Press</CategoryItem>
-              <CategoryItem href="#" >Policies</CategoryItem>
-              <CategoryItem href="#" >Help</CategoryItem>
-              <CategoryItem href="#" >Diversity & Belonging</CategoryItem>
-            </Category>          
+
+              <CategoryItem href="#">About us</CategoryItem>
+              <CategoryItem href="#">Careers</CategoryItem>
+              <CategoryItem href="#">Press</CategoryItem>
+              <CategoryItem href="#">Policies</CategoryItem>
+              <CategoryItem href="#">Help</CategoryItem>
+              <CategoryItem href="#">Diversity & Belonging</CategoryItem>
+            </Category>
           </div>
-          
+
           <div className="
             col-lg-3
             col-md-3
           ">
-            <Category>        
+            <Category>
               <CategoryTitle>Discover</CategoryTitle>
 
-              <CategoryItem href="#" >Trust & Safety </CategoryItem>
-              <CategoryItem href="#" >Travel Credit</CategoryItem>
-              <CategoryItem href="#" >Gift Cards</CategoryItem>
-              <CategoryItem href="#" >Airbnb Citizen</CategoryItem>
-              <CategoryItem href="#" >Business Travel</CategoryItem>
-              <CategoryItem href="#" >Guidebooks</CategoryItem>
-              <CategoryItem href="#" >Airbnbmag</CategoryItem>
-            </Category>          
+              <CategoryItem href="#">Trust & Safety
+              </CategoryItem>
+              <CategoryItem href="#">Travel Credit</CategoryItem>
+              <CategoryItem href="#">Gift Cards</CategoryItem>
+              <CategoryItem href="#">Airbnb Citizen</CategoryItem>
+              <CategoryItem href="#">Business Travel</CategoryItem>
+              <CategoryItem href="#">Guidebooks</CategoryItem>
+              <CategoryItem href="#">Airbnbmag</CategoryItem>
+            </Category>
           </div>
 
           <div className="
             col-lg-2
             col-md-2
           ">
-            <Category>        
+            <Category>
               <CategoryTitle>Hosting</CategoryTitle>
 
-              <CategoryItem href="#" >Why Host</CategoryItem>
-              <CategoryItem href="#" >Hospitability</CategoryItem>
-              <CategoryItem href="#" >Response Hosting</CategoryItem>
-              <CategoryItem href="#" >Community Center</CategoryItem>
+              <CategoryItem href="#">Why Host</CategoryItem>
+              <CategoryItem href="#">Hospitability</CategoryItem>
+              <CategoryItem href="#">Response Hosting</CategoryItem>
+              <CategoryItem href="#">Community Center</CategoryItem>
             </Category>
           </div>
-        </Information>   
+        </Information>
 
         <Credits className="
           col-sm-12
           col-xs-9
-        ">           
+        ">
           <About>
             <Logo src={logo} alt=""/>
             <Credit>© Airbnb Inc.</Credit>
@@ -206,13 +210,13 @@ export default () => {
             <Link href="#">
               <img src={facebook} alt=""/>
             </Link>
-            
+
             <Link href="#">
-              <img src={twitter} alt=""/>            
+              <img src={twitter} alt=""/>
             </Link>
 
             <Link href="#">
-              <img src={instagram} alt=""/>            
+              <img src={instagram} alt=""/>
             </Link>
           </Links>
         </Credits>

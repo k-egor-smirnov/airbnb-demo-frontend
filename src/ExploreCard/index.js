@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 import media from '../media'
 
-const Explore = styled.div`
+const Explore = styled.div `
   display: flex;
   margin-right: 16px;
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -12,23 +12,23 @@ const Explore = styled.div`
   flex: 0 1 auto;
   overflow: hidden;
 
-  ${media.md`
+  ${media.md `
     max-width: 305px;    
   `}
 
-  ${media.sm`
+  ${media.sm `
     flex-flow: column nowrap;
     max-width: 144px;    
   `}
 `
 
-const Title = styled.span`
+const Title = styled.span `
   padding: 8px;
   margin: auto;
   font-weight: bold;
 `
 
-const Image = styled.img`
+const Image = styled.img `
   object-fit: cover;
 `
 
@@ -40,12 +40,12 @@ class ExploreCard extends Component {
         col-sm-5
         col-md-4
       ">
-    
+
         <div className="scrolling-card">
-            <Explore>
-              <Image src={this.props.image} alt="" /> 
-              <Title>{this.props.title}</Title>
-            </Explore>
+          <Explore>
+            <Image src={this.props.image} alt=""/>
+            <Title>{this.props.title}</Title>
+          </Explore>
         </div>
       </div>
     )

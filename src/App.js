@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import 'normalize.css'
 import Header from './Header/'
@@ -10,9 +10,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Content />
-        <Footer />
+        <Header/>
+        <Content/>
+        <Footer/>
       </div>
     )
   }

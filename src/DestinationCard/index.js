@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 
-const Card = styled.div`
+const Card = styled.div `
   dispay: flex;
   justify-content: space-between;
   flex-flow: column nowrap;
@@ -9,7 +9,7 @@ const Card = styled.div`
   max-width: 144px;
   width: 100%;
 
-@media only screen and (min-width: 768px){
+  @media only screen and (min-width: 768px){
     padding-right: 0px;    
     max-width: 176px;    
   }    
@@ -18,7 +18,7 @@ const Card = styled.div`
     max-width: 264px;
   }
 `
-const Title = styled.span`
+const Title = styled.span `
   padding-top: 8px;
   display: block;
   text-overflow: ellipsis;
@@ -28,15 +28,15 @@ const Title = styled.span`
   font-weight: bold;
 `
 
-const Image = styled.img`
+const Image = styled.img `
   object-fit: cover;
 
   @media only screen and (min-width: 768px){
-    ${'' /* max-width: 100%; */}
+    ${ ''/* max-width: 100%; */}
   }  
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.div `
   flexgrow: 1;
   flex-basis: 10%;
 `
@@ -46,7 +46,7 @@ class DestinationCard extends Component {
     return (
       <Wrapper className="scrolling-card">
         <Card>
-          <Image src={this.props.image}></Image>  
+          <Image src={this.props.image}></Image>
           <Title>{this.props.title}</Title>
         </Card>
       </Wrapper>
