@@ -5,6 +5,7 @@ import ExperienceCard from '../ExperienceCard/'
 import HomeCard from '../HomeCard/'
 import ReservationCard from '../ReservationCard/'
 import DestinationCard from '../DestinationCard/'
+import scrollArrow from '../next-page.svg'
 
 const Main = styled.main`
   width: auto;
@@ -81,6 +82,19 @@ const MoreButton = styled.a`
   }
 `
 
+const ScrollButton = styled.a`
+  display: none;
+
+  @media only screen and (min-width: 992px){
+    display: block;
+    content: url(${scrollArrow});
+    position: absolute;
+    right: 0%;
+    top: 38%;
+  }  
+  
+`
+
 const Section = styled.section`
   padding-top: 48px;
 `
@@ -91,11 +105,12 @@ export default () => {
       <Section>
         <SectionTitle>Explore Airbnb</SectionTitle> 
         
+        
         <div className="row">
           <ExploreCategory className="scrolling-wrapper">
             <ExploreCard image="/homes.png" title="Homes" />
             <ExploreCard image="/experiences.png" title="Experiences"/>
-            <ExploreCard image="/restaurants.png" title="Restaurants"/> 
+            <ExploreCard image="/restaurants.png" title="Restaurants"/>
           </ExploreCategory>
         </div>
       </Section>
@@ -117,6 +132,8 @@ export default () => {
             <ExperienceCard cost="$50" reviews={44} 
               title="Salsa Night" image="/salsa.png"/>            
           </ExperienceCategory>
+
+          <ScrollButton />          
         </div>
       </Section>
 
@@ -135,6 +152,8 @@ export default () => {
               <HomeCard type="Entire treehouse" reviews={364} beds={1} cost="$200" 
                 title="Dreamy Tropical Tree House" image="/house3.png" />  
             </HomeCategory>
+
+            <ScrollButton />                      
         </div>
       </Section>
 
@@ -155,6 +174,8 @@ export default () => {
             <ReservationCard type="FINE SEAFOOD" title="Seaprice" cost="About $70 per person" 
               image="./reservation4.png"/> 
           </ReservationCategory>
+
+          <ScrollButton />                    
         </div>
       </Section>
 
@@ -174,6 +195,9 @@ export default () => {
             <DestinationCard image="/dest5.png" title="Seoul"/>
             <DestinationCard image="/dest6.png" title="Los Angeles"/>
           </DestinationCategory>
+
+          <ScrollButton />          
+          
         </div>
 
       </Section>
