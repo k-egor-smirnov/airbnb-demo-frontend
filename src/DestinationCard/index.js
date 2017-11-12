@@ -6,11 +6,11 @@ const Card = styled.div`
   justify-content: space-between;
   flex-flow: column nowrap;
   padding-right: 8px;
-  flex: 1 0 50%;
   max-width: 144px;
   width: 100%;
 
-  @media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px){
+    padding-right: 0px;    
     max-width: 176px;    
   }    
 
@@ -37,28 +37,18 @@ const Image = styled.img`
 `
 
 const Wrapper = styled.div`
-  flex-grow: 1;
-  flex-basis: 33%;
+  flexgrow: 1;
+  flex-basis: 20%;
 `
 
 class DestinationCard extends Component {
   render() {
     return (
-      <Wrapper>
-        <div className="
-            col-xs-4
-            col-sm-3
-            col-md-2
-            col-xl-2
-            ">
-
-          <div className="scrolling-card">
-            <Card>
-              <Image src={this.props.image}></Image>  
-              <Title>{this.props.title}</Title>
-            </Card>
-          </div>
-        </div>
+      <Wrapper className="scrolling-card">
+        <Card>
+          <Image src={this.props.image}></Image>  
+          <Title>{this.props.title}</Title>
+        </Card>
       </Wrapper>
     )
   }
