@@ -29,8 +29,6 @@ const ScrollButton = styled.a`
     display: block;
     content: url(${scrollArrow});
     position: absolute;
-    top: 0; 
-    bottom: 0;
     right: 0;
     margin: auto;
   }  
@@ -49,10 +47,6 @@ const ExperienceCategory = styled.div`
   justify-content: flex-start;
   flex: 1 auto;  
   position: relative;
-
-  ${ScrollButton} {
-    display: none;
-  }
 `
 
 const HomeCategory = styled.div`
@@ -145,7 +139,7 @@ export default () => {
               title="Salsa Night" image="/salsa.png"/>            
           </ExperienceCategory>
 
-          <ScrollButton />          
+          <ScrollButton style={{"top": "37%"}}/>          
         </div>
       </Section>
 
@@ -165,7 +159,7 @@ export default () => {
                 title="Dreamy Tropical Tree House" image="/house3.png" />  
             </HomeCategory>
 
-            <ScrollButton />                      
+          <ScrollButton style={{"top": "34%"}}/>          
         </div>
       </Section>
 
@@ -187,7 +181,7 @@ export default () => {
               image="./reservation4.png"/> 
           </ReservationCategory>
 
-          <ScrollButton />                    
+          <ScrollButton style={{"top": "26%"}}/>          
         </div>
       </Section>
 
@@ -208,8 +202,7 @@ export default () => {
             <DestinationCard image="/dest6.png" title="Los Angeles"/>
           </DestinationCategory>
 
-          <ScrollButton />          
-          
+          <ScrollButton style={{"top": "37%", "right": "-1%"}}/>          
         </div>
 
       </Section>
