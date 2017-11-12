@@ -115,20 +115,14 @@ export default() => {
             className="col-lg-4 col-md-3 col-sm-6 col-xs-12">
             <ChooseContainer>
               <div
-                className="
-                  col-xs-12
-                  col-sm-8
-                ">
+                className="col-xs-12 col-sm-8">
                 <Select>
                   <option value="English">English</option>
                 </Select>
               </div>
 
               <div
-                className="
-                  col-xs-12
-                  col-sm-8
-                ">
+                className="col-xs-12 col-sm-8">
                 <Select>
                   <option value="United States dollar">United States dollar</option>
                 </Select>
@@ -136,10 +130,7 @@ export default() => {
             </ChooseContainer>
           </div>
 
-          <div className="
-            col-lg-3
-            col-md-3
-          ">
+          <div className="col-lg-3 col-md-3">
             <Category>
               <CategoryTitle>Airbnb</CategoryTitle>
 
@@ -152,10 +143,7 @@ export default() => {
             </Category>
           </div>
 
-          <div className="
-            col-lg-3
-            col-md-3
-          ">
+          <div className="col-lg-3 col-md-3">
             <Category>
               <CategoryTitle>Discover</CategoryTitle>
 
@@ -170,10 +158,7 @@ export default() => {
             </Category>
           </div>
 
-          <div className="
-            col-lg-2
-            col-md-2
-          ">
+          <div className="col-lg-2 col-md-2">
             <Category>
               <CategoryTitle>Hosting</CategoryTitle>
 
@@ -185,19 +170,13 @@ export default() => {
           </div>
         </Information>
 
-        <Credits className="
-          col-sm-12
-          col-xs-9
-        ">
+        <Credits className="col-sm-12 col-xs-9">
           <About>
             <Logo src={logo} alt=""/>
             <Credit>© Airbnb Inc.</Credit>
           </About>
 
-          <Links className="
-              col-sm-6
-              col-xs-9
-            ">
+          <Links className="col-sm-6 col-xs-9">
 
             <Link href="#">Terms</Link>
             <Link href="#">Privacy</Link>

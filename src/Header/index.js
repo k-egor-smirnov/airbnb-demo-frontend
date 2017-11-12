@@ -94,13 +94,7 @@ export default() => {
     <Header>
       <Content>
         <div className="row">
-          <Left
-            className="
-            col-lg-8
-            col-md-8
-            col-sm-12
-            col-xs-12
-          ">
+          <Left className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <Logo/>
             <Search
               className="
