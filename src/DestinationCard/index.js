@@ -5,10 +5,11 @@ const Card = styled.div`
   dispay: flex;
   justify-content: space-between;
   flex-flow: column nowrap;
-  max-width: 144px;
   padding-right: 8px;
-  flex: 0 0 50%;
-  
+  flex: 1 0 50%;
+  max-width: 144px;
+  width: 100%;
+
   @media only screen and (min-width: 768px){
     max-width: 176px;    
   }    
@@ -23,7 +24,7 @@ const Title = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: inherit;
+  width: fit-content;
   font-weight: bold;
 `
 
@@ -31,27 +32,34 @@ const Image = styled.img`
   object-fit: cover;
 
   @media only screen and (min-width: 768px){
-    max-width: 100%;
+    ${'' /* max-width: 100%; */}
   }  
+`
+
+const Wrapper = styled.div`
+  flex-grow: 1;
+  flex-basis: 33%;
 `
 
 class DestinationCard extends Component {
   render() {
     return (
-      <div className="
-          col-xs-4
-          col-sm-3
-          col-md-2
-          col-xl-2
-          ">
+      <Wrapper>
+        <div className="
+            col-xs-4
+            col-sm-3
+            col-md-2
+            col-xl-2
+            ">
 
-        <div className="scrolling-card">
-          <Card>
-            <Image src={this.props.image}></Image>  
-            <Title>{this.props.title}</Title>
-          </Card>
+          <div className="scrolling-card">
+            <Card>
+              <Image src={this.props.image}></Image>  
+              <Title>{this.props.title}</Title>
+            </Card>
+          </div>
         </div>
-      </div>
+      </Wrapper>
     )
   }
 }

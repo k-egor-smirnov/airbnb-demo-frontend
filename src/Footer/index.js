@@ -13,19 +13,6 @@ const Footer = styled.footer`
   width: inherit;
 `
 
-const SelectContainer = styled.div`
-  margin-bottom: 16px;
-`
-
-const Select = styled.select`
-  border: none;
-  outline: none;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  border-radius: 4px;
-  height: 48px;
-  max-width: 230px;
-`
-
 const Content = styled.div`
   margin: 0 auto;  
   margin-top: 48px;
@@ -35,6 +22,10 @@ const Content = styled.div`
 const Category = styled.div`
   display: flex;
   flex-flow: column nowrap;  
+
+  @media (max-width: 572px) {
+    display: none;
+  }
 `
 
 const CategoryTitle = styled.span`
@@ -51,11 +42,7 @@ const Information = styled.div`
   flex-flow: row nowrap;
   display: flex;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(72, 72, 72, 0.2);  
-
-  @media (orientation: portrait), not (max-width: 572px) {
-    display: none;
-  }
+  border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 `
 
 const Credits = styled.div`
@@ -68,10 +55,6 @@ const Credits = styled.div`
   justify-content: space-between;  
   align-items: center; 
   max-width: 100%;
-
-  @media (orientation: portrait), not (max-width: 364px) {
-    flex-flow: row wrap;     
-  }  
 `
 const About = styled.div`
   display: flex;
@@ -99,6 +82,29 @@ const Link = styled.a`
   padding: 8px;
   padding-top: 16px;
 `
+const ChooseContainer = styled.div`
+  display: flex;
+  flex-flow: column nowrap; 
+  width: 100%;
+
+  @media (max-width: 572px) {
+    flex-flow: row nowrap; 
+  }
+`
+
+const Select = styled.select`
+  margin-bottom: 16px;  
+  border: none;
+  outline: none;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  border-radius: 4px;
+  height: 48px;
+  width: 100%;
+
+  @media (max-width: 572px) {
+    width: 100%;
+  }
+`
 
 export default () => {
   return (
@@ -108,24 +114,29 @@ export default () => {
           <div className="
             col-lg-4
             col-md-3
+            col-sm-6
+            col-xs-12
           ">
-            <div className="
-              col-lg-4
-              col-md-3
-            ">
-              <SelectContainer>
-                <Select>
-                  <option value="English">English</option>
-                </Select>
-              </SelectContainer>
-              
-              <SelectContainer>
-                <Select>
-                  <option value="United States dollar">United States dollar</option>    
-                </Select>
-              </SelectContainer>
+              <ChooseContainer>
+                <div className="
+                  col-xs-12
+                  col-sm-8
+                ">
+                  <Select>
+                    <option value="English">English</option>
+                  </Select>
+                </div>
+
+                <div className="
+                  col-xs-12
+                  col-sm-8
+                ">
+                  <Select>
+                    <option value="United States dollar">United States dollar</option>    
+                  </Select>
+                </div>
+              </ChooseContainer>
             </div>
-          </div>      
 
           <div className="
             col-lg-3
@@ -148,7 +159,7 @@ export default () => {
             col-md-3
           ">
             <Category>        
-            <CategoryTitle>Discover</CategoryTitle>
+              <CategoryTitle>Discover</CategoryTitle>
 
               <CategoryItem href="#" >Trust & Safety </CategoryItem>
               <CategoryItem href="#" >Travel Credit</CategoryItem>

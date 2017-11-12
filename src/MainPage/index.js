@@ -36,6 +36,7 @@ const ScrollButton = styled.a`
   }  
 `
 const ExploreCategory = styled.div`
+  display: flex;
   width: 100%;
   justify-content: flex-start;
   flex: 1 auto;  
@@ -43,6 +44,7 @@ const ExploreCategory = styled.div`
 `
 
 const ExperienceCategory = styled.div`
+  display: flex;  
   width: 100%;
   justify-content: flex-start;
   flex: 1 auto;  
@@ -54,12 +56,14 @@ const ExperienceCategory = styled.div`
 `
 
 const HomeCategory = styled.div`
+  display: flex;
   width: inherit;
   justify-content: flex-start;
   flex: 1 auto;
   position: relative;  
 `
 const ReservationCategory = styled.div`
+  display: flex;
   width: inherit;
   justify-content: flex-start;
   flex: 1 auto;
@@ -67,12 +71,12 @@ const ReservationCategory = styled.div`
 `
 
 const DestinationCategory = styled.div`
+  display: flex;
   width: inherit;
   justify-content: space-between;
   overflow-x: auto
   position: relative;  
 `
-
 
 const SectionHeader = styled.div`
   display: flex;
@@ -172,7 +176,7 @@ export default () => {
         </SectionHeader>
 
         <div className="row">
-          <ReservationCategory className="reservations scrolling-wrapper">
+          <ReservationCategory className="scrolling-wrapper">
             <ReservationCard type="SPEAKEASY" title="Chumley's" cost="About $60 per person"
               image="./reservation1.png" /> 
             <ReservationCard type="KOREAN GASTROPUB" title="Hanjan" cost="About $55 per person" 
