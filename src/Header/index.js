@@ -33,7 +33,7 @@ const Logo = styled.img `
   content: url(${logo});   
 `;
 
-const ExpandButton = styled.img `
+const ExpandButton = styled.a `
   content: url(${downArrow});
   margin-top: auto;
   position: absolute;

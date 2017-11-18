@@ -31,7 +31,7 @@ const CategoryTitle = styled.span `
   font-weight: bold;  
 `
 
-const CategoryItem = styled.a `
+const CategoryLink = styled.a `
   color: black;
   text-decoration: none;
   padding-top: 12px;
@@ -156,12 +156,12 @@ export default() => {
             <Category>
               <CategoryTitle>Airbnb</CategoryTitle>
 
-              <CategoryItem href="#">About us</CategoryItem>
-              <CategoryItem href="#">Careers</CategoryItem>
-              <CategoryItem href="#">Press</CategoryItem>
-              <CategoryItem href="#">Policies</CategoryItem>
-              <CategoryItem href="#">Help</CategoryItem>
-              <CategoryItem href="#">Diversity & Belonging</CategoryItem>
+              <CategoryLink href="#">About us</CategoryLink>
+              <CategoryLink href="#">Careers</CategoryLink>
+              <CategoryLink href="#">Press</CategoryLink>
+              <CategoryLink href="#">Policies</CategoryLink>
+              <CategoryLink href="#">Help</CategoryLink>
+              <CategoryLink href="#">Diversity & Belonging</CategoryLink>
             </Category>
           </div>
 
@@ -169,14 +169,14 @@ export default() => {
             <Category>
               <CategoryTitle>Discover</CategoryTitle>
 
-              <CategoryItem href="#">Trust & Safety
-              </CategoryItem>
-              <CategoryItem href="#">Travel Credit</CategoryItem>
-              <CategoryItem href="#">Gift Cards</CategoryItem>
-              <CategoryItem href="#">Airbnb Citizen</CategoryItem>
-              <CategoryItem href="#">Business Travel</CategoryItem>
-              <CategoryItem href="#">Guidebooks</CategoryItem>
-              <CategoryItem href="#">Airbnbmag</CategoryItem>
+              <CategoryLink href="#">Trust & Safety
+              </CategoryLink>
+              <CategoryLink href="#">Travel Credit</CategoryLink>
+              <CategoryLink href="#">Gift Cards</CategoryLink>
+              <CategoryLink href="#">Airbnb Citizen</CategoryLink>
+              <CategoryLink href="#">Business Travel</CategoryLink>
+              <CategoryLink href="#">Guidebooks</CategoryLink>
+              <CategoryLink href="#">Airbnbmag</CategoryLink>
             </Category>
           </div>
 
@@ -184,10 +184,10 @@ export default() => {
             <Category>
               <CategoryTitle>Hosting</CategoryTitle>
 
-              <CategoryItem href="#">Why Host</CategoryItem>
-              <CategoryItem href="#">Hospitability</CategoryItem>
-              <CategoryItem href="#">Response Hosting</CategoryItem>
-              <CategoryItem href="#">Community Center</CategoryItem>
+              <CategoryLink href="#">Why Host</CategoryLink>
+              <CategoryLink href="#">Hospitability</CategoryLink>
+              <CategoryLink href="#">Response Hosting</CategoryLink>
+              <CategoryLink href="#">Community Center</CategoryLink>
             </Category>
           </div>
         </Information>

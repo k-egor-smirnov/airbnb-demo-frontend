@@ -18,8 +18,8 @@ const Type = styled.span `
   line-height: 9px;
   font-weight: bold;
   padding-top: 12px;
-
   margin-top: 4px;
+  
   @media (min-width: 768px) {
     font-size: 10px;
   }

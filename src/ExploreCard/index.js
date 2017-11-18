@@ -39,12 +39,10 @@ class ExploreCard extends Component {
   render() {
     return (
       <div className="col-xs-6 col-sm-5 col-md-4">
-        <div className="scrolling-card">
           <Explore>
             <Image src={this.props.image} alt=""/>
             <Title>{this.props.title}</Title>
           </Explore>
-        </div>
       </div>
     )
   }

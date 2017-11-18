@@ -19,6 +19,10 @@ const Information = styled.div `
 const Cost = styled.span `
   font-weight: bold;
   font-size: 13px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 const Title = styled.span `
@@ -44,7 +48,7 @@ const Reviews = styled.span `
 
 const Image = styled.img `
   max-width: 100%;
-  max-height: 100%;
+  height : auto;
 `
 
 class ExperienceCard extends Component {

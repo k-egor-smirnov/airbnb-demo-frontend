@@ -32,6 +32,10 @@ const Cost = styled.span `
   font-weight: bold;
   font-size: 13px;
   line-height: 15px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 const Title = styled.span `

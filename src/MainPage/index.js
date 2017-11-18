@@ -22,14 +22,20 @@ const Main = styled.main `
   margin: auto;
 `
 
-const ScrollButton = styled.a `
+const ScrollButton = styled.button `
   display: none;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: url(${scrollArrow}) no-repeat;
+  background-size: cover; 
 
   @media only screen and (min-width: 992px){
     display: block;
-    content: url(${scrollArrow});
     position: absolute;
-    right: 0;
+    top: ${props => props.top ? props.top : 0};
+    bottom: ${props => props.bottom ? props.bottom : 0};
+    right: ${props => props.right ? props.right : 0};
     margin: auto;
   }  
 `
@@ -112,12 +118,7 @@ export default() => {
           <ExploreCard image="/restaurants.png" title="Restaurants"/>
         </ExploreCategory>
 
-        <ScrollButton
-          style={{
-          top: 0,
-          bottom: "-53%",
-          right: "-1.6%"
-        }}/>
+        <ScrollButton bottom="-53%" right="-1.2%"/>
       </Section>
 
       <Section>
@@ -146,12 +147,7 @@ export default() => {
           <ExperienceCard cost="$50" reviews={44} title="Salsa Night" image="/salsa.png"/>
         </ExperienceCategory>
 
-        <ScrollButton
-          style={{
-          top: 0,
-          bottom: "-10%",
-          right: "-1.6%"
-        }}/>
+        <ScrollButton bottom="-10%" right="-1.4%" />
       </Section>
 
       <Section>
@@ -185,12 +181,7 @@ export default() => {
             image="/house3.png"/>
         </HomeCategory>
 
-        <ScrollButton
-          style={{
-          top: 0,
-          bottom: "-20%",
-          right: "-1.6%"
-        }}/>
+        <ScrollButton bottom="-20%" right="-1.3%" />
       </Section>
 
       <Section>
@@ -223,12 +214,7 @@ export default() => {
             image="./reservation4.png"/>
         </ReservationCategory>
 
-        <ScrollButton
-          style={{
-          top: 0,
-          bottom: "-18%",
-          right: "-1.6%"
-        }}/>
+        <ScrollButton bottom="-18%" right="-1.2%" />
       </Section>
 
       <Section>
@@ -247,12 +233,7 @@ export default() => {
           <DestinationCard image="/dest6.png" title="Los Angeles"/>
         </DestinationCategory>
 
-        <ScrollButton
-          style={{
-          top: 0,
-          bottom: "-26%",
-          right: "-0.9%"
-        }}/>
+        <ScrollButton bottom="-26%" right="-0.5%" />
       </Section>
     </Main>
   )
