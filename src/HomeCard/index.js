@@ -1,21 +1,18 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import star from '../star.svg'
-import media from '../media'
 
 const Card = styled.div `
   display: flex;
-  margin-right: 16px;
   flex-flow: column nowrap;
   max-width: 310px;
-
-  ${media.md `
-    max-width: 305px;
-  `}
+  margin-bottom: 16px;
+  color: #383838;
 `
 
 const Image = styled.img `
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
 `
 
 const Information = styled.div `
@@ -25,18 +22,36 @@ const Information = styled.div `
   white-space: nowrap;
   overflow: hidden;
   width: inherit;
+
+  font-size: 12px;
+  font-height: 14px;
 `
 
 const Cost = styled.span `
   font-weight: bold;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
 `
 
 const Title = styled.span `
   padding-left: 4px;
   font-weight: bold;  
+  font-size: 13px;
+  line-height: 15px;
+  
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 const Type = styled.span `
+  font-size: 12px;
+  font-height: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
 `
 
 const Rating = styled.div `
@@ -48,6 +63,10 @@ const Star = styled.img `
 `
 
 const Reviews = styled.span `
+  white-space: nowrap;
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 14px;
 `
 
 const Superhost = styled.span `
@@ -57,35 +76,31 @@ const Superhost = styled.span `
 class HomeCard extends Component {
   render() {
     return (
-      <div
-        className="col-xs-6 col-sm-5 col-md-4">
+      <div className="col-xs-8 col-md-5 col-lg-4">
+        <Card>
+          <Image src={this.props.image} alt=""/>
 
-        <div className="scrolling-card">
-          <Card>
-            <Image src={this.props.image} alt=""/>
+          <Information className="card-information">
+            <Cost>{this.props.cost}</Cost>
+            <Title>{this.props.title}</Title>
+          </Information>
 
-            <Information className="card-information">
-              <Cost>{this.props.cost}</Cost>
-              <Title>{this.props.title}</Title>
-            </Information>
+          <Type>{this.props.type}
+            ·{this.props.beds}
+            beds</Type>
 
-            <Type>{this.props.type}
-              • {this.props.beds}
-              beds</Type>
-
-            <Rating>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Star src={star}/>
-              <Reviews>{this.props.reviews}
-                <Superhost>
-                  • Superhost</Superhost>
-              </Reviews>
-            </Rating>
-          </Card>
-        </div>
+          <Rating>
+            <Star src={star}/>
+            <Star src={star}/>
+            <Star src={star}/>
+            <Star src={star}/>
+            <Star src={star}/>
+            <Reviews>{this.props.reviews}
+              <Superhost>
+                ·Superhost</Superhost>
+            </Reviews>
+          </Rating>
+        </Card>
       </div>
     )
   }

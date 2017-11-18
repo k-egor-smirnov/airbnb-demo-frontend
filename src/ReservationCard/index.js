@@ -4,48 +4,63 @@ import media from '../media'
 
 const Reservation = styled.div `
   display: flex;
-  margin-right: 16px;
+  margin-bottom: 16px;
   flex-flow: column nowrap;
   overflow-y: none;
-  max-width: 230px;
   overflow: hidden;
-
-  ${media.md `
-    max-width: 240px;
-  `}
+  padding-bottom: 2px; /* Для шрифтов*/
+  color: #383838;
 `
 
-const Type = styled.div `
-  padding-top: 12px;
-`
-
-const Title = styled.div `
-  padding-top: 2px;
+const Type = styled.span `
+  font-size: 8px;
+  color: #383838;
+  line-height: 9px;
   font-weight: bold;
+  padding-top: 12px;
+
+  margin-top: 4px;
+  @media (min-width: 768px) {
+    font-size: 10px;
+  }
 `
 
-const Cost = styled.div `
-  padding-top: 2px;
+const Title = styled.span `
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+`
+
+const Cost = styled.span `
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 14px;
+
+  @media (min-width: 572px) {
+    font-size: 18px;
+  }
 `
 
 const Image = styled.img `
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
 `
 
 class ReservationCard extends Component {
   render() {
     return (
-      <div
-        className="col-xs-6 col-sm-4 col-md-3">
-
-        <div className="scrolling-card">
-          <Reservation>
-            <Image src={this.props.image} alt=""/>
-            <Type>{this.props.type}</Type>
-            <Title>{this.props.title}</Title>
-            <Cost>{this.props.cost}</Cost>
-          </Reservation>
-        </div>
+      <div className="col-xs-6 col-md-4 col-lg-3">
+        <Reservation>
+          <Image src={this.props.image} alt=""/>
+          <Type>{this.props.type}</Type>
+          <Title>{this.props.title}</Title>
+          <Cost>{this.props.cost}</Cost>
+        </Reservation>
       </div>
     )
   }

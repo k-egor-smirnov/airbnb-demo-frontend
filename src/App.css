@@ -1,8 +1,3 @@
-@font-face {
-  font-family: HelveticaNeue;
-  src: url(/HelveticaNeue.ttf) format('ttf');
-}
-
 .row {
   display: flex;
   position: relative;
@@ -44,4 +39,9 @@ body {
   font-style: normal;
   font-weight: lighter;
   src: url("fonts/Circular_Air-Light.woff") format("woff"), url("fonts/Circular_Air-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("fonts/HelveticaNeue.woff") format("woff"), url("fonts/HelveticaNeue.ttf") format("truetype");
 }

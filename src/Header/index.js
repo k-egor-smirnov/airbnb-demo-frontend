@@ -2,30 +2,53 @@ import React from 'react'
 import logo from './ic-airbnb.svg';
 import search from './search.svg'
 import styled from 'styled-components'
-import media from '../media'
 import downArrow from './downArrow.svg'
 
 const Header = styled.header `
+  padding-top: 16px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
+  color: #383838;
 `;
 
 const Content = styled.div `
   max-width: 976px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
-  width: inherit;
   box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  &>div:last-child {
+    margin-left: auto; /* setting nav to right*/
+  }
 `
 
 const Logo = styled.img `
-  display: flex;
-  padding: 16px;
+  margin: 0 auto;
   content: url(${logo});   
 `;
+
+const ExpandButton = styled.img `
+  content: url(${downArrow});
+  margin-top: auto;
+  position: absolute;
+  top: 0;
+  bottom: 44%;
+  margin-left: 5px;
+
+  @media (min-width: 768px) {
+    margin-left: 7px;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }  
+`
 
 const Nav = styled.nav `
   display: none;
@@ -33,82 +56,55 @@ const Nav = styled.nav `
   align-items: center;  
   flex-flow: row nowrap;
   
-  @media only screen and (min-width: 768px){
+  @media only screen and (min-width: 992px){
     display: flex;
   }
 `
-
-const Left = styled.div `
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-`
-
 const Link = styled.a `
-  color: black;
+  color: #383838;
+  font-size: 14px;
+  line-height: 24px;
   text-decoration: none;
   padding: 8px;
   padding-top: 16px;
 `
-
-const Search = styled.div `
-  display: flex;
+const Search = styled.input `
+  box-sizing: border-box;
   border: 1px solid rgba(72, 72, 72, 0.2);  
-  border-radius: 4px; 
-  max-width: 512px;    
-
-  ${media.lg `
-    max-width: 350px;        
-  `}
-
-  ${media.lg `
-    padding-right: 8px;
-  `}
-
-  @media (min-width: 0px) and (max-width: 768px) {
-    &:before {
-      position: relative;
-      right: 16px;
-      content: url(${downArrow});
-      margin: auto;
-    }
-  }
-
-`
-
-const SearchIcon = styled.img `
-  margin-left: 8px;
-  margin-right: 8px;
-  content: url(${search})
-`
-
-const Input = styled.input `
   height: 48px;
   width: 100%;
-  border: none;
+  border-radius: 4px;
+  margin-left: 4px;
+  padding-left: 35px;
+  background: url(${search}) no-repeat scroll 16px 16px;
+  background-size: 14px;
+  font-size: 14px;
+  line-height: 24px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 992px) {
+    margin-left: 0px;
+  }  
 `;
 
 export default() => {
   return (
     <Header>
       <Content>
-        <div className="row">
-          <Left className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <Logo/>
-            <Search
-              className="
-              col-lg-7
-              col-md-7
-              col-sm-10
-              col-xs-10
-            ">
-              <SearchIcon/>
-              <Input placeholder='Try "Miami"'/>
-            </Search>
-          </Left>
+        <div className="col-xs-2 col-md-1">
+          <Logo/>
+          <ExpandButton/>
+        </div>
 
-          <Nav className="col-lg-4 col-md-4">
+        <div className="col-xs-10 col-md-7 col-lg-5">
+          <Search placeholder='Try "Miami"'/>
+        </div>
+
+        <div className="col-lg-4">
+          <Nav>
             <Link href="#">Become a host</Link>
             <Link href="#">Help</Link>
             <Link href="#">Sign up</Link>

@@ -9,6 +9,7 @@ import scrollArrow from '../next-page.svg'
 
 const Main = styled.main `
   width: auto;
+  overflow: none;
 
   @media (min-width: 768px) {
     max-width: 752px;
@@ -18,7 +19,6 @@ const Main = styled.main `
     max-width: 976px;
   }
   
-  padding-left: 8px;
   margin: auto;
 `
 
@@ -42,11 +42,7 @@ const ExploreCategory = styled.div `
 `
 
 const ExperienceCategory = styled.div `
-  display: flex;  
-  width: 100%;
   justify-content: flex-start;
-  flex: 1 auto;  
-  position: relative;
 `
 
 const HomeCategory = styled.div `
@@ -59,16 +55,12 @@ const HomeCategory = styled.div `
 const ReservationCategory = styled.div `
   display: flex;
   width: inherit;
-  justify-content: flex-start;
-  flex: 1 auto;
   position: relative;  
 `
 
 const DestinationCategory = styled.div `
   display: flex;
   width: inherit;
-  justify-content: space-between;
-  overflow-x: auto
   position: relative;  
 `
 
@@ -79,10 +71,11 @@ const SectionHeader = styled.div `
 `
 
 const SectionTitle = styled.h1 `
-  padding-left: 16px;
   font-size: 32px;
-  
-  @media only screen and (max-width: 576px){
+  font-weight: bold;
+  color: #383838;
+
+  @media only screen and (max-width: 768px){
     font-size: 24px;
   }
 `
@@ -90,20 +83,22 @@ const SectionTitle = styled.h1 `
 const MoreButton = styled.a `
   padding-right: 16px;
   text-decoration: none;
-  font-size: 14px;  
-  color: black;
-  
-  @media only screen and (max-width: 576px){
-    font-size: 12px;
-  }
+  font-size: 12px;  
+  color: #383838;
 
   &:after {
-    content: url('/arrow.svg');;
+    margin-left: 8px;
+    content: url("/arrow.svg")
+  }
+
+  @media only screen and (min-width: 576px){
+    font-size: 14px;
   }
 `
 
 const Section = styled.section `
   padding-top: 48px;
+  position: relative;
 `
 
 export default() => {
@@ -111,14 +106,18 @@ export default() => {
     <Main>
       <Section>
         <SectionTitle>Explore Airbnb</SectionTitle>
+        <ExploreCategory className="scrolling-wrapper">
+          <ExploreCard image="/homes.png" title="Homes"/>
+          <ExploreCard image="/experiences.png" title="Experiences"/>
+          <ExploreCard image="/restaurants.png" title="Restaurants"/>
+        </ExploreCategory>
 
-        <div className="row">
-          <ExploreCategory className="scrolling-wrapper">
-            <ExploreCard image="/homes.png" title="Homes"/>
-            <ExploreCard image="/experiences.png" title="Experiences"/>
-            <ExploreCard image="/restaurants.png" title="Restaurants"/>
-          </ExploreCategory>
-        </div>
+        <ScrollButton
+          style={{
+          top: 0,
+          bottom: "-53%",
+          right: "-1.6%"
+        }}/>
       </Section>
 
       <Section>
@@ -128,30 +127,31 @@ export default() => {
           </MoreButton>
         </SectionHeader>
 
-        <div className="row">
-          <ExperienceCategory className="scrolling-wrapper">
-            <ExperienceCard
-              cost="$29"
-              reviews={44}
-              title="Forest therapy"
-              image="/forest.png"/>
-            <ExperienceCard
-              cost="$69"
-              reviews={46}
-              title="Whale watching"
-              image="/whale.png"/>
-            <ExperienceCard
-              cost="$69"
-              reviews={44}
-              title="Table Mountain Summi, Cable Car Down"
-              image="/mountain.png"/>
-            <ExperienceCard cost="$50" reviews={44} title="Salsa Night" image="/salsa.png"/>
-          </ExperienceCategory>
+        <ExperienceCategory className="scrolling-wrapper">
+          <ExperienceCard
+            cost="$29"
+            reviews={44}
+            title="Forest therapy"
+            image="/forest.png"/>
+          <ExperienceCard
+            cost="$69"
+            reviews={46}
+            title="Whale watching"
+            image="/whale.png"/>
+          <ExperienceCard
+            cost="$69"
+            reviews={44}
+            title="Table Mountain Summi, Cable Car Down"
+            image="/mountain.png"/>
+          <ExperienceCard cost="$50" reviews={44} title="Salsa Night" image="/salsa.png"/>
+        </ExperienceCategory>
 
-          <ScrollButton style={{
-            "top": "37%"
-          }}/>
-        </div>
+        <ScrollButton
+          style={{
+          top: 0,
+          bottom: "-10%",
+          right: "-1.6%"
+        }}/>
       </Section>
 
       <Section>
@@ -161,35 +161,36 @@ export default() => {
           </MoreButton>
         </SectionHeader>
 
-        <div className="row">
-          <HomeCategory className="scrolling-wrapper">
-            <HomeCard
-              type="Entire house"
-              reviews={97}
-              beds={9}
-              cost="$82"
-              title="La Salentina, see, nature & relax"
-              image="/house1.png"/>
-            <HomeCard
-              type="Entire house"
-              reviews={161}
-              beds={5}
-              cost="$82"
-              title="Your private 3 bedr. riad and exclusive"
-              image="/house2.png"/>
-            <HomeCard
-              type="Entire treehouse"
-              reviews={364}
-              beds={1}
-              cost="$200"
-              title="Dreamy Tropical Tree House"
-              image="/house3.png"/>
-          </HomeCategory>
+        <HomeCategory className="scrolling-wrapper">
+          <HomeCard
+            type="Entire house"
+            reviews={97}
+            beds={9}
+            cost="$82"
+            title="La Salentina, see, nature & relax"
+            image="/house1.png"/>
+          <HomeCard
+            type="Entire house"
+            reviews={161}
+            beds={5}
+            cost="$82"
+            title="Your private 3 bedr. riad and exclusive"
+            image="/house2.png"/>
+          <HomeCard
+            type="Entire treehouse"
+            reviews={364}
+            beds={1}
+            cost="$200"
+            title="Dreamy Tropical Tree House"
+            image="/house3.png"/>
+        </HomeCategory>
 
-          <ScrollButton style={{
-            "top": "34%"
-          }}/>
-        </div>
+        <ScrollButton
+          style={{
+          top: 0,
+          bottom: "-20%",
+          right: "-1.6%"
+        }}/>
       </Section>
 
       <Section>
@@ -199,34 +200,35 @@ export default() => {
           </MoreButton>
         </SectionHeader>
 
-        <div className="row">
-          <ReservationCategory className="scrolling-wrapper">
-            <ReservationCard
-              type="SPEAKEASY"
-              title="Chumley's"
-              cost="About $60 per person"
-              image="./reservation1.png"/>
-            <ReservationCard
-              type="KOREAN GASTROPUB"
-              title="Hanjan"
-              cost="About $55 per person"
-              image="./reservation2.png"/>
-            <ReservationCard
-              type="GERMAN AMERICAN"
-              title="Prime Meats"
-              cost="About $55 per person"
-              image="./reservation3.png"/>
-            <ReservationCard
-              type="FINE SEAFOOD"
-              title="Seaprice"
-              cost="About $70 per person"
-              image="./reservation4.png"/>
-          </ReservationCategory>
+        <ReservationCategory className="scrolling-wrapper">
+          <ReservationCard
+            type="SPEAKEASY"
+            title="Chumley's"
+            cost="About $60 per person"
+            image="./reservation1.png"/>
+          <ReservationCard
+            type="KOREAN GASTROPUB"
+            title="Hanjan"
+            cost="About $55 per person"
+            image="./reservation2.png"/>
+          <ReservationCard
+            type="GERMAN AMERICAN"
+            title="Prime Meats"
+            cost="About $55 per person"
+            image="./reservation3.png"/>
+          <ReservationCard
+            type="FINE SEAFOOD"
+            title="Seaprice"
+            cost="About $70 per person"
+            image="./reservation4.png"/>
+        </ReservationCategory>
 
-          <ScrollButton style={{
-            "top": "26%"
-          }}/>
-        </div>
+        <ScrollButton
+          style={{
+          top: 0,
+          bottom: "-18%",
+          right: "-1.6%"
+        }}/>
       </Section>
 
       <Section>
@@ -236,23 +238,21 @@ export default() => {
           </MoreButton>
         </SectionHeader>
 
-        <div className="row">
-          <DestinationCategory className="scrolling-wrapper">
-            <DestinationCard image="/dest1.png" title="Paris"/>
-            <DestinationCard image="/dest2.png" title="Miami"/>
-            <DestinationCard image="/dest3.png" title="Tokyo"/>
-            <DestinationCard image="/dest4.png" title="Cape town"/>
-            <DestinationCard image="/dest5.png" title="Seoul"/>
-            <DestinationCard image="/dest6.png" title="Los Angeles"/>
-          </DestinationCategory>
+        <DestinationCategory className="scrolling-wrapper">
+          <DestinationCard image="/dest1.png" title="Paris"/>
+          <DestinationCard image="/dest2.png" title="Miami"/>
+          <DestinationCard image="/dest3.png" title="Tokyo"/>
+          <DestinationCard image="/dest4.png" title="Cape town"/>
+          <DestinationCard image="/dest5.png" title="Seoul"/>
+          <DestinationCard image="/dest6.png" title="Los Angeles"/>
+        </DestinationCategory>
 
-          <ScrollButton
-            style={{
-            "top": "37%",
-            "right": "-1%"
-          }}/>
-        </div>
-
+        <ScrollButton
+          style={{
+          top: 0,
+          bottom: "-26%",
+          right: "-1.6%"
+        }}/>
       </Section>
     </Main>
   )

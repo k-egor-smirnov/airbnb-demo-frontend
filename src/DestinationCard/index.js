@@ -3,20 +3,10 @@ import styled from 'styled-components'
 
 const Card = styled.div `
   dispay: flex;
-  justify-content: space-between;
   flex-flow: column nowrap;
   padding-right: 8px;
-  max-width: 144px;
-  width: 100%;
-
-  @media only screen and (min-width: 768px){
-    padding-right: 0px;    
-    max-width: 176px;    
-  }    
-
-  @media only screen and (min-width: 992px){
-    max-width: 264px;
-  }
+  margin-bottom: 16px;
+  color: #383838;
 `
 const Title = styled.span `
   padding-top: 8px;
@@ -29,27 +19,19 @@ const Title = styled.span `
 `
 
 const Image = styled.img `
-  object-fit: cover;
-
-  @media only screen and (min-width: 768px){
-    ${ ''/* max-width: 100%; */}
-  }  
-`
-
-const Wrapper = styled.div `
-  flexgrow: 1;
-  flex-basis: 10%;
+  max-width: 100%;
+  max-height: 100%; 
 `
 
 class DestinationCard extends Component {
   render() {
     return (
-      <Wrapper className="scrolling-card">
-        <Card>
+      <div className="col-xs-4 col-md-3 col-lg-2">
+        <Card className="scrolling-wrapper">
           <Image src={this.props.image}></Image>
           <Title>{this.props.title}</Title>
         </Card>
-      </Wrapper>
+      </div>
     )
   }
 }
