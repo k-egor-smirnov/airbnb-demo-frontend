@@ -84,10 +84,6 @@ const Search = styled.input `
   @media (min-width: 768px) {
     font-size: 16px;
   }
-
-  @media (min-width: 992px) {
-    margin-left: 0px;
-  }  
 `;
 
 export default() => {

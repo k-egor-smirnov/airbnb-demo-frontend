@@ -251,7 +251,7 @@ export default() => {
           style={{
           top: 0,
           bottom: "-26%",
-          right: "-1.6%"
+          right: "-0.9%"
         }}/>
       </Section>
     </Main>
