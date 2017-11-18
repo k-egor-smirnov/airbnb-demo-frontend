@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const Card = styled.div `
+const Card = styled.div`
   dispay: flex;
   flex-flow: column nowrap;
   padding-right: 8px;
   margin-bottom: 16px;
   color: #383838;
 `
-const Title = styled.span `
+const Title = styled.span`
   padding-top: 8px;
   display: block;
   text-overflow: ellipsis;
@@ -18,7 +18,7 @@ const Title = styled.span `
   font-weight: bold;
 `
 
-const Image = styled.img `
+const Image = styled.img`
   max-width: 100%;
   max-height: 100%; 
 `

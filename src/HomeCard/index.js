@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import star from '../star.svg'
 
-const Card = styled.div `
+const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
   max-width: 310px;
@@ -10,12 +10,12 @@ const Card = styled.div `
   color: #383838;
 `
 
-const Image = styled.img `
+const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
 `
 
-const Information = styled.div `
+const Information = styled.div`
   padding-top: 8px;
   display: block;
   text-overflow: ellipsis;
@@ -27,7 +27,7 @@ const Information = styled.div `
   font-height: 14px;
 `
 
-const Cost = styled.span `
+const Cost = styled.span`
   font-weight: bold;
   font-weight: bold;
   font-size: 13px;
@@ -38,7 +38,7 @@ const Cost = styled.span `
   }
 `
 
-const Title = styled.span `
+const Title = styled.span`
   padding-left: 4px;
   font-weight: bold;  
   font-size: 13px;
@@ -49,7 +49,7 @@ const Title = styled.span `
   }
 `
 
-const Type = styled.span `
+const Type = styled.span`
   font-size: 12px;
   font-height: 14px;
 
@@ -58,22 +58,22 @@ const Type = styled.span `
   }
 `
 
-const Rating = styled.div `
+const Rating = styled.div`
 `
 
-const Star = styled.img `
+const Star = styled.img`
   margin-right: 4px;
   height: 12px;
 `
 
-const Reviews = styled.span `
+const Reviews = styled.span`
   white-space: nowrap;
   margin-left: 4px;
   font-size: 12px;
   line-height: 14px;
 `
 
-const Superhost = styled.span `
+const Superhost = styled.span`
 
 `
 
@@ -82,7 +82,7 @@ class HomeCard extends Component {
     return (
       <div className="col-xs-8 col-md-5 col-lg-4">
         <Card>
-          <Image src={this.props.image} alt=""/>
+          <Image src={this.props.image} alt="" />
 
           <Information className="card-information">
             <Cost>{this.props.cost}</Cost>
@@ -94,11 +94,11 @@ class HomeCard extends Component {
             beds</Type>
 
           <Rating>
-            <Star src={star}/>
-            <Star src={star}/>
-            <Star src={star}/>
-            <Star src={star}/>
-            <Star src={star}/>
+            <Star src={star} />
+            <Star src={star} />
+            <Star src={star} />
+            <Star src={star} />
+            <Star src={star} />
             <Reviews>{this.props.reviews}
               <Superhost>
                 ·Superhost</Superhost>

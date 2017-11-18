@@ -4,7 +4,7 @@ import search from './search.svg'
 import styled from 'styled-components'
 import downArrow from './downArrow.svg'
 
-const Header = styled.header `
+const Header = styled.header`
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
@@ -14,7 +14,7 @@ const Header = styled.header `
   color: #383838;
 `;
 
-const Content = styled.div `
+const Content = styled.div`
   max-width: 976px;
   display: flex;
   justify-content: flex-start;
@@ -28,12 +28,12 @@ const Content = styled.div `
   }
 `
 
-const Logo = styled.img `
+const Logo = styled.img`
   margin: 0 auto;
   content: url(${logo});   
 `;
 
-const ExpandButton = styled.a `
+const ExpandButton = styled.a`
   content: url(${downArrow});
   margin-top: auto;
   position: absolute;
@@ -50,7 +50,7 @@ const ExpandButton = styled.a `
   }  
 `
 
-const Nav = styled.nav `
+const Nav = styled.nav`
   display: none;
   justify-content: flex-end;
   align-items: center;  
@@ -60,7 +60,7 @@ const Nav = styled.nav `
     display: flex;
   }
 `
-const Link = styled.a `
+const Link = styled.a`
   color: #383838;
   font-size: 14px;
   line-height: 24px;
@@ -68,7 +68,7 @@ const Link = styled.a `
   padding: 8px;
   padding-top: 16px;
 `
-const Search = styled.input `
+const Search = styled.input`
   box-sizing: border-box;
   border: 1px solid rgba(72, 72, 72, 0.2);  
   height: 48px;
@@ -86,17 +86,17 @@ const Search = styled.input `
   }
 `;
 
-export default() => {
+export default () => {
   return (
     <Header>
       <Content>
         <div className="col-xs-2 col-md-1">
-          <Logo/>
-          <ExpandButton/>
+          <Logo />
+          <ExpandButton />
         </div>
 
         <div className="col-xs-10 col-md-7 col-lg-5">
-          <Search placeholder='Try "Miami"'/>
+          <Search placeholder='Try "Miami"' />
         </div>
 
         <div className="col-lg-4">

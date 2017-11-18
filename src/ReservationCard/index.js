@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import media from '../media'
 
-const Reservation = styled.div `
+const Reservation = styled.div`
   display: flex;
   margin-bottom: 16px;
   flex-flow: column nowrap;
@@ -12,7 +12,7 @@ const Reservation = styled.div `
   color: #383838;
 `
 
-const Type = styled.span `
+const Type = styled.span`
   font-size: 8px;
   color: #383838;
   line-height: 9px;
@@ -25,7 +25,7 @@ const Type = styled.span `
   }
 `
 
-const Title = styled.span `
+const Title = styled.span`
   margin-top: 2px;
   font-weight: bold;
   font-size: 14px;
@@ -36,7 +36,7 @@ const Title = styled.span `
   }
 `
 
-const Cost = styled.span `
+const Cost = styled.span`
   margin-top: 4px;
   font-size: 12px;
   line-height: 14px;
@@ -46,7 +46,7 @@ const Cost = styled.span `
   }
 `
 
-const Image = styled.img `
+const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
 `
@@ -56,7 +56,7 @@ class ReservationCard extends Component {
     return (
       <div className="col-xs-6 col-md-4 col-lg-3">
         <Reservation>
-          <Image src={this.props.image} alt=""/>
+          <Image src={this.props.image} alt="" />
           <Type>{this.props.type}</Type>
           <Title>{this.props.title}</Title>
           <Cost>{this.props.cost}</Cost>

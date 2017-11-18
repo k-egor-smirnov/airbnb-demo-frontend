@@ -5,20 +5,20 @@ import facebook from './facebook.svg'
 import twitter from './twitter.svg'
 import instagram from './instagram.svg'
 
-const Footer = styled.footer `
+const Footer = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
   width: inherit;
 `
 
-const Content = styled.div `
+const Content = styled.div`
   margin: 0 auto;  
   margin-top: 48px;
   max-width: 976px;
 `
 
-const Category = styled.div `
+const Category = styled.div`
   display: none;
   flex-flow: column nowrap;  
 
@@ -27,17 +27,17 @@ const Category = styled.div `
   }
 `
 
-const CategoryTitle = styled.span `
+const CategoryTitle = styled.span`
   font-weight: bold;  
 `
 
-const CategoryLink = styled.a `
+const CategoryLink = styled.a`
   color: black;
   text-decoration: none;
   padding-top: 12px;
 `
 
-const Information = styled.div `
+const Information = styled.div`
   flex-flow: row nowrap;
   display: flex;
   overflow: hidden;
@@ -45,7 +45,7 @@ const Information = styled.div `
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 `
 
-const Credits = styled.div `
+const Credits = styled.div`
   display: flex;
   font-size: 12px;
   margin-top: 16px;
@@ -59,7 +59,7 @@ const Credits = styled.div `
     margin-bottom: 32px;
   }
 `
-const About = styled.div `
+const About = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
@@ -69,15 +69,15 @@ const About = styled.div `
   }
 `
 
-const Logo = styled.img `
+const Logo = styled.img`
   height: 30px;
 
 `
-const Credit = styled.span `
+const Credit = styled.span`
   margin-left: 12px;
 `
 
-const Links = styled.div `
+const Links = styled.div`
   display: flex;
   width: 100%;
   flex: 1 auto;
@@ -88,7 +88,7 @@ const Links = styled.div `
   }
 `
 
-const Link = styled.a `
+const Link = styled.a`
   color: black;
   text-decoration: none;
   white-space: nowrap;
@@ -100,7 +100,7 @@ const Link = styled.a `
     font-size: 15px;
   }
 `
-const ChooseContainer = styled.div `
+const ChooseContainer = styled.div`
   display: flex;
   width: 100%;
   flex-flow : row nowrap;
@@ -110,7 +110,7 @@ const ChooseContainer = styled.div `
   }
 `
 
-const Select = styled.select `
+const Select = styled.select`
   padding-left: 8px;
   margin-bottom: 16px;  
   font-family: CircularAir;
@@ -131,7 +131,7 @@ const Select = styled.select `
   }
 `
 
-export default() => {
+export default () => {
   return (
     <Footer>
       <Content>
@@ -196,7 +196,7 @@ export default() => {
           <Credits>
             <div className="col-md-6">
               <About>
-                <Logo src={logo} alt=""/>
+                <Logo src={logo} alt="" />
                 <Credit>© Airbnb Inc.</Credit>
               </About>
             </div>
@@ -207,15 +207,15 @@ export default() => {
                 <Link href="#">Privacy</Link>
                 <Link href="#">Site map</Link>
                 <Link href="#">
-                  <img src={facebook} alt=""/>
+                  <img src={facebook} alt="" />
                 </Link>
 
                 <Link href="#">
-                  <img src={twitter} alt=""/>
+                  <img src={twitter} alt="" />
                 </Link>
 
                 <Link href="#">
-                  <img src={instagram} alt=""/>
+                  <img src={instagram} alt="" />
                 </Link>
               </Links>
             </div>

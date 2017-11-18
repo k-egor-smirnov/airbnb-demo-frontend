@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const Explore = styled.div `
+const Explore = styled.div`
   display: flex;
   border: 1px solid rgba(72, 72, 72, 0.2);
   border-radius: 4px;
@@ -17,7 +17,7 @@ const Explore = styled.div `
   }
 `
 
-const Title = styled.span `
+const Title = styled.span`
   margin-top: 8px;
   margin-bottom: 8px;
   margin-left: 12px;
@@ -29,7 +29,7 @@ const Title = styled.span `
   }
 `
 
-const Image = styled.img `
+const Image = styled.img`
   object-fit: cover;
   max-height: 100%;
   max-width: 100%;
@@ -39,10 +39,10 @@ class ExploreCard extends Component {
   render() {
     return (
       <div className="col-xs-6 col-sm-5 col-md-4">
-          <Explore>
-            <Image src={this.props.image} alt=""/>
-            <Title>{this.props.title}</Title>
-          </Explore>
+        <Explore>
+          <Image src={this.props.image} alt="" />
+          <Title>{this.props.title}</Title>
+        </Explore>
       </div>
     )
   }
