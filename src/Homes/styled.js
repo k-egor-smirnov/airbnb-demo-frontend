@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
 import styled from 'styled-components';
 import star from '../star.svg';
 
 const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  max-width: 310px;
+  max-width: 100%;
   margin-bottom: 16px;
   color: #383838;
 `;
 
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`;
+const Image = styled.img`width: 100%;`;
 
 const Information = styled.div`
   padding-top: 8px;
@@ -74,37 +70,15 @@ const Reviews = styled.span`
 
 const Superhost = styled.span``;
 
-class HomeCard extends Component {
-  render() {
-    return (
-      <div className="col-xs-8 col-md-5 col-lg-4">
-        <Card>
-          <Image src={this.props.image} alt="" />
-
-          <Information className="card-information">
-            <Cost>{this.props.cost}</Cost>
-            <Title>{this.props.title}</Title>
-          </Information>
-
-          <Type>
-            {this.props.type} · {this.props.beds} beds
-          </Type>
-
-          <Rating>
-            <Star src={star} />
-            <Star src={star} />
-            <Star src={star} />
-            <Star src={star} />
-            <Star src={star} />
-            <Reviews>
-              {this.props.reviews}
-              <Superhost> · Superhost</Superhost>
-            </Reviews>
-          </Rating>
-        </Card>
-      </div>
-    );
-  }
-}
-
-export default HomeCard;
+export {
+  Card,
+  Image,
+  Information,
+  Cost,
+  Title,
+  Type,
+  Rating,
+  Reviews,
+  Superhost,
+  Star
+};
