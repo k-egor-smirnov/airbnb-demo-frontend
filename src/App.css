@@ -1,28 +1,36 @@
-.App {
-  text-align: center;
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  font-family: CircularAir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Circular_Air-Book.woff") format("woff"), url("fonts/Circular_Air-Book.ttf") format("truetype");
 }
 
-.App-title {
-  font-size: 1.5em;
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/Circular_Air-Bold.woff") format("woff"), url("fonts/Circular_Air-Bold.ttf") format("truetype");
 }
 
-.App-intro {
-  font-size: large;
+@font-face {
+  font-family: "CircularAir";
+  font-style: normal;
+  font-weight: lighter;
+  src: url("fonts/Circular_Air-Light.woff") format("woff"), url("fonts/Circular_Air-Light.ttf") format("truetype");
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("fonts/HelveticaNeue.woff") format("woff"), url("fonts/HelveticaNeue.ttf") format("truetype");
 }
