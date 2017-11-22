@@ -13,6 +13,7 @@ const Header = styled.header`
   overflow: hidden;
   color: #383838;
   position: fixed;
+  background: #fff;
 `;
 
 const Content = styled.div`

@@ -5,16 +5,35 @@ import HomeCard from './Card';
 import GoogleMapReact from 'google-map-react';
 
 const HomesList = styled.div`
-  margin-top: 24px;
   display: flex;
   flex-flow: row wrap;
+  margin-top: 80px;
 `;
 
 const Filters = styled.div`
+  margin-top: 1px; // Header border
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 12px;
   padding-bottom: 12px;
   display: flex;
   flex-flow: row nowrap;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  width: auto;
+
+  @media (min-width: 768px) {
+    max-width: 752px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 976px;
+  }
+
+  border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 `;
 
 const Filter = styled.a`
@@ -72,6 +91,38 @@ class Homes extends Component {
 
         <div className="col-lg-8">
           <HomesList>
+            <div className="col-xs-12 col-md-6">
+              <HomeCard
+                type="Entire house"
+                reviews={97}
+                beds={9}
+                cost="$82"
+                title="La Salentina, see, nature & relax"
+                image="/house1.png"
+              />
+            </div>
+
+            <div className="col-xs-12 col-md-6">
+              <HomeCard
+                type="Entire house"
+                reviews={161}
+                beds={5}
+                cost="$82"
+                title="Your private 3 bedr. riad and exclusive"
+                image="/house2.png"
+              />
+            </div>
+
+            <div className="col-xs-12 col-md-6">
+              <HomeCard
+                type="Entire treehouse"
+                reviews={364}
+                beds={1}
+                cost="$200"
+                title="Dreamy Tropical Tree House"
+                image="/house3.png"
+              />
+            </div>
             <div className="col-xs-12 col-md-6">
               <HomeCard
                 type="Entire house"
