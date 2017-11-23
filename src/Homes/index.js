@@ -13,7 +13,7 @@ const HomesList = styled.div`
 
 const Filters = styled.div`
   margin-top: 1px; // Header border
-  margin-left: auto;
+  margin-left: 8px;
   margin-right: auto;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -33,6 +33,7 @@ const Filters = styled.div`
 
   @media (min-width: 992px) {
     max-width: 976px;
+    margin-left: auto;
   }
 
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
@@ -51,6 +52,10 @@ const Filter = styled.a`
   padding-bottom: 7px;
   color: #383838;
 
+  @media (max-width: 992px) {
+    display: ${props => (props.toHide ? 'none' : 'flex')};
+  }
+
   &:hover {
     background: #008489;
     border: 1px solid #008489;
@@ -61,7 +66,6 @@ const Filter = styled.a`
 const Wrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  overflow: none;
   margin: auto;
 
   @media (min-width: 768px) {
@@ -140,13 +144,13 @@ class Homes extends Component {
         <Filters>
           <Filter>Dates</Filter>
           <Filter>Guests</Filter>
-          <Filter min-display="xs">Room type</Filter>
-          <Filter min-display="xs">Price</Filter>
-          <Filter min-display="xs">Instant Book</Filter>
+          <Filter toHide>Room type</Filter>
+          <Filter toHide>Price</Filter>
+          <Filter toHide>Instant Book</Filter>
           <Filter>More filters</Filter>
         </Filters>
 
-        <div className="col-lg-8">
+        <div className="col-xs-12 col-lg-8">
           <HomesList>
             <div className="col-xs-12 col-md-6">
               <HomeCard
