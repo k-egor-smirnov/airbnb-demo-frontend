@@ -14,6 +14,7 @@ const Header = styled.header`
   color: #383838;
   position: fixed;
   background: #fff;
+  z-index: 10;
 `;
 
 const Content = styled.div`

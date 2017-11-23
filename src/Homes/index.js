@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomeCard from './Card';
-import GoogleMapReact from 'google-map-react';
+import MapView from './MapView';
 
 const HomesList = styled.div`
   display: flex;
   flex-flow: row wrap;
   margin-top: 80px;
+  position: relative;
 `;
 
 const Filters = styled.div`
@@ -24,6 +25,7 @@ const Filters = styled.div`
   right: 0;
   background: #fff;
   width: auto;
+  z-index: 10;
 
   @media (min-width: 768px) {
     max-width: 752px;
@@ -57,8 +59,8 @@ const Filter = styled.a`
 `;
 
 const Wrapper = styled.div`
+  display: flex;
   flex-flow: row nowrap;
-  width: auto;
   overflow: none;
   margin: auto;
 
@@ -69,6 +71,61 @@ const Wrapper = styled.div`
   @media (min-width: 992px) {
     max-width: 976px;
   }
+`;
+
+const MapWrapper = styled.div`
+  display: none;
+  position: fixed;
+  width: 34%;
+  height: 100%;
+  margin-top: 80px;
+  height: 100%;
+  left: auto;
+  top: 57px;
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+`;
+
+const Pages = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+`;
+
+const PagesList = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20px;
+  align-items: center;
+`;
+
+const PageLink = styled.a`
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: 40px;
+
+  background: ${props => (props.active ? '#008489' : 'white')};
+  padding-left: ${props => (props.active ? '13px' : 0)};
+  padding-right: ${props => (props.active ? '13px' : 0)};
+  padding-top: ${props => (props.active ? '5px' : 0)};
+  padding-bottom: ${props => (props.active ? '6px' : 0)};
+  border-radius: ${props => (props.active ? '100%' : 0)};
+  color: ${props => (props.active ? 'white' : '#0F7276')};
+`;
+
+const PagesInfo = styled.div`
+  margin-bottom: 40px;
+  font-size: 16px;
+`;
+
+const BottomHint = styled.span`
+  font-size: 16px;
+  line-height: 19px;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 25px;
 `;
 
 class Homes extends Component {
@@ -156,13 +213,30 @@ class Homes extends Component {
               />
             </div>
           </HomesList>
+          <Pages>
+            <PagesList>
+              <PageLink active>1</PageLink>
+              <PageLink>2</PageLink>
+              <PageLink>3</PageLink>
+              <PageLink>...</PageLink>
+              <PageLink>17</PageLink>
+            </PagesList>
+            <PagesInfo>1 – 18 of 300+ Rentals</PagesInfo>
+          </Pages>
+
+          <BottomHint>
+            Enter dates to see full pricing. Additional fees apply. Taxes may be
+            added.
+          </BottomHint>
         </div>
 
-        <div className="col-lg-4">
-          <GoogleMapReact
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
-          />
+        <div>
+          <MapWrapper>
+            <MapView
+              defaultCenter={this.props.center}
+              defaultZoom={this.props.zoom}
+            />
+          </MapWrapper>
         </div>
       </Wrapper>
     );
