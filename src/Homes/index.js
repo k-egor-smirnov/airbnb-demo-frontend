@@ -6,6 +6,7 @@ import MapView from './MapView';
 import DatePicker from './Filters/DatePicker';
 import moment from 'moment';
 import closeImage from './close.svg';
+import Guests from './Filters/Guests/';
 
 const HomesList = styled.div`
   display: flex;
@@ -16,8 +17,6 @@ const HomesList = styled.div`
 
 const Filters = styled.div`
   margin-top: 1px; // Header border
-  margin-left: 8px;
-  margin-right: auto;
   padding-top: 12px;
   padding-bottom: 12px;
   display: flex;
@@ -27,28 +26,24 @@ const Filters = styled.div`
   left: 0;
   right: 0;
   background: #fff;
-  width: auto;
+  width: 100%;
   z-index: 10;
-
-  @media (min-width: 768px) {
-    max-width: 752px;
-  }
-
-  @media (min-width: 992px) {
-    max-width: 976px;
-    margin-left: auto;
-  }
-
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 `;
 
 const Filter = styled.div`
+  width: 100%;
+  margin-left: 8px;
+  margin-right: 4px;
   margin-top: 12px;
   margin-bottom: 12px;
+
+  @media (max-width: 992px) {
+    display: ${props => (props.toHide ? 'none' : 'flex')};
+  }
 `;
 
 const FilterTitle = styled.a`
-  margin-right: 12px;
   border-radius: 4px;
   border: 1px solid rgba(72, 72, 72, 0.2);
   font-size: 14px;
@@ -59,10 +54,6 @@ const FilterTitle = styled.a`
   padding-top: 7px;
   padding-bottom: 7px;
   color: #383838;
-
-  @media (max-width: 992px) {
-    display: ${props => (props.toHide ? 'none' : 'flex')};
-  }
 
   &:hover {
     background: #008489;
@@ -83,8 +74,10 @@ const FilterPopup = styled.div`
 
 const FilterPopupHeader = styled.div`
   display: flex;
-  margin-top: 16px;
-  margin-bottom: 40px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  max-width: 572px;
+  margin: auto;
   justify-content: space-between;
 `;
 
@@ -203,7 +196,9 @@ class Homes extends Component {
       <Wrapper>
         <Filters>
           <Filter onClick={this.turnDatesFilterDisplayState}>
-            <FilterTitle>Dates</FilterTitle>
+            <FilterTitle>
+              {this.displayDatesFilter ? 'Check in — Check out' : 'Dates'}
+            </FilterTitle>
             <FilterPopup display={this.state.displayDatesFilter}>
               <FilterPopupHeader>
                 <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
@@ -222,26 +217,26 @@ class Homes extends Component {
                 <FilterPopupTitle>Guests</FilterPopupTitle>
                 <ResetLink>Reset</ResetLink>
               </FilterPopupHeader>
+              <Guests />
             </FilterPopup>
           </Filter>
 
-          <Filter>
-            <FilterTitle toHide>Room type</FilterTitle>
+          <Filter toHide>
+            <FilterTitle>Room type</FilterTitle>
           </Filter>
 
-          <Filter>
-            <FilterTitle toHide>Price</FilterTitle>
+          <Filter toHide>
+            <FilterTitle>Price</FilterTitle>
           </Filter>
 
-          <Filter>
-            <FilterTitle toHide>Instant Book</FilterTitle>
+          <Filter toHide>
+            <FilterTitle>Instant Book</FilterTitle>
           </Filter>
 
           <Filter>
             <FilterTitle>More filters</FilterTitle>
           </Filter>
         </Filters>
-
         <div className="col-xs-12 col-lg-8">
           <HomesList>
             <div className="col-xs-12 col-md-6">

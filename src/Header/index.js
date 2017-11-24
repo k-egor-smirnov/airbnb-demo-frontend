@@ -68,8 +68,7 @@ const Link = styled.a`
   font-size: 14px;
   line-height: 24px;
   text-decoration: none;
-  padding: 8px;
-  padding-top: 16px;
+  margin-right: 8px;
 `;
 const Search = styled.input`
   box-sizing: border-box;
