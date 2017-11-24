@@ -5,14 +5,15 @@ const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
   max-width: 100%;
-  margin-bottom: 16px;
   color: #383838;
 `;
 
-const Image = styled.img`width: 100%;`;
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Information = styled.div`
-  padding-top: 8px;
+  margin-top: 8px;
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -46,15 +47,19 @@ const Title = styled.span`
 `;
 
 const Type = styled.span`
+  margin-top: 4px;
   font-size: 12px;
   font-height: 14px;
 
   @media (min-width: 768px) {
+    margin-top: 2px;
     font-size: 15px;
   }
 `;
 
-const Rating = styled.div``;
+const Rating = styled.div`
+  margin-top: 8px;
+`;
 
 const Star = styled.img`
   margin-right: 4px;

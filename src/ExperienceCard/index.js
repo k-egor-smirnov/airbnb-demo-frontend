@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import star from '../star.svg'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import star from '../star.svg';
 
 const Experience = styled.div`
   display: flex;
   flex-flow: column wrap;
-  padding-bottom: 16px;
   color: #383838;
 `;
 
@@ -14,7 +13,7 @@ const Information = styled.div`
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
-`
+`;
 
 const Cost = styled.span`
   font-weight: bold;
@@ -23,33 +22,32 @@ const Cost = styled.span`
   @media (min-width: 768px) {
     font-size: 15px;
   }
-`
+`;
 
 const Title = styled.span`
   margin-left: 4px;
-  font-size: 13px;  
+  font-size: 13px;
 
   @media (min-width: 768px) {
     font-size: 15px;
   }
-`
-const Rating = styled.div`
-`
+`;
+const Rating = styled.div``;
 
 const Star = styled.img`
   margin-right: 4px;
   height: 12px;
-`
+`;
 
 const Reviews = styled.span`
   margin-left: 4px;
   font-size: 12px;
-`
+`;
 
 const Image = styled.img`
   max-width: 100%;
-  height : auto;
-`
+  height: auto;
+`;
 
 class ExperienceCard extends Component {
   render() {
@@ -68,15 +66,12 @@ class ExperienceCard extends Component {
               <Star src={star} />
               <Star src={star} />
 
-              <Reviews>{this.props.reviews}
-                reviews
-              </Reviews>
+              <Reviews>{this.props.reviews} reviews</Reviews>
             </Rating>
-
           </Information>
         </Experience>
       </div>
-    )
+    );
   }
 }
 

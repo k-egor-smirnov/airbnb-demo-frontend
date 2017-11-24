@@ -48,7 +48,9 @@ const ExploreCategory = styled.div`
   position: relative;
 `;
 
-const ExperienceCategory = styled.div`justify-content: flex-start;`;
+const ExperienceCategory = styled.div`
+  justify-content: flex-start;
+`;
 
 const HomeCategory = styled.div`
   display: flex;
@@ -116,8 +118,6 @@ export default () => {
           <ExploreCard image="/experiences.png" title="Experiences" />
           <ExploreCard image="/restaurants.png" title="Restaurants" />
         </ExploreCategory>
-
-        <ScrollButton bottom="-53%" right="-1.2%" />
       </Section>
 
       <Section>

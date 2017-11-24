@@ -216,6 +216,13 @@ class Homes extends Component {
 
           <Filter>
             <FilterTitle>Guests</FilterTitle>
+            <FilterPopup display={true}>
+              <FilterPopupHeader>
+                <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
+                <FilterPopupTitle>Guests</FilterPopupTitle>
+                <ResetLink>Reset</ResetLink>
+              </FilterPopupHeader>
+            </FilterPopup>
           </Filter>
 
           <Filter>

@@ -1,28 +1,27 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 const Reservation = styled.div`
   display: flex;
-  margin-bottom: 16px;
   flex-flow: column nowrap;
   overflow-y: none;
   overflow: hidden;
   padding-bottom: 2px; /* Для шрифтов*/
   color: #383838;
-`
+`;
 
 const Type = styled.span`
   font-size: 8px;
   color: #383838;
   line-height: 9px;
   font-weight: bold;
-  padding-top: 12px;
-  margin-top: 4px;
-  
+  margin-top: 7px;
+
   @media (min-width: 768px) {
     font-size: 10px;
+    margin-top: 12px;
   }
-`
+`;
 
 const Title = styled.span`
   margin-top: 2px;
@@ -33,7 +32,7 @@ const Title = styled.span`
   @media (min-width: 768px) {
     font-size: 18px;
   }
-`
+`;
 
 const Cost = styled.span`
   margin-top: 4px;
@@ -43,12 +42,12 @@ const Cost = styled.span`
   @media (min-width: 572px) {
     font-size: 18px;
   }
-`
+`;
 
 const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
-`
+`;
 
 class ReservationCard extends Component {
   render() {
@@ -61,8 +60,8 @@ class ReservationCard extends Component {
           <Cost>{this.props.cost}</Cost>
         </Reservation>
       </div>
-    )
+    );
   }
 }
 
-export default ReservationCard
+export default ReservationCard;

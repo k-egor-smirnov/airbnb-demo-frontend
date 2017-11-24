@@ -5,7 +5,6 @@ const Card = styled.div`
   dispay: flex;
   flex-flow: column nowrap;
   padding-right: 8px;
-  margin-bottom: 16px;
   color: #383838;
 `
 const Title = styled.span`
