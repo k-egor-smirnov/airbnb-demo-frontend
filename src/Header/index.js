@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import logo from './ic-airbnb.svg';
-import search from './search.svg'
-import styled from 'styled-components'
-import downArrow from './downArrow.svg'
+import search from './search.svg';
+import styled from 'styled-components';
+import downArrow from './downArrow.svg';
 
 const Header = styled.header`
   padding-top: 16px;
@@ -12,6 +12,9 @@ const Header = styled.header`
   box-sizing: border-box;
   overflow: hidden;
   color: #383838;
+  position: fixed;
+  background: #fff;
+  z-index: 10;
 `;
 
 const Content = styled.div`
@@ -23,14 +26,14 @@ const Content = styled.div`
   box-sizing: border-box;
   width: 100%;
   position: relative;
-  &>div:last-child {
+  & > div:last-child {
     margin-left: auto; /* setting nav to right*/
   }
-`
+`;
 
 const Logo = styled.img`
   margin: 0 auto;
-  content: url(${logo});   
+  content: url(${logo});
 `;
 
 const ExpandButton = styled.a`
@@ -47,19 +50,19 @@ const ExpandButton = styled.a`
 
   @media (min-width: 992px) {
     display: none;
-  }  
-`
+  }
+`;
 
 const Nav = styled.nav`
   display: none;
   justify-content: flex-end;
-  align-items: center;  
+  align-items: center;
   flex-flow: row nowrap;
-  
-  @media only screen and (min-width: 992px){
+
+  @media only screen and (min-width: 992px) {
     display: flex;
   }
-`
+`;
 const Link = styled.a`
   color: #383838;
   font-size: 14px;
@@ -67,10 +70,10 @@ const Link = styled.a`
   text-decoration: none;
   padding: 8px;
   padding-top: 16px;
-`
+`;
 const Search = styled.input`
   box-sizing: border-box;
-  border: 1px solid rgba(72, 72, 72, 0.2);  
+  border: 1px solid rgba(72, 72, 72, 0.2);
   height: 48px;
   width: 100%;
   border-radius: 4px;
@@ -96,7 +99,7 @@ export default () => {
         </div>
 
         <div className="col-xs-10 col-md-7 col-lg-5">
-          <Search placeholder='Try "Miami"' />
+          <Search placeholder="Try &quot;Miami&quot;" />
         </div>
 
         <div className="col-lg-4">
@@ -109,5 +112,5 @@ export default () => {
         </div>
       </Content>
     </Header>
-  )
-}
+  );
+};

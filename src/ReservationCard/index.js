@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import media from '../media'
 
 const Reservation = styled.div`
   display: flex;

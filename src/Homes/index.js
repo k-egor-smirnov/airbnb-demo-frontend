@@ -72,6 +72,7 @@ const FilterTitle = styled.a`
 `;
 
 const FilterPopup = styled.div`
+  display: ${props => (props.display ? 'block' : 'none')};
   top: 0;
   left: 0;
   background-color: #fff;
@@ -174,20 +175,38 @@ const BottomHint = styled.span`
 `;
 
 class Homes extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      displayDatesFilter: false
+    };
+
+    this.turnDatesFilterDisplayState = this.turnDatesFilterDisplayState.bind(
+      this
+    );
+  }
+
   static defaultProps = {
     center: { lat: 59.95, lng: 30.33 },
     zoom: 11
   };
 
+  turnDatesFilterDisplayState() {
+    this.setState({
+      displayDatesFilter: !this.state.displayDatesFilter
+    });
+  }
+
   render() {
     return (
       <Wrapper>
         <Filters>
-          <Filter>
+          <Filter onClick={this.turnDatesFilterDisplayState}>
             <FilterTitle>Dates</FilterTitle>
-            <FilterPopup>
+            <FilterPopup display={this.state.displayDatesFilter}>
               <FilterPopupHeader>
-                <ClosePopupLink />
+                <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
                 <FilterPopupTitle>When</FilterPopupTitle>
                 <ResetLink>Reset</ResetLink>
               </FilterPopupHeader>
