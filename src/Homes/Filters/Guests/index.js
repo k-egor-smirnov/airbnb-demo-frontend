@@ -5,10 +5,11 @@ import plus from '../plus.svg';
 
 const Wrapper = styled.div`
   display: flex;
+  position: relative;
   flex-flow: column nowrap;
   margin: 0 auto;
   max-width: 572px;
-  margin-botttom: 24px;
+  margin-bottom: 24px;
 `;
 
 const Option = styled.div`
@@ -46,11 +47,28 @@ const Count = styled.span`
 const Minus = styled.a`
   margin-right: 18px;
   content: url(${minus});
+  opacity: 0.5;
 `;
 
 const Plus = styled.a`
   margin-left: 18px;
   content: url(${plus});
+`;
+
+const SaveButton = styled.button`
+  position: fixed;
+  bottom: 8px;
+  max-width: 556px;
+  width: 100%;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: #ff5a5f;
+  border: none;
+  font-size: 18px;
+  font-family: CircularAir;
+  color: #fff;
 `;
 
 class Guests extends React.Component {
@@ -92,6 +110,8 @@ class Guests extends React.Component {
             <Plus alt="" />
           </CountPicker>
         </Option>
+
+        <SaveButton>Save</SaveButton>
       </Wrapper>
     );
   }

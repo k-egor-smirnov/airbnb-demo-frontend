@@ -32,6 +32,7 @@ const Filters = styled.div`
 `;
 
 const Filter = styled.div`
+  display: flex;
   width: 100%;
   margin-left: 8px;
   margin-right: 4px;
@@ -75,19 +76,24 @@ const FilterPopup = styled.div`
 const FilterPopupHeader = styled.div`
   display: flex;
   padding-top: 16px;
-  padding-bottom: 40px;
+  padding-bottom: 14px;
   max-width: 572px;
   margin: auto;
+  margin-bottom: 40px;
   justify-content: space-between;
+  box-shadow: ${props =>
+    props.shadow ? '0px 0.5px 0px rgba(72, 72, 72, 0.3);' : 'none'};
 `;
 
 const FilterPopupTitle = styled.span`
   color: #383838;
   font-size: 14px;
+  font-weight: bold;
 `;
 
 const ResetLink = styled.a`
   color: #0f7276;
+  font-weight: bold;
   font-size: 14px;
   margin-right: 8px;
 `;
@@ -212,7 +218,7 @@ class Homes extends Component {
           <Filter>
             <FilterTitle>Guests</FilterTitle>
             <FilterPopup display={true}>
-              <FilterPopupHeader>
+              <FilterPopupHeader shadow>
                 <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
                 <FilterPopupTitle>Guests</FilterPopupTitle>
                 <ResetLink>Reset</ResetLink>
