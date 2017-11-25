@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 class Histogram extends React.Component {
   render() {
     let densityData = {
-      data: [5427, 5243, 5514, 3933, 1326, 687, 1271, 1638]
+      data: [10, 10, 20, 25, 45, 40, 40, 20]
     };
 
     return (
@@ -18,7 +18,8 @@ class Histogram extends React.Component {
         options={{
           layout: {
             padding: {
-              left: 16
+              left: 16,
+              right: 16
             }
           },
           animation: {

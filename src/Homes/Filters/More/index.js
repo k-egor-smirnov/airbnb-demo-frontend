@@ -5,6 +5,8 @@ import '../../rheostat.css';
 import Bar from './Bar';
 import circle from '../circle.svg';
 import Toggle from 'react-toggle';
+import 'react-toggle/style.css';
+import downArrow from '../../downArrow.svg';
 
 import {
   CountOption,
@@ -16,7 +18,13 @@ import {
   Minus,
   Plus,
   BottomButton,
-  Wrapper
+  Wrapper,
+  MoreWrapper,
+  SwitchOption,
+  SwitchOptionInfromation,
+  SwitchOptionInfromationTitle,
+  SwitchOptionInfromationDescription,
+  Link
 } from '../styled';
 
 const Section = styled.div`
@@ -45,6 +53,10 @@ const SelectOptionCheckbox = styled.input.attrs({
   width: 24px;
   border: 1px solid rgba(72, 72, 72, 0.3);
   border-radius: 4px;
+
+  &:checked {
+    background-color: #008489;
+  }
 `;
 
 const SelectOptionInformation = styled.div`
@@ -64,8 +76,9 @@ const SelectOptionInformationDescription = styled.span`
 
 const CostWrapper = styled.div`
   padding-bottom: 32px;
-  width: 85%;
-  margin: 0 auto;
+  width: calc(100% - 64px);
+  margin-left: 16px;
+  margin-right: 16px;
 `;
 
 const Handle = styled.img`
@@ -92,14 +105,29 @@ const PriceDescription = styled.span`
   font-size: 14px;
 `;
 
+const ExpandLink = Link.extend`
+  margin-left: 8px;
+  margin-bottom: 32px;
+
+  &:after {
+    margin-left: 8px;
+    content: url(${downArrow});
+  }
+`;
+
+const TwoColumnWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+`;
+
 class More extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <MoreWrapper>
         <Section>
           <SectionTitle>Room type</SectionTitle>
           <SelectOption>
-            <SelectOptionCheckbox />
+            <SelectOptionCheckbox disabled />
             <SelectOptionInformation>
               <SelectOptionInformationTitle>
                 Entire home
@@ -111,7 +139,7 @@ class More extends React.Component {
           </SelectOption>
 
           <SelectOption>
-            <SelectOptionCheckbox />
+            <SelectOptionCheckbox disabled />
             <SelectOptionInformation>
               <SelectOptionInformationTitle>
                 Private room
@@ -123,7 +151,7 @@ class More extends React.Component {
           </SelectOption>
 
           <SelectOption>
-            <SelectOptionCheckbox />
+            <SelectOptionCheckbox disabled />
             <SelectOptionInformation>
               <SelectOptionInformationTitle>
                 Shared room
@@ -154,33 +182,157 @@ class More extends React.Component {
         </Section>
 
         <Section>
-          <SectionTitle>Rooms and beds</SectionTitle>
-          <CountOption>
-            <CountOptionTitle>Bedrooms</CountOptionTitle>
-            <CountPicker>
-              <Minus />
-              <Count>0+</Count>
-              <Plus />
-            </CountPicker>
-          </CountOption>
-          <CountOption>
-            <CountOptionTitle>Beds</CountOptionTitle>
-            <CountPicker>
-              <Minus />
-              <Count>0+</Count>
-              <Plus />
-            </CountPicker>
-          </CountOption>
-          <CountOption>
-            <CountOptionTitle>Bathrooms</CountOptionTitle>
-            <CountPicker>
-              <Minus />
-              <Count>0+</Count>
-              <Plus />
-            </CountPicker>
-          </CountOption>
+          <div className="col-xs-12 col-md-6">
+            <SectionTitle>Rooms and beds</SectionTitle>
+            <CountOption>
+              <CountOptionTitle>Bedrooms</CountOptionTitle>
+              <CountPicker>
+                <Minus />
+                <Count>0+</Count>
+                <Plus />
+              </CountPicker>
+            </CountOption>
+            <CountOption>
+              <CountOptionTitle>Beds</CountOptionTitle>
+              <CountPicker>
+                <Minus />
+                <Count>0+</Count>
+                <Plus />
+              </CountPicker>
+            </CountOption>
+            <CountOption>
+              <CountOptionTitle>Bathrooms</CountOptionTitle>
+              <CountPicker>
+                <Minus />
+                <Count>0+</Count>
+                <Plus />
+              </CountPicker>
+            </CountOption>
+          </div>
         </Section>
-      </Wrapper>
+        <Section>
+          <div className="col-xs-12 col-md-6">
+            <SectionTitle>More options</SectionTitle>
+            <SwitchOption>
+              <SwitchOptionInfromation>
+                <SwitchOptionInfromationTitle>
+                  Instant Book
+                </SwitchOptionInfromationTitle>
+                <SwitchOptionInfromationDescription>
+                  Secure a reservation instantly.
+                </SwitchOptionInfromationDescription>
+                <Link>Learn more</Link>
+              </SwitchOptionInfromation>
+
+              <Toggle />
+            </SwitchOption>
+
+            <SwitchOption>
+              <SwitchOptionInfromation>
+                <SwitchOptionInfromationTitle>
+                  Superhost
+                </SwitchOptionInfromationTitle>
+                <SwitchOptionInfromationDescription>
+                  Stay with recognized
+                </SwitchOptionInfromationDescription>
+                <Link>Learn more</Link>
+              </SwitchOptionInfromation>
+
+              <Toggle />
+            </SwitchOption>
+          </div>
+        </Section>
+
+        <Section>
+          <SectionTitle>Amenities</SectionTitle>
+
+          <TwoColumnWrapper>
+            <div className="col-md-5">
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Heating
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    TV
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+            </div>
+            <div className="col-md-5">
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Kitchen
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Wireless Internet
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+            </div>
+          </TwoColumnWrapper>
+
+          <ExpandLink>See all amenities</ExpandLink>
+        </Section>
+
+        <Section>
+          <SectionTitle>Facilities</SectionTitle>
+
+          <TwoColumnWrapper>
+            <div className="col-md-5">
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Elevator
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Pool
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+            </div>
+            <div className="col-md-5">
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Free parking on premises
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+              <SelectOption>
+                <SelectOptionCheckbox disabled />
+                <SelectOptionInformation>
+                  <SelectOptionInformationTitle>
+                    Wheelchair accessible
+                  </SelectOptionInformationTitle>
+                </SelectOptionInformation>
+              </SelectOption>
+            </div>
+          </TwoColumnWrapper>
+
+          <ExpandLink>See all amenities</ExpandLink>
+        </Section>
+      </MoreWrapper>
     );
   }
 }

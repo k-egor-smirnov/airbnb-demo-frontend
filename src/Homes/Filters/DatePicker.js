@@ -7,7 +7,6 @@ import omit from 'lodash/omit';
 import './react_dates_overrides.css';
 import arrow from './arrow.svg';
 
-
 const DatePickerWrapper = styled.div`
   height: ${props => (props.height ? props.height : '100vh')};
   width: 100%;
@@ -63,10 +62,10 @@ class DatePicker extends React.Component {
 
   calculateOrientation(displaySize) {
     console.log(displaySize);
-    let orientation = 'vertical';
+    let orientation = 'horizontal';
 
-    if (displaySize !== 'xs') {
-      orientation = 'horizontal';
+    if (displaySize === 'xs') {
+      orientation = 'vertical';
     }
 
     console.log(orientation);

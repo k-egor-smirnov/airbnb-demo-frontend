@@ -6,7 +6,16 @@
 .DateInput {
 }
 
-@media (max-width: 572px) {
+.CalendarDay_container {
+  font-size: 12px;
+  color: #383838;
+  border: 1px solid #d5d5d5;
+}
+
+@media (max-width: 768px) {
+  .CalendarDay_container {
+    font-size: 14px;
+  }
   .DateInput_input {
     font-family: 'CircularAir';
     padding: 0;
@@ -34,7 +43,7 @@
   }
 }
 
-@media (min-width: 572px) {
+@media (min-width: 768px) {
   .DayPicker_transitionContainer {
     min-height: 320px;
   }
@@ -44,10 +53,14 @@
   .DayPicker_weekHeader_li {
     font-size: 12px;
     line-height: 14px;
+    color: #636363;
   }
   .CalendarMonth_caption {
     font-size: 18px;
     line-height: 21px;
     font-weight: bold;
+  }
+  .DayPicker__horizontal {
+    box-shadow: none;
   }
 }

@@ -62,6 +62,12 @@ const Filter = styled.div`
   }
 `;
 
+const MoreFilter = Filter.extend`
+  @media (max-width: 992px) {
+    position: unset;
+  }
+`;
+
 const FilterTitle = styled.a`
   border-radius: 4px;
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -76,7 +82,7 @@ const FilterTitle = styled.a`
   background: ${props => (props.active ? '#008489' : '#fff')};
   color: ${props => (props.active ? '#fff' : '#383838')};
   color: ${props =>
-  props.active ? '1px solid #008489' : '1px solid rgba(72, 72, 72, 0.2)'};
+    props.active ? '1px solid #008489' : '1px solid rgba(72, 72, 72, 0.2)'};
 `;
 
 const FilterPopup = styled.div`
@@ -94,7 +100,19 @@ const FilterPopup = styled.div`
     border-radius: 4px;
     position: absolute;
     width: fit-content;
+    height: fit-content;
     top: 40px;
+  }
+`;
+
+const MoreFilterPopup = FilterPopup.extend`
+  @media (min-width: 768px) {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    height: 85vh;
+    top: 56px;
+    overflow-y: auto;
   }
 `;
 
@@ -202,6 +220,29 @@ const BottomHint = styled.span`
   margin-bottom: 25px;
 `;
 
+const ControllsWrapper = styled.div`
+  display: none;
+  height: fit-content;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
+const Cancel = styled.a`
+  font-size: 16px;
+  color: #636363;
+  padding: 24px;
+`;
+
+const Apply = styled.a`
+  font-size: 16px;
+  color: #008489;
+  padding: 24px;
+`;
+
 function calculateSize(width) {
   let size = 'xs';
 
@@ -209,7 +250,7 @@ function calculateSize(width) {
     size = 'md';
   }
 
-  if (width >= 976) {
+  if (width >= 968) {
     size = 'lg';
   }
 
@@ -222,10 +263,20 @@ class Homes extends Component {
 
     this.state = {
       displayDatesFilter: false,
+      displayGuestsFilter: false,
+      displayMoreFilters: false,
       displaySize: calculateSize(window.width)
     };
 
     this.turnDatesFilterDisplayState = this.turnDatesFilterDisplayState.bind(
+      this
+    );
+
+    this.turnGuestsFilterDisplayState = this.turnGuestsFilterDisplayState.bind(
+      this
+    );
+
+    this.turnMoreFiltersDisplayState = this.turnMoreFiltersDisplayState.bind(
       this
     );
 
@@ -240,6 +291,18 @@ class Homes extends Component {
   turnDatesFilterDisplayState() {
     this.setState({
       displayDatesFilter: !this.state.displayDatesFilter
+    });
+  }
+
+  turnGuestsFilterDisplayState() {
+    this.setState({
+      displayGuestsFilter: !this.state.displayGuestsFilter
+    });
+  }
+
+  turnMoreFiltersDisplayState() {
+    this.setState({
+      displayMoreFilters: !this.state.displayMoreFilters
     });
   }
 
@@ -270,18 +333,30 @@ class Homes extends Component {
                   numberOfMonths={this.state.displaySize === 'md' ? 1 : 2}
                   displaySize={this.state.displaySize}
                 />
+
+                <ControllsWrapper>
+                  <Cancel>Cancel</Cancel>
+                  <Apply>Apply</Apply>
+                </ControllsWrapper>
               </FilterPopup>
             </Filter>
 
-            <Filter>
-              <FilterTitle>Guests</FilterTitle>
-              <FilterPopup display={false}>
+            <Filter onClick={this.turnGuestsFilterDisplayState}>
+              <FilterTitle active={this.state.displayGuestsFilter}>
+                Guests
+              </FilterTitle>
+              <FilterPopup display={this.state.displayGuestsFilter}>
                 <FilterPopupHeader shadow>
-                  <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
+                  <ClosePopupLink onClick={this.turnGuestsDisplayState} />
                   <FilterPopupTitle>Guests</FilterPopupTitle>
                   <ResetLink>Reset</ResetLink>
                 </FilterPopupHeader>
                 <Guests />
+
+                <ControllsWrapper>
+                  <Cancel>Cancel</Cancel>
+                  <Apply>Apply</Apply>
+                </ControllsWrapper>
               </FilterPopup>
             </Filter>
 
@@ -297,17 +372,23 @@ class Homes extends Component {
               <FilterTitle>Instant Book</FilterTitle>
             </Filter>
 
-            <Filter>
-              <FilterTitle>More filters</FilterTitle>
-              <FilterPopup display={false}>
+            <MoreFilter onClick={this.turnMoreFiltersDisplayState}>
+              <FilterTitle active={this.state.displayMoreFilters}>
+                More filters
+              </FilterTitle>
+              <MoreFilterPopup display={this.state.displayMoreFilters}>
                 <FilterPopupHeader shadow>
-                  <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
+                  <ClosePopupLink onClick={this.turnMoreFiltersDisplayState} />
                   <FilterPopupTitle>All filters (0)</FilterPopupTitle>
                   <ResetLink>Clear All</ResetLink>
                 </FilterPopupHeader>
                 <More />
-              </FilterPopup>
-            </Filter>
+                <ControllsWrapper>
+                  <Cancel>Cancel</Cancel>
+                  <Apply>Apply</Apply>
+                </ControllsWrapper>
+              </MoreFilterPopup>
+            </MoreFilter>
           </Filters>
         </FiltersWrapper>
         <div className="col-xs-12 col-lg-8">

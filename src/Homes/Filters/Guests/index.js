@@ -13,10 +13,14 @@ import {
   Wrapper
 } from '../styled';
 
+const GuestsWrapper = Wrapper.extend`
+  width: 326px;
+`;
+
 class Guests extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <GuestsWrapper>
         <CountOption>
           <CountOptionInformation>
             <CountOptionTitle bold>Adults</CountOptionTitle>
@@ -54,7 +58,7 @@ class Guests extends React.Component {
         </CountOption>
 
         <BottomButton>Save</BottomButton>
-      </Wrapper>
+      </GuestsWrapper>
     );
   }
 }
