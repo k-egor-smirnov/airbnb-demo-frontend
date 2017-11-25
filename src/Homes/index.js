@@ -7,6 +7,7 @@ import closeImage from './close.svg';
 import Guests from './Filters/Guests/';
 import More from './Filters/More/';
 import ReactResizeDetector from 'react-resize-detector';
+import { BottomButton } from './Filters/styled';
 
 const HomesList = styled.div`
   display: flex;
@@ -49,7 +50,7 @@ const Filters = styled.div`
 `;
 
 const Filter = styled.div`
-  display: flex;
+  display: ${props => (props.toHide ? 'none' : 'flex')};
   white-space: nowrap;
   position: relative;
   margin-left: 8px;
@@ -57,8 +58,8 @@ const Filter = styled.div`
   margin-top: 12px;
   margin-bottom: 12px;
 
-  @media (max-width: 992px) {
-    display: ${props => (props.toHide ? 'none' : 'flex')};
+  @media (min-width: 992px) {
+    display: flex;
   }
 `;
 
@@ -70,7 +71,6 @@ const MoreFilter = Filter.extend`
 
 const FilterTitle = styled.a`
   border-radius: 4px;
-  border: 1px solid rgba(72, 72, 72, 0.2);
   font-size: 14px;
   line-height: 16px;
 
@@ -78,10 +78,9 @@ const FilterTitle = styled.a`
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
-  color: #383838;
   background: ${props => (props.active ? '#008489' : '#fff')};
   color: ${props => (props.active ? '#fff' : '#383838')};
-  color: ${props =>
+  border: ${props =>
     props.active ? '1px solid #008489' : '1px solid rgba(72, 72, 72, 0.2)'};
 `;
 
@@ -106,13 +105,20 @@ const FilterPopup = styled.div`
 `;
 
 const MoreFilterPopup = FilterPopup.extend`
+  overflow-y: auto;
+
   @media (min-width: 768px) {
     border: none;
     border-radius: 0;
     width: 100%;
     height: 85vh;
     top: 56px;
-    overflow-y: auto;
+  }
+
+  @media (min-width: 992px) {
+    position: fixed;
+    width: 67%;
+    top: 137px;
   }
 `;
 
@@ -169,14 +175,14 @@ const MapWrapper = styled.div`
   display: none;
   position: fixed;
   width: 34%;
-  height: 100%;
+  height: 100vh;
   margin-top: 80px;
-  height: 100%;
-  left: auto;
+  left: calc((100% - 992px) / 2 + (992px / 12 * 8));
+  right: 0;
   top: 57px;
 
   @media (min-width: 992px) {
-    display: flex;
+    display: block;
   }
 `;
 
@@ -352,6 +358,7 @@ class Homes extends Component {
                   <ResetLink>Reset</ResetLink>
                 </FilterPopupHeader>
                 <Guests />
+                <BottomButton>Save</BottomButton>
 
                 <ControllsWrapper>
                   <Cancel>Cancel</Cancel>
@@ -383,6 +390,8 @@ class Homes extends Component {
                   <ResetLink>Clear All</ResetLink>
                 </FilterPopupHeader>
                 <More />
+                <BottomButton>Save</BottomButton>
+
                 <ControllsWrapper>
                   <Cancel>Cancel</Cancel>
                   <Apply>Apply</Apply>

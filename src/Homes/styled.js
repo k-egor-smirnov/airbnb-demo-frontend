@@ -5,6 +5,11 @@ const Card = styled.div`
   flex-flow: column nowrap;
   max-width: 100%;
   color: #383838;
+  margin-top: 24px;
+
+  @media (min-width: 768px) {
+    margin-top: 40px;
+  }
 `;
 
 const Image = styled.img`

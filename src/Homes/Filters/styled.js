@@ -15,7 +15,11 @@ const Link = styled.span`
 const CountOption = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-top: 24px;
+
+  &:last-child {
+    padding-bottom: 24px;
+  }
 `;
 
 const CountOptionInformation = styled.div`

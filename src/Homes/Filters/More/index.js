@@ -7,6 +7,7 @@ import circle from '../circle.svg';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 import downArrow from '../../downArrow.svg';
+import '../react_dates_overrides.css';
 
 import {
   CountOption,
@@ -44,6 +45,7 @@ const SelectOption = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-bottom: 16px;
+  white-space: pre-wrap;
 `;
 
 const SelectOptionCheckbox = styled.input.attrs({
@@ -116,8 +118,12 @@ const ExpandLink = Link.extend`
 `;
 
 const TwoColumnWrapper = styled.div`
-  display: flex;
+  display: none;
   flex-flow: row nowrap;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 class More extends React.Component {
