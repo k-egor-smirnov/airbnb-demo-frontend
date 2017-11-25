@@ -7,6 +7,8 @@ import DatePicker from './Filters/DatePicker';
 import moment from 'moment';
 import closeImage from './close.svg';
 import Guests from './Filters/Guests/';
+import More from './Filters/More/';
+import ReactResizeDetector from 'react-resize-detector';
 
 const HomesList = styled.div`
   display: flex;
@@ -15,10 +17,8 @@ const HomesList = styled.div`
   position: relative;
 `;
 
-const Filters = styled.div`
+const FiltersWrapper = styled.div`
   margin-top: 1px; // Header border
-  padding-top: 12px;
-  padding-bottom: 12px;
   display: flex;
   flex-flow: row nowrap;
   position: fixed;
@@ -31,9 +31,29 @@ const Filters = styled.div`
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
 `;
 
+const Filters = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: flex-start;
+  margin-left: 8px;
+  max-width: 552px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    max-width: 752px;
+    margin: auto;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 976px;
+    margin: auto;
+  }
+`;
+
 const Filter = styled.div`
   display: flex;
-  width: 100%;
+  white-space: nowrap;
+  position: relative;
   margin-left: 8px;
   margin-right: 4px;
   margin-top: 12px;
@@ -71,6 +91,16 @@ const FilterPopup = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
+  z-index: 20;
+
+  @media (min-width: 768px) {
+    border: 1px solid rgba(72, 72, 72, 0.1);
+    border-radius: 4px;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 40px;
+  }
 `;
 
 const FilterPopupHeader = styled.div`
@@ -83,6 +113,10 @@ const FilterPopupHeader = styled.div`
   justify-content: space-between;
   box-shadow: ${props =>
     props.shadow ? '0px 0.5px 0px rgba(72, 72, 72, 0.3);' : 'none'};
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const FilterPopupTitle = styled.span`
@@ -173,17 +207,34 @@ const BottomHint = styled.span`
   margin-bottom: 25px;
 `;
 
+function calculateSize(width) {
+  let size = 'xs';
+
+  if (width >= 752) {
+    size = 'md';
+  }
+
+  if (width >= 976) {
+    size = 'lg';
+  }
+
+  return size;
+}
+
 class Homes extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      displayDatesFilter: false
+      displayDatesFilter: false,
+      displaySize: calculateSize(window.width)
     };
 
     this.turnDatesFilterDisplayState = this.turnDatesFilterDisplayState.bind(
       this
     );
+
+    this._onResize = this._onResize.bind(this);
   }
 
   static defaultProps = {
@@ -197,52 +248,68 @@ class Homes extends Component {
     });
   }
 
+  _onResize(width) {
+    this.setState({
+      displaySize: calculateSize(width)
+    });
+  }
+
   render() {
     return (
       <Wrapper>
-        <Filters>
-          <Filter onClick={this.turnDatesFilterDisplayState}>
-            <FilterTitle>
-              {this.displayDatesFilter ? 'Check in — Check out' : 'Dates'}
-            </FilterTitle>
-            <FilterPopup display={this.state.displayDatesFilter}>
-              <FilterPopupHeader>
-                <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
-                <FilterPopupTitle>When</FilterPopupTitle>
-                <ResetLink>Reset</ResetLink>
-              </FilterPopupHeader>
-              <DatePicker />
-            </FilterPopup>
-          </Filter>
+        <FiltersWrapper>
+          <Filters>
+            <Filter onClick={this.turnDatesFilterDisplayState}>
+              <FilterTitle>
+                {this.state.displayDatesFilter ? 'Check in — Check out' : 'Dates'}
+              </FilterTitle>
+              <FilterPopup display={this.state.displayDatesFilter}>
+                <FilterPopupHeader>
+                  <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
+                  <FilterPopupTitle>When</FilterPopupTitle>
+                  <ResetLink>Reset</ResetLink>
+                </FilterPopupHeader>
+                <DatePicker displaySize={this.state.displaySize} />
+              </FilterPopup>
+            </Filter>
 
-          <Filter>
-            <FilterTitle>Guests</FilterTitle>
-            <FilterPopup display={true}>
-              <FilterPopupHeader shadow>
-                <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
-                <FilterPopupTitle>Guests</FilterPopupTitle>
-                <ResetLink>Reset</ResetLink>
-              </FilterPopupHeader>
-              <Guests />
-            </FilterPopup>
-          </Filter>
+            <Filter>
+              <FilterTitle>Guests</FilterTitle>
+              <FilterPopup display={false}>
+                <FilterPopupHeader shadow>
+                  <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
+                  <FilterPopupTitle>Guests</FilterPopupTitle>
+                  <ResetLink>Reset</ResetLink>
+                </FilterPopupHeader>
+                <Guests />
+              </FilterPopup>
+            </Filter>
 
-          <Filter toHide>
-            <FilterTitle>Room type</FilterTitle>
-          </Filter>
+            <Filter toHide>
+              <FilterTitle>Room type</FilterTitle>
+            </Filter>
 
-          <Filter toHide>
-            <FilterTitle>Price</FilterTitle>
-          </Filter>
+            <Filter toHide>
+              <FilterTitle>Price</FilterTitle>
+            </Filter>
 
-          <Filter toHide>
-            <FilterTitle>Instant Book</FilterTitle>
-          </Filter>
+            <Filter toHide>
+              <FilterTitle>Instant Book</FilterTitle>
+            </Filter>
 
-          <Filter>
-            <FilterTitle>More filters</FilterTitle>
-          </Filter>
-        </Filters>
+            <Filter>
+              <FilterTitle>More filters</FilterTitle>
+              <FilterPopup display={false}>
+                <FilterPopupHeader shadow>
+                  <ClosePopupLink onClick={this.turnDatesFilterDisplayState} />
+                  <FilterPopupTitle>All filters (0)</FilterPopupTitle>
+                  <ResetLink>Clear All</ResetLink>
+                </FilterPopupHeader>
+                <More />
+              </FilterPopup>
+            </Filter>
+          </Filters>
+        </FiltersWrapper>
         <div className="col-xs-12 col-lg-8">
           <HomesList>
             <div className="col-xs-12 col-md-6">
@@ -335,6 +402,8 @@ class Homes extends Component {
             />
           </MapWrapper>
         </div>
+
+        <ReactResizeDetector handleWidth onResize={this._onResize} />
       </Wrapper>
     );
   }

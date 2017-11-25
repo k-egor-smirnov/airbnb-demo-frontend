@@ -77,13 +77,17 @@ const defaultProps = {
 };
 
 const DatePickerWrapper = styled.div`
-  height: 100vh;
+  height: ${props => (props.height ? props.height : '100vh')};
   width: 100%;
 `;
 
 const ShowDateContainer = styled.div`
   margin-left: 8px;
   margin-bottom: 12px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const DateText = styled.span`
@@ -123,6 +127,30 @@ class DatePicker extends React.Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {}
+
+  calculateOrientation(displaySize) {
+    console.log(displaySize);
+    let orientation = 'vertical';
+
+    if (displaySize !== 'xs') {
+      orientation = 'horizontal';
+    }
+
+    console.log(orientation);
+    return orientation;
+  }
+
+  calculateHeight(displaySize) {
+    let height = '100vh';
+
+    if (displaySize !== 'xs') {
+      height = '100%';
+    }
+
+    return height;
+  }
+
   render() {
     const { focusedInput, startDate, endDate } = this.state;
 
@@ -141,7 +169,7 @@ class DatePicker extends React.Component {
     };
 
     return (
-      <DatePickerWrapper>
+      <DatePickerWrapper height={this.calculateHeight(this.props.displaySize)}>
         <ShowDateContainer>
           <DateText focused={this.state.focusedFirst}>
             {startDate ? startDate.format('DD-MM-YYYY') : 'Check-in'}
@@ -154,7 +182,7 @@ class DatePicker extends React.Component {
 
         <DayPickerRangeController
           {...props}
-          orientation="vertical"
+          orientation={this.calculateOrientation(this.props.displaySize)}
           verticalHeight="calc(100vh - 100px)"
           keepOpenOnDateSelect={this.state.keepOpenOnDateSelect}
           startDate={this.state.startDate}
