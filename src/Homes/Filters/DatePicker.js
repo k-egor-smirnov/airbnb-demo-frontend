@@ -2,79 +2,11 @@ import React from 'react';
 import 'react-dates/initialize';
 import { DayPickerRangeController } from 'react-dates';
 import styled from 'styled-components';
-import momentPropTypes from 'react-moment-proptypes';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import { forbidExtraProps } from 'airbnb-prop-types';
-import { START_DATE, END_DATE, HORIZONTAL_ORIENTATION } from '../constants';
+import { START_DATE, END_DATE } from '../constants';
 import omit from 'lodash/omit';
 import './react_dates_overrides.css';
 import arrow from './arrow.svg';
 
-const propTypes = forbidExtraProps({
-  // example props for the demo
-  autoFocusEndDate: PropTypes.bool,
-  initialStartDate: momentPropTypes.momentObj,
-  initialEndDate: momentPropTypes.momentObj,
-
-  keepOpenOnDateSelect: PropTypes.bool,
-  minimumNights: PropTypes.number,
-  isOutsideRange: PropTypes.func,
-  isDayBlocked: PropTypes.func,
-  isDayHighlighted: PropTypes.func,
-
-  // DayPicker props
-  enableOutsideDays: PropTypes.bool,
-  numberOfMonths: PropTypes.number,
-  withPortal: PropTypes.bool,
-  initialVisibleMonth: PropTypes.func,
-  renderCalendarInfo: PropTypes.func,
-
-  navPrev: PropTypes.node,
-  navNext: PropTypes.node,
-
-  onPrevMonthClick: PropTypes.func,
-  onNextMonthClick: PropTypes.func,
-  onOutsideClick: PropTypes.func,
-  renderDay: PropTypes.func,
-
-  // i18n
-  monthFormat: PropTypes.string,
-
-  isRTL: PropTypes.bool
-});
-
-const defaultProps = {
-  // example props for the demo
-  autoFocusEndDate: false,
-  initialStartDate: null,
-  initialEndDate: null,
-
-  // day presentation and interaction related props
-  renderDay: null,
-  minimumNights: 1,
-  isDayBlocked: () => false,
-  isDayHighlighted: () => false,
-  enableOutsideDays: false,
-
-  // calendar presentation and interaction related props
-  withPortal: false,
-  initialVisibleMonth: null,
-  numberOfMonths: 2,
-  onOutsideClick() {},
-  keepOpenOnDateSelect: false,
-  renderCalendarInfo: null,
-  isRTL: false,
-
-  // navigation related props
-  navPrev: null,
-  navNext: null,
-  onPrevMonthClick() {},
-  onNextMonthClick() {},
-
-  // internationalization
-  monthFormat: 'MMMM YYYY'
-};
 
 const DatePickerWrapper = styled.div`
   height: ${props => (props.height ? props.height : '100vh')};
@@ -161,13 +93,6 @@ class DatePicker extends React.Component {
       'initialEndDate'
     ]);
 
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    };
-
     return (
       <DatePickerWrapper height={this.calculateHeight(this.props.displaySize)}>
         <ShowDateContainer>
@@ -187,6 +112,7 @@ class DatePicker extends React.Component {
           keepOpenOnDateSelect={this.state.keepOpenOnDateSelect}
           startDate={this.state.startDate}
           endDate={this.state.endDate}
+          numberOfMonths={this.props.numberOfMonths}
           onDatesChange={this.onDatesChange}
           onFocusChange={this.onFocusChange}
           focusedInput={focusedInput}

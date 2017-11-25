@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import star from '../star.svg';
 
 const Card = styled.div`
   display: flex;

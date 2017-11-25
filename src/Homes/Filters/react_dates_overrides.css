@@ -6,29 +6,48 @@
 .DateInput {
 }
 
-.DateInput_input {
-  font-family: 'CircularAir';
-  padding: 0;
-  font-size: 18px;
-  line-height: 21px;
+@media (max-width: 572px) {
+  .DateInput_input {
+    font-family: 'CircularAir';
+    padding: 0;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .DateRangePickerInput_arrow {
+    align-self: center;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .DateRangePickerInput {
+    margin-left: 8px;
+  }
+
+  .DayPicker_weekHeader {
+    position: absolute;
+    border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+  }
+
+  .CalendarMonthGrid {
+    margin-top: 16px;
+  }
 }
 
-.DateRangePickerInput_arrow {
-  align-self: center;
-  margin-right: 16px;
-  margin-left: 16px;
-}
-
-.DateRangePickerInput {
-  margin-left: 8px;
-}
-
-.DayPicker_weekHeader {
-  position: absolute;
-  top: 0;
-  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
-}
-
-.CalendarMonthGrid {
-  margin-top: 16px;
+@media (min-width: 572px) {
+  .DayPicker_transitionContainer {
+    min-height: 320px;
+  }
+  .CalendarMonth_table {
+    margin-top: 4px;
+  }
+  .DayPicker_weekHeader_li {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .CalendarMonth_caption {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: bold;
+  }
 }

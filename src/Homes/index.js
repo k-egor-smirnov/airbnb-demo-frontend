@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomeCard from './Card';
 import MapView from './MapView';
 import DatePicker from './Filters/DatePicker';
-import moment from 'moment';
 import closeImage from './close.svg';
 import Guests from './Filters/Guests/';
 import More from './Filters/More/';
@@ -75,12 +73,10 @@ const FilterTitle = styled.a`
   padding-top: 7px;
   padding-bottom: 7px;
   color: #383838;
-
-  &:hover {
-    background: #008489;
-    border: 1px solid #008489;
-    color: #fff;
-  }
+  background: ${props => (props.active ? '#008489' : '#fff')};
+  color: ${props => (props.active ? '#fff' : '#383838')};
+  color: ${props =>
+  props.active ? '1px solid #008489' : '1px solid rgba(72, 72, 72, 0.2)'};
 `;
 
 const FilterPopup = styled.div`
@@ -98,7 +94,6 @@ const FilterPopup = styled.div`
     border-radius: 4px;
     position: absolute;
     width: fit-content;
-    height: fit-content;
     top: 40px;
   }
 `;
@@ -260,8 +255,10 @@ class Homes extends Component {
         <FiltersWrapper>
           <Filters>
             <Filter onClick={this.turnDatesFilterDisplayState}>
-              <FilterTitle>
-                {this.state.displayDatesFilter ? 'Check in — Check out' : 'Dates'}
+              <FilterTitle active={this.state.displayDatesFilter}>
+                {this.state.displayDatesFilter
+                  ? 'Check in — Check out'
+                  : 'Dates'}
               </FilterTitle>
               <FilterPopup display={this.state.displayDatesFilter}>
                 <FilterPopupHeader>
@@ -269,7 +266,10 @@ class Homes extends Component {
                   <FilterPopupTitle>When</FilterPopupTitle>
                   <ResetLink>Reset</ResetLink>
                 </FilterPopupHeader>
-                <DatePicker displaySize={this.state.displaySize} />
+                <DatePicker
+                  numberOfMonths={this.state.displaySize === 'md' ? 1 : 2}
+                  displaySize={this.state.displaySize}
+                />
               </FilterPopup>
             </Filter>
 
