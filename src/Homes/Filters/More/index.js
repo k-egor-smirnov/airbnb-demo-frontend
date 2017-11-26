@@ -4,10 +4,14 @@ import Rheostat from 'rheostat';
 import '../../rheostat.css';
 import Bar from './Bar';
 import circle from '../circle.svg';
-import Toggle from 'react-toggle';
+// import Toggle from 'react-toggle';
+import toggleImage from './toggle.svg';
 import 'react-toggle/style.css';
 import downArrow from '../../downArrow.svg';
 import '../react_dates_overrides.css';
+import entireImage from './entire.svg';
+import privateImage from './privat.svg';
+import sharedImage from './shared.svg';
 
 import {
   CountOption,
@@ -28,11 +32,15 @@ import {
   Link
 } from '../styled';
 
+const Toggle = styled.img`
+  content: url(${toggleImage});
+`;
+
 const Section = styled.div`
   display: flex;
   flex-flow: column nowrap;
   margin-bottom: 32px;
-  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
 `;
 
 const SectionTitle = styled.span`
@@ -46,6 +54,10 @@ const SelectOption = styled.div`
   justify-content: flex-start;
   margin-bottom: 16px;
   white-space: pre-wrap;
+`;
+
+const RoomSelectOption = SelectOption.extend`
+  justify-content: space-between;
 `;
 
 const SelectOptionCheckbox = styled.input.attrs({
@@ -126,50 +138,91 @@ const TwoColumnWrapper = styled.div`
   }
 `;
 
+const TypeImage = styled.img`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
+const Left = styled.div`
+  display: flex;
+`;
+
+const PriceSection = Section.extend`
+  @media (min-width: 992px) {
+    display: none;
+  }
+`;
+
+const RoomSection = Section.extend`
+  @media (min-width: 992px) {
+    display: none;
+  }
+`;
+
+const InstantBookSwitchOption = SwitchOption.extend`
+  @media (min-width: 992px) {
+    display: none;
+  }
+`;
+
 class More extends React.Component {
   render() {
     return (
       <MoreWrapper>
-        <Section>
+        <RoomSection>
           <SectionTitle>Room type</SectionTitle>
-          <SelectOption>
-            <SelectOptionCheckbox disabled />
-            <SelectOptionInformation>
-              <SelectOptionInformationTitle>
-                Entire home
-              </SelectOptionInformationTitle>
-              <SelectOptionInformationDescription>
-                Have a place to yourself
-              </SelectOptionInformationDescription>
-            </SelectOptionInformation>
-          </SelectOption>
+          <RoomSelectOption>
+            <Left>
+              <SelectOptionCheckbox disabled />
+              <SelectOptionInformation>
+                <SelectOptionInformationTitle>
+                  Entire home
+                </SelectOptionInformationTitle>
+                <SelectOptionInformationDescription>
+                  Have a place to yourself
+                </SelectOptionInformationDescription>
+              </SelectOptionInformation>
+            </Left>
+            <TypeImage src={entireImage} />
+          </RoomSelectOption>
 
-          <SelectOption>
-            <SelectOptionCheckbox disabled />
-            <SelectOptionInformation>
-              <SelectOptionInformationTitle>
-                Private room
-              </SelectOptionInformationTitle>
-              <SelectOptionInformationDescription>
-                Have your own room and share some common spaces
-              </SelectOptionInformationDescription>
-            </SelectOptionInformation>
-          </SelectOption>
+          <RoomSelectOption>
+            <Left>
+              <SelectOptionCheckbox disabled />
+              <SelectOptionInformation>
+                <SelectOptionInformationTitle>
+                  Private room
+                </SelectOptionInformationTitle>
+                <SelectOptionInformationDescription>
+                  Have your own room and share some common spaces
+                </SelectOptionInformationDescription>
+              </SelectOptionInformation>
+            </Left>
 
-          <SelectOption>
-            <SelectOptionCheckbox disabled />
-            <SelectOptionInformation>
-              <SelectOptionInformationTitle>
-                Shared room
-              </SelectOptionInformationTitle>
-              <SelectOptionInformationDescription>
-                Stay in a shared space, like a common room
-              </SelectOptionInformationDescription>
-            </SelectOptionInformation>
-          </SelectOption>
-        </Section>
+            <TypeImage src={privateImage} />
+          </RoomSelectOption>
 
-        <Section>
+          <RoomSelectOption>
+            <Left>
+              <SelectOptionCheckbox disabled />
+              <SelectOptionInformation>
+                <SelectOptionInformationTitle>
+                  Shared room
+                </SelectOptionInformationTitle>
+                <SelectOptionInformationDescription>
+                  Stay in a shared space, like a common room
+                </SelectOptionInformationDescription>
+              </SelectOptionInformation>
+            </Left>
+
+            <TypeImage src={sharedImage} />
+          </RoomSelectOption>
+        </RoomSection>
+
+        <PriceSection>
           <SectionTitle>Price range</SectionTitle>
 
           <Price>$10 — $1000+</Price>
@@ -185,7 +238,7 @@ class More extends React.Component {
               values={[1, 100]}
             />
           </CostWrapper>
-        </Section>
+        </PriceSection>
 
         <Section>
           <div className="col-xs-12 col-md-6">
@@ -219,7 +272,7 @@ class More extends React.Component {
         <Section>
           <div className="col-xs-12 col-md-6">
             <SectionTitle>More options</SectionTitle>
-            <SwitchOption>
+            <InstantBookSwitchOption>
               <SwitchOptionInfromation>
                 <SwitchOptionInfromationTitle>
                   Instant Book
@@ -231,7 +284,7 @@ class More extends React.Component {
               </SwitchOptionInfromation>
 
               <Toggle />
-            </SwitchOption>
+            </InstantBookSwitchOption>
 
             <SwitchOption>
               <SwitchOptionInfromation>

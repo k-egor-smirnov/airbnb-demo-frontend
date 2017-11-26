@@ -50,6 +50,18 @@ const Title = styled.span`
   }
 `;
 
+const Cancel = styled.a`
+  font-size: 16px;
+  color: #636363;
+  padding: 24px;
+`;
+
+const Apply = styled.a`
+  font-size: 16px;
+  color: #008489;
+  padding: 24px;
+`;
+
 const Type = styled.span`
   margin-top: 4px;
   font-size: 12px;
@@ -89,5 +101,7 @@ export {
   Rating,
   Reviews,
   Superhost,
-  Star
+  Star,
+  Cancel,
+  Apply
 };

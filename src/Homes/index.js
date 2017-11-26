@@ -8,11 +8,12 @@ import Guests from './Filters/Guests/';
 import More from './Filters/More/';
 import ReactResizeDetector from 'react-resize-detector';
 import { BottomButton } from './Filters/styled';
+import { Cancel, Apply } from './styled';
 
 const HomesList = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin-top: 80px;
+  margin-top: 40px;
   position: relative;
 `;
 
@@ -64,8 +65,9 @@ const Filter = styled.div`
 `;
 
 const MoreFilter = Filter.extend`
-  @media (max-width: 992px) {
-    position: unset;
+  position: static;
+  @media (min-width: 992px) {
+    position: static;
   }
 `;
 
@@ -100,7 +102,7 @@ const FilterPopup = styled.div`
     position: absolute;
     width: fit-content;
     height: fit-content;
-    top: 40px;
+    top: 52px;
   }
 `;
 
@@ -235,18 +237,6 @@ const ControllsWrapper = styled.div`
   @media (min-width: 768px) {
     display: flex;
   }
-`;
-
-const Cancel = styled.a`
-  font-size: 16px;
-  color: #636363;
-  padding: 24px;
-`;
-
-const Apply = styled.a`
-  font-size: 16px;
-  color: #008489;
-  padding: 24px;
 `;
 
 function calculateSize(width) {

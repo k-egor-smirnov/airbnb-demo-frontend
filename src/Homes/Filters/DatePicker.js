@@ -107,7 +107,7 @@ class DatePicker extends React.Component {
         <DayPickerRangeController
           {...props}
           orientation={this.calculateOrientation(this.props.displaySize)}
-          verticalHeight="calc(100vh - 100px)"
+          verticalHeight={window.innerHeight - 120}
           keepOpenOnDateSelect={this.state.keepOpenOnDateSelect}
           startDate={this.state.startDate}
           endDate={this.state.endDate}
