@@ -9,6 +9,7 @@ import More from './Filters/More/';
 import ReactResizeDetector from 'react-resize-detector';
 import { BottomButton } from './Filters/styled';
 import { Cancel, Apply, ControllsWrapper } from './styled';
+import mapImage from './map.svg';
 
 const HomesList = styled.div`
   display: flex;
@@ -103,6 +104,16 @@ const FilterPopup = styled.div`
     width: fit-content;
     height: fit-content;
     top: 52px;
+  }
+`;
+
+const OpenMap = styled.a`
+  position: fixed;
+  bottom: 24px;
+  right: 8px;
+  content: url(${mapImage});
+  @media (min-width: 992px) {
+    display: none;
   }
 `;
 
@@ -496,6 +507,7 @@ class Homes extends Component {
           </MapWrapper>
         </div>
 
+        <OpenMap />
         <ReactResizeDetector handleWidth onResize={this._onResize} />
       </Wrapper>
     );
