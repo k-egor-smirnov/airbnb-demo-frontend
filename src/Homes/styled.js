@@ -53,13 +53,17 @@ const Title = styled.span`
 const Cancel = styled.a`
   font-size: 16px;
   color: #636363;
-  padding: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
 `;
 
 const Apply = styled.a`
   font-size: 16px;
   color: #008489;
-  padding: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
 `;
 
 const Type = styled.span`
@@ -91,6 +95,17 @@ const Reviews = styled.span`
 
 const Superhost = styled.span``;
 
+const ControllsWrapper = styled.div`
+  display: none;
+  height: fit-content;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+`;
+
 export {
   Card,
   Image,
@@ -103,5 +118,6 @@ export {
   Superhost,
   Star,
   Cancel,
-  Apply
+  Apply,
+  ControllsWrapper
 };

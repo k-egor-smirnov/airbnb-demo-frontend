@@ -8,7 +8,7 @@ import Guests from './Filters/Guests/';
 import More from './Filters/More/';
 import ReactResizeDetector from 'react-resize-detector';
 import { BottomButton } from './Filters/styled';
-import { Cancel, Apply } from './styled';
+import { Cancel, Apply, ControllsWrapper } from './styled';
 
 const HomesList = styled.div`
   display: flex;
@@ -140,6 +140,29 @@ const FilterPopupHeader = styled.div`
   }
 `;
 
+const MoreControllsWrapper = ControllsWrapper.extend`
+  justify-content: flex-end;
+  margin-right: 16px;
+  align-items: center;
+
+  @media (min-width: 992px) {
+    margin: 0;
+    justify-content: center;
+  }
+`;
+
+const MoreApply = Apply.extend`
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 28px;
+  padding-left: 28px;
+  background: #008489;
+  color: #fff;
+  border-radius: 4px;
+`;
+
+const MoreCancel = Cancel.extend``;
+
 const FilterPopupTitle = styled.span`
   color: #383838;
   font-size: 14px;
@@ -190,6 +213,7 @@ const MapWrapper = styled.div`
 
 const Pages = styled.div`
   display: flex;
+  margin-top: 48px;
   flex-flow: column nowrap;
   align-items: center;
 `;
@@ -226,17 +250,6 @@ const BottomHint = styled.span`
   justify-content: center;
   display: flex;
   margin-bottom: 25px;
-`;
-
-const ControllsWrapper = styled.div`
-  display: none;
-  height: fit-content;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-
-  @media (min-width: 768px) {
-    display: flex;
-  }
 `;
 
 function calculateSize(width) {
@@ -382,10 +395,10 @@ class Homes extends Component {
                 <More />
                 <BottomButton>Save</BottomButton>
 
-                <ControllsWrapper>
-                  <Cancel>Cancel</Cancel>
-                  <Apply>Apply</Apply>
-                </ControllsWrapper>
+                <MoreControllsWrapper>
+                  <MoreCancel>Cancel</MoreCancel>
+                  <MoreApply>See homes </MoreApply>
+                </MoreControllsWrapper>
               </MoreFilterPopup>
             </MoreFilter>
           </Filters>

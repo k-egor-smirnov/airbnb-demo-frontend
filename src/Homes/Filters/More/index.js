@@ -32,6 +32,8 @@ import {
   Link
 } from '../styled';
 
+
+
 const Toggle = styled.img`
   content: url(${toggleImage});
 `;
@@ -391,6 +393,8 @@ class More extends React.Component {
 
           <ExpandLink>See all amenities</ExpandLink>
         </Section>
+
+
       </MoreWrapper>
     );
   }
