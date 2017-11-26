@@ -1,0 +1,36 @@
+<svg width="48" height="48" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>map</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4805 -322)">
+<g id="map">
+<g id="Rectangle 4" filter="url(#filter0_d)">
+<use xlink:href="#path0_fill" transform="translate(4809 324)" fill="#FFFFFF"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(4809 324)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(4809 324)" fill="#484848" fill-opacity="0.16"/>
+</g>
+</g>
+<g id="location">
+<g id="Shape">
+<use xlink:href="#path2_fill" transform="translate(4821.34 334.469)" fill="#008489"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="4805" y="322" width="48" height="48" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.282353 0 0 0 0 0.282353 0 0 0 0 0.282353 0 0 0 0.16 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 20C 0 8.9543 8.9543 0 20 0C 31.0457 0 40 8.9543 40 20C 40 31.0457 31.0457 40 20 40C 8.9543 40 0 31.0457 0 20Z"/>
+<path id="path1_stroke_2x" d="M 20 39C 9.50659 39 1 30.4934 1 20L -1 20C -1 31.598 8.40202 41 20 41L 20 39ZM 39 20C 39 30.4934 30.4934 39 20 39L 20 41C 31.598 41 41 31.598 41 20L 39 20ZM 20 1C 30.4934 1 39 9.50659 39 20L 41 20C 41 8.40202 31.598 -1 20 -1L 20 1ZM 20 -1C 8.40202 -1 -1 8.40202 -1 20L 1 20C 1 9.50659 9.50659 1 20 1L 20 -1Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 0 7.65625C 0 3.42749 3.42773 0 7.65625 0C 11.8848 0 15.3125 3.42749 15.3125 7.65625C 15.3125 11.6375 13.2949 14.6162 7.95166 18.9575C 7.77979 19.0975 7.53271 19.0975 7.36084 18.9575C 2.01758 14.6162 0 11.6375 0 7.65625ZM 5.08545 9.14062C 5.61572 10.0592 6.5957 10.625 7.65625 10.625C 9.2959 10.625 10.625 9.29584 10.625 7.65625C 10.625 6.01666 9.2959 4.6875 7.65625 4.6875C 6.5957 4.6875 5.61572 5.25333 5.08545 6.17188C 4.55469 7.09042 4.55469 8.22208 5.08545 9.14062Z"/>
+</defs>
+</svg>

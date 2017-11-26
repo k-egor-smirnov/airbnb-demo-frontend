@@ -1,11 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import ExploreCard from '../ExploreCard/'
-import ExperienceCard from '../ExperienceCard/'
-import HomeCard from '../HomeCard/'
-import ReservationCard from '../ReservationCard/'
-import DestinationCard from '../DestinationCard/'
-import scrollArrow from '../next-page.svg'
+import React from 'react';
+import styled from 'styled-components';
+import ExploreCard from '../ExploreCard/';
+import ExperienceCard from '../ExperienceCard/';
+import HomeCard from '../Homes/Card';
+import ReservationCard from '../ReservationCard/';
+import DestinationCard from '../DestinationCard/';
+import scrollArrow from '../next-page.svg';
+import { Link } from 'react-router-dom';
 
 const Main = styled.main`
   width: auto;
@@ -18,9 +19,9 @@ const Main = styled.main`
   @media (min-width: 992px) {
     max-width: 976px;
   }
-  
+
   margin: auto;
-`
+`;
 
 const ScrollButton = styled.button`
   display: none;
@@ -28,84 +29,84 @@ const ScrollButton = styled.button`
   width: 40px;
   border: none;
   background: url(${scrollArrow}) no-repeat;
-  background-size: cover; 
+  background-size: cover;
 
-  @media only screen and (min-width: 992px){
+  @media only screen and (min-width: 992px) {
     display: block;
     position: absolute;
-    top: ${props => props.top ? props.top : 0};
-    bottom: ${props => props.bottom ? props.bottom : 0};
-    right: ${props => props.right ? props.right : 0};
+    top: ${props => (props.top ? props.top : 0)};
+    bottom: ${props => (props.bottom ? props.bottom : 0)};
+    right: ${props => (props.right ? props.right : 0)};
     margin: auto;
-  }  
-`
+  }
+`;
 const ExploreCategory = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  flex: 1 auto;  
+  flex: 1 auto;
   position: relative;
-`
+`;
 
 const ExperienceCategory = styled.div`
   justify-content: flex-start;
-`
+`;
 
 const HomeCategory = styled.div`
   display: flex;
   width: inherit;
   justify-content: flex-start;
   flex: 1 auto;
-  position: relative;  
-`
+  position: relative;
+`;
 const ReservationCategory = styled.div`
   display: flex;
   width: inherit;
-  position: relative;  
-`
+  position: relative;
+`;
 
 const DestinationCategory = styled.div`
   display: flex;
   width: inherit;
-  position: relative;  
-`
+  position: relative;
+`;
 
 const SectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 const SectionTitle = styled.h1`
   font-size: 32px;
   font-weight: bold;
   color: #383838;
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 768px) {
     font-size: 24px;
   }
-`
+`;
 
 const MoreButton = styled.a`
   padding-right: 16px;
   text-decoration: none;
-  font-size: 12px;  
+  font-size: 12px;
   color: #383838;
 
   &:after {
     margin-left: 8px;
-    content: url("/arrow.svg")
+    content: url('/arrow.svg');
   }
 
-  @media only screen and (min-width: 576px){
+  @media only screen and (min-width: 576px) {
     font-size: 14px;
   }
-`
+`;
 
 const Section = styled.section`
   padding-top: 48px;
   position: relative;
-`
+`;
 
 export default () => {
   return (
@@ -117,15 +118,12 @@ export default () => {
           <ExploreCard image="/experiences.png" title="Experiences" />
           <ExploreCard image="/restaurants.png" title="Restaurants" />
         </ExploreCategory>
-
-        <ScrollButton bottom="-53%" right="-1.2%" />
       </Section>
 
       <Section>
         <SectionHeader>
           <SectionTitle>Experiences</SectionTitle>
-          <MoreButton href="#">See all
-          </MoreButton>
+          <MoreButton href="#">See all</MoreButton>
         </SectionHeader>
 
         <ExperienceCategory className="scrolling-wrapper">
@@ -133,18 +131,26 @@ export default () => {
             cost="$29"
             reviews={44}
             title="Forest therapy"
-            image="/forest.png" />
+            image="/forest.png"
+          />
           <ExperienceCard
             cost="$69"
             reviews={46}
             title="Whale watching"
-            image="/whale.png" />
+            image="/whale.png"
+          />
           <ExperienceCard
             cost="$69"
             reviews={44}
             title="Table Mountain Summi, Cable Car Down"
-            image="/mountain.png" />
-          <ExperienceCard cost="$50" reviews={44} title="Salsa Night" image="/salsa.png" />
+            image="/mountain.png"
+          />
+          <ExperienceCard
+            cost="$50"
+            reviews={44}
+            title="Salsa Night"
+            image="/salsa.png"
+          />
         </ExperienceCategory>
 
         <ScrollButton bottom="-10%" right="-1.4%" />
@@ -153,32 +159,44 @@ export default () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Homes</SectionTitle>
-          <MoreButton href="#">See all
-          </MoreButton>
+          <Link to="/homes">
+            <MoreButton href="#">See all</MoreButton>
+          </Link>
         </SectionHeader>
 
         <HomeCategory className="scrolling-wrapper">
-          <HomeCard
-            type="Entire house"
-            reviews={97}
-            beds={9}
-            cost="$82"
-            title="La Salentina, see, nature & relax"
-            image="/house1.png" />
-          <HomeCard
-            type="Entire house"
-            reviews={161}
-            beds={5}
-            cost="$82"
-            title="Your private 3 bedr. riad and exclusive"
-            image="/house2.png" />
-          <HomeCard
-            type="Entire treehouse"
-            reviews={364}
-            beds={1}
-            cost="$200"
-            title="Dreamy Tropical Tree House"
-            image="/house3.png" />
+          <div className="col-xs-8 col-md-5 col-lg-4">
+            <HomeCard
+              type="Entire house"
+              reviews={97}
+              beds={9}
+              cost="$82"
+              title="La Salentina, see, nature & relax"
+              image="/house1.png"
+            />
+          </div>
+
+          <div className="col-xs-8 col-md-5 col-lg-4">
+            <HomeCard
+              type="Entire house"
+              reviews={161}
+              beds={5}
+              cost="$82"
+              title="Your private 3 bedr. riad and exclusive"
+              image="/house2.png"
+            />
+          </div>
+
+          <div className="col-xs-8 col-md-5 col-lg-4">
+            <HomeCard
+              type="Entire treehouse"
+              reviews={364}
+              beds={1}
+              cost="$200"
+              title="Dreamy Tropical Tree House"
+              image="/house3.png"
+            />
+          </div>
         </HomeCategory>
 
         <ScrollButton bottom="-20%" right="-1.3%" />
@@ -187,8 +205,7 @@ export default () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Popular reservations around the world</SectionTitle>
-          <MoreButton href="#">See all
-          </MoreButton>
+          <MoreButton href="#">See all</MoreButton>
         </SectionHeader>
 
         <ReservationCategory className="scrolling-wrapper">
@@ -196,22 +213,26 @@ export default () => {
             type="SPEAKEASY"
             title="Chumley's"
             cost="About $60 per person"
-            image="./reservation1.png" />
+            image="./reservation1.png"
+          />
           <ReservationCard
             type="KOREAN GASTROPUB"
             title="Hanjan"
             cost="About $55 per person"
-            image="./reservation2.png" />
+            image="./reservation2.png"
+          />
           <ReservationCard
             type="GERMAN AMERICAN"
             title="Prime Meats"
             cost="About $55 per person"
-            image="./reservation3.png" />
+            image="./reservation3.png"
+          />
           <ReservationCard
             type="FINE SEAFOOD"
             title="Seaprice"
             cost="About $70 per person"
-            image="./reservation4.png" />
+            image="./reservation4.png"
+          />
         </ReservationCategory>
 
         <ScrollButton bottom="-18%" right="-1.2%" />
@@ -220,8 +241,7 @@ export default () => {
       <Section>
         <SectionHeader>
           <SectionTitle>Featured destination</SectionTitle>
-          <MoreButton href="#">See all
-          </MoreButton>
+          <MoreButton href="#">See all</MoreButton>
         </SectionHeader>
 
         <DestinationCategory className="scrolling-wrapper">
@@ -236,5 +256,5 @@ export default () => {
         <ScrollButton bottom="-26%" right="-0.5%" />
       </Section>
     </Main>
-  )
-}
+  );
+};

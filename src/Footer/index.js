@@ -1,41 +1,53 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from './logo.svg'
-import facebook from './facebook.svg'
-import twitter from './twitter.svg'
-import instagram from './instagram.svg'
+import React from 'react';
+import styled from 'styled-components';
+import logo from './logo.svg';
+import facebook from './facebook.svg';
+import twitter from './twitter.svg';
+import instagram from './instagram.svg';
 
 const Footer = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid rgba(72, 72, 72, 0.2);
   margin-top: 64px;
   width: inherit;
-`
+`;
 
 const Content = styled.div`
-  margin: 0 auto;  
+  margin: 0 auto;
   margin-top: 48px;
   max-width: 976px;
-`
+`;
 
 const Category = styled.div`
   display: none;
-  flex-flow: column nowrap;  
+  flex-flow: column nowrap;
 
   @media (min-width: 768px) {
-      display: flex;
+    display: flex;
   }
-`
+`;
 
 const CategoryTitle = styled.span`
-  font-weight: bold;  
-`
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+`;
 
 const CategoryLink = styled.a`
   color: black;
   text-decoration: none;
   padding-top: 12px;
-`
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 15px;
+    line-height: 18px;
+  }
+`;
 
 const Information = styled.div`
   flex-flow: row nowrap;
@@ -43,7 +55,7 @@ const Information = styled.div`
   overflow: hidden;
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(72, 72, 72, 0.2);
-`
+`;
 
 const Credits = styled.div`
   display: flex;
@@ -58,7 +70,7 @@ const Credits = styled.div`
     margin-top: 32px;
     margin-bottom: 32px;
   }
-`
+`;
 const About = styled.div`
   display: flex;
   align-items: center;
@@ -67,15 +79,14 @@ const About = styled.div`
   @media (min-width: 992px) {
     font-size: 15px;
   }
-`
+`;
 
 const Logo = styled.img`
   height: 30px;
-
-`
+`;
 const Credit = styled.span`
   margin-left: 12px;
-`
+`;
 
 const Links = styled.div`
   display: flex;
@@ -84,9 +95,9 @@ const Links = styled.div`
   align-items: center;
 
   @media (min-width: 768px) {
-    justify-content: flex-end;  
+    justify-content: flex-end;
   }
-`
+`;
 
 const Link = styled.a`
   color: black;
@@ -99,22 +110,23 @@ const Link = styled.a`
   @media (min-width: 992px) {
     font-size: 15px;
   }
-`
+`;
 const ChooseContainer = styled.div`
   display: flex;
   width: 100%;
-  flex-flow : row nowrap;
+  flex-flow: row nowrap;
 
   @media (min-width: 768px) {
-    flex-flow : column nowrap;
+    flex-flow: column nowrap;
   }
-`
+`;
 
 const Select = styled.select`
   padding-left: 8px;
-  margin-bottom: 16px;  
+  margin-bottom: 16px;
   font-family: CircularAir;
   font-size: 12px;
+  line-height: 14px;
   border: none;
   outline: none;
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -124,12 +136,14 @@ const Select = styled.select`
 
   @media (min-width: 768px) {
     font-size: 15px;
+    line-height: 18px;
   }
 
   @media (min-width: 992px) {
     font-size: 18px;
+    line-height: 21px;
   }
-`
+`;
 
 export default () => {
   return (
@@ -146,7 +160,9 @@ export default () => {
 
               <div className="col-xs-6 col-md-8">
                 <Select>
-                  <option value="United States dollar">United States dollar</option>
+                  <option value="United States dollar">
+                    United States dollar
+                  </option>
                 </Select>
               </div>
             </ChooseContainer>
@@ -169,8 +185,7 @@ export default () => {
             <Category>
               <CategoryTitle>Discover</CategoryTitle>
 
-              <CategoryLink href="#">Trust & Safety
-              </CategoryLink>
+              <CategoryLink href="#">Trust & Safety</CategoryLink>
               <CategoryLink href="#">Travel Credit</CategoryLink>
               <CategoryLink href="#">Gift Cards</CategoryLink>
               <CategoryLink href="#">Airbnb Citizen</CategoryLink>
@@ -223,5 +238,5 @@ export default () => {
         </div>
       </Content>
     </Footer>
-  )
-}
+  );
+};

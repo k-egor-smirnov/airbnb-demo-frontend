@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
 import styled from 'styled-components';
-import star from '../star.svg';
 
 const Card = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  max-width: 310px;
-  margin-bottom: 16px;
+  max-width: 100%;
   color: #383838;
+  margin-top: 24px;
+
+  @media (min-width: 768px) {
+    margin-top: 40px;
+  }
 `;
 
 const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
 `;
 
 const Information = styled.div`
-  padding-top: 8px;
+  margin-top: 8px;
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -49,16 +50,36 @@ const Title = styled.span`
   }
 `;
 
+const Cancel = styled.a`
+  font-size: 16px;
+  color: #636363;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
+`;
+
+const Apply = styled.a`
+  font-size: 16px;
+  color: #008489;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
+`;
+
 const Type = styled.span`
+  margin-top: 4px;
   font-size: 12px;
   font-height: 14px;
 
   @media (min-width: 768px) {
+    margin-top: 2px;
     font-size: 15px;
   }
 `;
 
-const Rating = styled.div``;
+const Rating = styled.div`
+  margin-top: 8px;
+`;
 
 const Star = styled.img`
   margin-right: 4px;
@@ -74,37 +95,29 @@ const Reviews = styled.span`
 
 const Superhost = styled.span``;
 
-class HomeCard extends Component {
-  render() {
-    return (
-      <div className="col-xs-8 col-md-5 col-lg-4">
-        <Card>
-          <Image src={this.props.image} alt="" />
+const ControllsWrapper = styled.div`
+  display: none;
+  height: fit-content;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 
-          <Information className="card-information">
-            <Cost>{this.props.cost}</Cost>
-            <Title>{this.props.title}</Title>
-          </Information>
-
-          <Type>
-            {this.props.type} · {this.props.beds} beds
-          </Type>
-
-          <Rating>
-            <Star src={star} />
-            <Star src={star} />
-            <Star src={star} />
-            <Star src={star} />
-            <Star src={star} />
-            <Reviews>
-              {this.props.reviews}
-              <Superhost> · Superhost</Superhost>
-            </Reviews>
-          </Rating>
-        </Card>
-      </div>
-    );
+  @media (min-width: 768px) {
+    display: flex;
   }
-}
+`;
 
-export default HomeCard;
+export {
+  Card,
+  Image,
+  Information,
+  Cost,
+  Title,
+  Type,
+  Rating,
+  Reviews,
+  Superhost,
+  Star,
+  Cancel,
+  Apply,
+  ControllsWrapper
+};

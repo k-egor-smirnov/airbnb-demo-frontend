@@ -5,32 +5,41 @@
   overflow-y: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
-  font-family: CircularAir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #383838;
 }
 
 @font-face {
-  font-family: "CircularAir";
+  font-family: 'CircularAir';
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/Circular_Air-Book.woff") format("woff"), url("fonts/Circular_Air-Book.ttf") format("truetype");
+  src: url('fonts/Circular_Air-Book.woff') format('woff'),
+    url('fonts/Circular_Air-Book.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "CircularAir";
+  font-family: 'CircularAir';
   font-style: normal;
   font-weight: bold;
-  src: url("fonts/Circular_Air-Bold.woff") format("woff"), url("fonts/Circular_Air-Bold.ttf") format("truetype");
+  src: url('fonts/Circular_Air-Bold.woff') format('woff'),
+    url('fonts/Circular_Air-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "CircularAir";
+  font-family: 'CircularAir';
   font-style: normal;
   font-weight: lighter;
-  src: url("fonts/Circular_Air-Light.woff") format("woff"), url("fonts/Circular_Air-Light.ttf") format("truetype");
+  src: url('fonts/Circular_Air-Light.woff') format('woff'),
+    url('fonts/Circular_Air-Light.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("fonts/HelveticaNeue.woff") format("woff"), url("fonts/HelveticaNeue.ttf") format("truetype");
+  font-family: 'Helvetica Neue';
+  src: url('fonts/HelveticaNeue.woff') format('woff'),
+    url('fonts/HelveticaNeue.ttf') format('truetype');
 }

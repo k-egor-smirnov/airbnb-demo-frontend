@@ -6,6 +6,14 @@ import Header from './Header/';
 import Landing from './MainPage/';
 import Footer from './Footer/';
 import 'flexboxgrid2/flexboxgrid2.css';
+import styled from 'styled-components';
+import 'react-dates/lib/css/_datepicker.css';
+
+import Homes from './Homes/';
+
+const Content = styled.div`
+  padding-top: 80px;
+`;
 
 class App extends Component {
   render() {
@@ -14,10 +22,12 @@ class App extends Component {
         <div>
           <Header />
 
-          <Route path="/" exact component={Landing} />
-          <Route path="/homes" component={Landing} />
+          <Content>
+            <Route path="/" exact component={Landing} />
+            <Route path="/homes" component={Homes} />
+          </Content>
 
-          <Footer />
+          <Route path="/" exact component={Footer} />
         </div>
       </BrowserRouter>
     );
